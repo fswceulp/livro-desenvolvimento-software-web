@@ -40,9 +40,9 @@ Aqui no curso, o conteúdo de JavaScript será dividido entre entendimento da si
 
 Entender a sintaxe do JavaScript é uma tarefa fundamental para o andamento do curso. A seção seguinte (Javascript) apresenta os elementos principais da linguagem:
 
-- [sintaxe](sintaxe.html)
-- [tipos de dados](tipos-de-dados.html)
-- [condicionais](condicionais.html)
-- [laços de repetição](lacos-de-repeticao.html)
-- [funções](funcoes.html)
-- [objetos](objetos.html)
+- [sintaxe](sintaxe.md)
+- [tipos de dados](tipos-de-dados.md)
+- [condicionais](condicionais.md)
+- [laços de repetição](lacos-de-repeticao.md)
+- [funções](funcoes.md)
+- [objetos](objetos.md)
