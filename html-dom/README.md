@@ -14,7 +14,7 @@ Os nós podem ser de quatro tipos:
 * `Atributte`
 * `Text`
 
-Destes tipos, apenas o tipo **Documento** pode ter apenas uma instância na árvore DOM.
+Destes tipos, apenas o tipo `Document` pode ter apenas uma instância na árvore DOM.
 
 Ao representar o documento HTML na forma de objetos, também são representadas outras características além da relação entre elementos, como propriedades, métodos e eventos.
 
@@ -43,7 +43,9 @@ No código JavaScript, o objeto `document`, que representa o nó raiz da árvore
 
 O nó do tipo `Element` possui a propriedade `innerHTML`, que dá acesso ao conteúdo do nó. Este conteúdo é, na verdade, HTML.
 
-> **Exercício** Modifique o código para que o conteúdo HTML do elemento `div` apresente um texto como uma página de uma notícia, com título, resumo, imagem e texto.  
+> **Exercício**
+
+> Modifique o código para que o conteúdo HTML do elemento `div` apresente um texto como uma página de uma notícia, com título, resumo, imagem e texto.  
 
 ## Métodos para encontrar elementos
 
