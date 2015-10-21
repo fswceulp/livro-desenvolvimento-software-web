@@ -1,1 +1,20 @@
-{}
+{
+    "styles": {
+        "website": "styles/website.css"
+    },
+    "plugins": [
+        "anchors", "richquotes", "edit-link"
+    ],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-51680040-3"
+        },
+        "richquotes" : {
+            "todos" : true
+        },
+        "edit-link": {
+            "base": "https://github.com/jacksongomesbr/livro-desenvolvimento-software-web/edit/master",
+            "label": "Editar"
+        }
+    }
+}

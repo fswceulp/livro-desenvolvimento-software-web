@@ -6,7 +6,7 @@ Embora seja possível, por meio da árvore DOM, manipular qualquer tipo de docum
 
 O exemplo a seguir ilustra a utilização do HTML DOM para acessar dados do formulário.
 
-<iframe src="http://embed.plnkr.co/g79uKYMF2h5EfgmJdpfK/preview" width="100%" height="400"></iframe>
+<iframe src="https://embed.plnkr.co/g79uKYMF2h5EfgmJdpfK/preview" width="100%" height="400"></iframe>
 
 No HTML, é importante destacar o trecho referente ao formulário:
 
@@ -110,7 +110,7 @@ A lista a seguir apresenta as restrições mais comuns em campos de formulário:
 
 O exemplo a seguir ilustra a utilização de vários campos de formulários e restrições sobre eles.
 
-<iframe src="http://embed.plnkr.co/5GezzqU2yd5cuwpeOCVE/preview" width="100%" height="400"></iframe>
+<iframe src="https://embed.plnkr.co/5GezzqU2yd5cuwpeOCVE/preview" width="100%" height="400"></iframe>
 
 > **Exercícios**
 

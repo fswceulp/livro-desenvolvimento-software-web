@@ -1,9 +1,8 @@
-title: Model complexo
----
+# Model complexo
 
 Os exemplos apresentados até o momento lidaram com estruturas mais básicas para o model. O Angular também permite trabalhar com model com uma estrutura mais complexa, como será visto nesta seção. Primeiro, utilize o aplicativo a seguir.
 
-<iframe src="http://embed.plnkr.co/elrnz2OTGP0zrXruwIbp/preview" width="100%" height="600"></iframe>
+<iframe src="https://embed.plnkr.co/elrnz2OTGP0zrXruwIbp/preview" width="100%" height="600"></iframe>
 
 Há duas entidades no modelo de dados: `Cidade` e `Estado`. A figura a seguir apresenta um diagrama de classes UML.
 
@@ -13,7 +12,7 @@ A classe `Estado` possui `uf` e `nome`, enquanto a classe `Cidade` possui `estad
 
 Ainda no arquivo `app.js`, entre as linhas 25 e 29 é definido um vetor de estados (`$scope.estados`). Já entre as linhas 31 e 38, um vetor de cidades (`$scope.cidades`). A função `salvar()`, linha 40, acrescenta uma cidade no vetor.
 
-No arquivo `index.html`, no front-end, há duas seções principais: a primeira apresenta a lista de cidades, com opção de filtro; a segunda contém o formulário de cadastro da cidade. Para a lista de cidades, entre as linhas 42 e 46 são criadas as linhas da tabela que apresenta a lista. Importante notar que, na linha 44, há o código <code>&lt;td&gt;&#123;&#123;cidade.estado.nome\}\}&lt;/td&gt;</code>. Perceba que está sendo utilizado `cidade.estado.nome` ou seja, o nome do estado da cidade. 
+No arquivo `index.html`, no front-end, há duas seções principais: a primeira apresenta a lista de cidades, com opção de filtro; a segunda contém o formulário de cadastro da cidade. Para a lista de cidades, entre as linhas 42 e 46 são criadas as linhas da tabela que apresenta a lista. Importante notar que, na linha 44, há o código <code>&lt;td&gt;&#123;&#123;cidade.estado.nome\}\}&lt;/td&gt;</code>. Perceba que está sendo utilizado `cidade.estado.nome` ou seja, o nome do estado da cidade.
 
 Para o cadastro da cidade, os elementos do fomrulário estão vinculados ao model da seguinte forma:
 - o `input` representa o nome da cidade e está vinculado a `cidade.nome` (linha 57);

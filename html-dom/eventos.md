@@ -6,7 +6,7 @@ No documento HTML, os eventos são representados por meio de atributos.
 
 O exemplo a seguir utiliza o conceito de eventos para que, no clique de um botão, uma mensagem seja apresentada para o usuário.  
 
-<iframe src="http://embed.plnkr.co/cAJndSK2AbfuPuKLH9qL/preview" width="100%" height="400"></iframe>
+<iframe src="https://embed.plnkr.co/cAJndSK2AbfuPuKLH9qL/preview" width="100%" height="400"></iframe>
 
 O código JavaScript declara a função `mostrarMensagem()`:
 

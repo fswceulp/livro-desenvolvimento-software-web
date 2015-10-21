@@ -30,7 +30,7 @@ Um dos principais recursos do Angular são as **diretivas**, que estendem o HTML
 
 O exemplo a seguir ilustra alguns dos conceitos, que serão destacados posteriormente.
 
-<iframe src="http://embed.plnkr.co/Q2DapCZkodDahG1k21AT/preview" width="100%" height="300"></iframe>
+<iframe src="https://embed.plnkr.co/Q2DapCZkodDahG1k21AT/preview" width="100%" height="300"></iframe>
 
 ## Conceitos iniciais
 

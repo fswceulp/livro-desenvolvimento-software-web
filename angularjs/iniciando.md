@@ -11,7 +11,7 @@ Independente da forma que você escolher, lembre-se que o angular estará dispon
 
 Um aplicativo que usa Angular está baseado no padrão arquitetural **MVC** (*Model-View-Controller*). Por causa disso, mesmo um aplicativo mais simples terá uma estrutura natural, baseada no MVC. O exemplo a seguir apresenta este aplicativo simples e a estrutura baseada no MVC.
 
-<iframe src="http://embed.plnkr.co/pf7Spx9A6TVASWk6KGFu/preview" width="100%" height="300"></iframe>
+<iframe src="https://embed.plnkr.co/pf7Spx9A6TVASWk6KGFu/preview" width="100%" height="300"></iframe>
 
 O aplicativo possui dois arquivos principais: `index.html` e `app.js`. O arquivo `index.html` representa a **View**, ou seja, a parte visual do aplicativo. Na linha 2, a diretiva `ng-app` possui o valor `appsimples`, que é o nome do módulo que representa o aplicativo. Isso quer dizer que a lógica do aplicativo está em um módulo (um aplicativo pode possuir vários módulos e pode existir uma relação de dependência entre eles, o que será visto posteriormente).
 

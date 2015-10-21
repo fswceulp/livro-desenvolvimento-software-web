@@ -2,7 +2,7 @@
 
 As diretivas `ng-show` e `ng-hide` são utilizadas, respectivamente, para mostrar e ocultar conteúdo. Veja o aplicativo a seguir.
 
-<iframe src="http://embed.plnkr.co/Z6jWxn9ew4lRca7TUoc2/preview" width="100%" height="300"></iframe>
+<iframe src="https://embed.plnkr.co/Z6jWxn9ew4lRca7TUoc2/preview" width="100%" height="300"></iframe>
 
 No arquivo `index.html`, nas linhas 15 e 16, são criados elementos `input` para representar opções para uma pergunta. Cada elemento está vinculado ao model `tipo` (por meio da diretiva `ng-model`) e cada uma possui o atributo `value`, indicando o valor de `tipo` quando cada opção estiver selecionada.
 
