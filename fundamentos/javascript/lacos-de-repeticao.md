@@ -1,5 +1,5 @@
-title: Laços de Repetição
----
+# Laços de Repetição
+
 Laços de repetição podem ser: `for`, `for in`, `while` e `do while`.
 
 ## Instrução for
@@ -54,7 +54,7 @@ A instrução `for...in` também pode ser utilizada para iterar pelos elementos 
 var n = [1, 2, 3, 4, 5];
 var s = 0;
 for (var i in n) {
-    s += n[i]; 
+    s += n[i];
 }
 ```
 
@@ -100,16 +100,16 @@ do {
 } while (i < 10);
 ```
 
-{% note info Exercícios %}
+> **Exercícios**
 
-**Exercício 1**: Calcule a média de um array de números. Utilize as instruções `for`, `for...in`, `while` e `do...while ` (fazendo um código separado para cada instrução).
+> **Exercício 1**: Calcule a média de um array de números. Utilize as instruções `for`, `for...in`, `while` e `do...while ` (fazendo um código separado para cada instrução).
 
-**Exercício 2**: Considere que um conjunto de dados armazena os seguintes dados: nome, idade e sexo de um grupo de pessoas. Crie um programa JavaScript que encontre e apresente:
+> **Exercício 2**: Considere que um conjunto de dados armazena os seguintes dados: nome, idade e sexo de um grupo de pessoas. Crie um programa JavaScript que encontre e apresente:
 
-- o nome e a idade da pessoa mais idosa;
-- a média das idades dos homens; e
-- a média das idades das mulheres.
+> - o nome e a idade da pessoa mais idosa;
 
-**Exercício 2A**: Na implementação do **exercício 2** (alterando-a diretamente ou em uma versão alternativa), utilize objetos para representar os dados das pessoas. 
+> - a média das idades dos homens; e
 
-{% endnote %}
+> - a média das idades das mulheres.
+
+> **Exercício 2A**: Na implementação do **exercício 2** (alterando-a diretamente ou em uma versão alternativa), utilize objetos para representar os dados das pessoas.

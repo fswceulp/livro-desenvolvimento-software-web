@@ -1,5 +1,5 @@
-title: Condicionais
----
+# Condicionais
+
 As instruções condicionais em JavaScript utilizam as palavras `if`, `else`, e `switch`.
 
 ## A instrução if

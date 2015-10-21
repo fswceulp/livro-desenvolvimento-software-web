@@ -1,5 +1,5 @@
-title: Objetos
----
+# Objetos
+
 Por ser uma linguagem multi-paradigma, o JavaScript também suporta o Paradigma Orientado a Objetos (POO), da mesma forma que outras linguagens como Python, C++, Java e C#. As diferenças principais para outras linguagens e as características principais de POO com JavaScript são apresentadas nesta seção.
 
 ## Definição do objeto
@@ -88,17 +88,15 @@ for (var p in pessoas) {
 
 No trecho de código, a variável `pessoas` recebe um array de objetos. Perceba que a construção `new Pessoa()` é válida. Neste caso, cada índice do array possui (referencia) um objeto.
 
-{% note info Exercício %}
+> **Exercício**
 
-Considere que, no contexto de uma escola:
+> Considere que, no contexto de uma escola:
 
-* A escola é identificada por um código e possui nome e alunos; e
-* Os alunos possuem nome, disciplinas e notas (uma nota para cada disciplina).
+> * A escola é identificada por um código e possui nome e alunos; e
+> * Os alunos possuem nome, disciplinas e notas (uma nota para cada disciplina).
 
-Represente este contexto na forma orientada a objeto, criando tipos de dados (classes). 
+> Represente este contexto na forma orientada a objeto, criando tipos de dados (classes).
 
-A classe que representa o aluno deve possuir um método que calcula e retorna a média geral do aluno, ou seja, a média das suas notas nas disciplinas. 
+> A classe que representa o aluno deve possuir um método que calcula e retorna a média geral do aluno, ou seja, a média das suas notas nas disciplinas.
 
-Além disso, a classe que representa a escola deve possui um método que retorna o nome do aluno com maior média geral. 
-
-{% endnote %}
+> Além disso, a classe que representa a escola deve possui um método que retorna o nome do aluno com maior média geral.  

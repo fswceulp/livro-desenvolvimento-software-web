@@ -1,5 +1,5 @@
-title: Tipos de dados
----
+# Tipos de dados
+
 Por ser uma linguagem interpretada, JavaScript não é fortemente tipada. Isso significa que as variáveis não possuem tipos ao serem declaradas e seu tipo é definido conforme seu valor. Os tipos considerados pelo JavaScript são: números, strings,  booleanos e objetos. Exemplos:
 
 ```javascript
@@ -34,7 +34,9 @@ var mensagem = "\"José\" é o meu nome";
 
 Os exemplos acima ilustram representações de strings, utilizando aspas simples e duplas e demonstram a utilização da `\` como forma de representar caracteres especiais dentro de strings.
 
-> **Exercício** Qual o valor da expressão `10 + 8 + 'Anos';`?
+> **Exercício**
+
+> Qual o valor da expressão `10 + 8 + 'Anos';`?
 
 
 ## Arrays
@@ -96,7 +98,9 @@ pessoa = null;
 
 Na prática, `null` e `unfefined` são iguais em valor, mas diferentes em tipo.
 
-> **Exercício** : Como identificar se uma variável é array?
+> **Exercício**
+
+> Como identificar se uma variável é array?
 
 ## Funções para conversões de tipos
 
@@ -111,4 +115,6 @@ m = parseFloat(m); // converte para numero
 var s = n.toString(); // converte para string
 ```
 
-> **Exercício**: Crie um objeto que represente a seguinte situação: um aluno é identificado pelo número acadêmico e possui nome, e-mail, data de nascimento, endereço e uma lista de turmas; cada turma é identificada por um número e possui nome da disciplina, ano e semestre; para cada turma, o aluno possui quatro notas.
+> **Exercício**
+
+> Crie um objeto que represente a seguinte situação: um aluno é identificado pelo número acadêmico e possui nome, e-mail, data de nascimento, endereço e uma lista de turmas; cada turma é identificada por um número e possui nome da disciplina, ano e semestre; para cada turma, o aluno possui quatro notas.

@@ -1,5 +1,5 @@
-title: Sintaxe
----
+# Sintaxe
+
 As instruções de programa em JavaScript são dispostas em linhas, terminadas, opcionalmente, em ";" (ponto-e-vírgula). Exemplo:
 
 ```javascript
@@ -101,4 +101,3 @@ JavaScript é uma linguagem "case sensitive", isto é, letras maiúsculas e min�
 var primeiroNome = 'Jose';
 var primeironome = 'Jose';
 ```
-
