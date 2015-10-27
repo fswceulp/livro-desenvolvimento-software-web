@@ -1,3 +1,4 @@
 *.stackdump
 /_book/
 /node_modules/
+*.pdf

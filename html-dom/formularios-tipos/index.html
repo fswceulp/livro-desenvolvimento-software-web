@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function enviarDados() {
+            var form = document.forms[0];
+            var primeiro_nome = form["primeiro_nome"].value;
+            var segundo_nome = form["segundo_nome"].value;
+            var sexo = form["sexo"].value;
+            var cor = form["cor"].value;
+            var data = form["data_de_nascimento"].value;
+            var mensagem = document.getElementById('mensagem');
+            mensagem.innerHTML = primeiro_nome + ' ' + segundo_nome
+            + '<br/>sexo: ' + sexo
+            + '<br/>cor: ' + cor
+            + '<br/>data: ' + data;
+        }
+        </script>
+    </head>
+<body>
+
+<form onsubmit="return false;">
+    <div>
+        <label for="primeiro_nome">Primeiro nome:</label>
+        <input type="text" name="primeiro_nome" id="primeiro_nome"
+        placeholder="Informe seu primeiro nome" required>
+    </div>
+    <div>
+        <label for="segundo_nome">Segundo nome:</label>
+        <input type="text" name="segundo_nome" id="segundo_nome"
+        placeholder="Informe seu segundo nome">
+    </div>
+    <div>
+        Sexo:
+        <label>M <input type="radio" name="sexo" value="m" required></label>
+        <label>F <input type="radio" name="sexo" value="f" required></label>
+    </div>
+    <div>
+        <label>
+            Data de nascimento:
+            <input type="date" name="data_de_nascimento">
+        </label>
+    </div>
+    <div>
+        <label>Cor favorita:
+
+        <select name="cor">
+            <option>Vermelho</option>
+            <option>Preto</option>
+            <option>Azul</option>
+            <option>Amarelo</option>
+        </select>
+
+        </label>
+
+    </div>
+    <button type="submit" onclick="enviarDados()">Enviar dados</button>
+</form>
+
+<p>Seu nome completo é:</p>
+<div id="mensagem"></div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <div id="conteudo"></div>
+
+  <script>
+      var conteudo = document.getElementById('conteudo');
+      var p = document.createElement('p');
+
+      var p2 = document.createElement('p');
+      p2.innerHTML = '<div>Clique abaixo para acessar nosso site!</div>';
+      p.appendChild(p2);
+
+      var a = document.createElement('a');
+      a.setAttribute('href', 'http://ulbra-to.br');
+      a.setAttribute('target', '_blank');
+      a.innerHTML = 'http://ulbra-to.br';
+      p.appendChild(a);
+
+      conteudo.appendChild(p);
+  </script>
+  </body>
+
+
+</html>

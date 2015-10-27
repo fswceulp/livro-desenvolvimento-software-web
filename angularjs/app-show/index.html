@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="pt-br">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Demonstração ng-hide e ng-show</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+      <p>Você é um
+          <label><input type="radio" ng-model="tipo" value="sith">sith</label> ou um
+          <label><input type="radio" ng-model="tipo" value="jedi">jedi</label>?
+      </p>
+      <p ng-show="tipo=='sith'">"The Force shall set me free" (Sith Code)</p>
+      <p ng-show="tipo=='jedi'">"A Jedi uses the Force for knowledge and defense, never for attack" (Yoda)</p>
+  </body>
+
+</html>

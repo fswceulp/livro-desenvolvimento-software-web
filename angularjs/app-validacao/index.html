@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="appsimples">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>App Simples</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="HomeController">
+        <div class="container">
+            <h1>Cidades do Tocantins</h1>
+
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <h2>Lista de cidades</h2>
+                    <p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="q" placeholder="Pesquisar...">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </span>
+                        </div>
+                    </p>
+
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>UF</th>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cidade in cidades | filter:q | orderBy:estado.uf">
+                                <td>{{$index}}</td>
+                                <td>{{cidade.estado.uf}}</td>
+                                <td>{{cidade.nome}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <h2>Cadastrar cidade</h2>
+
+                    <form class="form" name="form" novalidate>
+                        <div class="form-group">
+                            <label for="nomeDaCidade">Nome
+                            </label>
+                            <input type="text" id="nomeDaCidade" name="nomeDaCidade" class="form-control" ng-model="cidade.nome" placeholder="Nome da cidade" required="" value="">
+                            <div ng-show="form.$submitted || form.uEmail.$touched">
+                                <div ng-show="form.nomeDaCidade.$error.required">Informe o nome da cidade</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select class="form-control" id="estado" name="estado" ng-model="cidade.estado.uf" required="" value="TO">
+                                <option ng-repeat="estado in estados" value="{{estado.uf}}">{{estado.nome}}</option>
+                            </select>
+                            <div ng-show="form.$submitted || form.uEmail.$touched">
+                                <div ng-show="form.estado.$error.required">Escolha um Estado da lista</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-default" type="submit" ng-click="salvar(cidade)">Salvar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+  </body>
+
+</html>

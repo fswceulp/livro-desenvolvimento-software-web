@@ -34,6 +34,10 @@ Os arquivos também pode ser utilizados online, sem necessidade de download, dir
 
 O código a seguir apresenta a estrutura básica de um arquivo HTML com Bootstrap.
 
-<iframe src="http://embed.plnkr.co/kiNm1soFELpZfrnSHkhV/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "intro/index.html"
+{%endace%}
+
+Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/kiNm1soFELpZfrnSHkhV/preview).
 
 Importante notar a importação dos arquivos `boostrap.css`, `jquery.min.js` e `bootstrap.min.js`.

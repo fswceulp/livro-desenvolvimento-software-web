@@ -24,7 +24,11 @@ Por meio da interface de programação do DOM é possível manipular o documento
 
 O exemplo a seguir demonstra o funcionamento básico do DOM.
 
-<iframe src="https://embed.plnkr.co/A8JOWp4A85IzNE4NBzNW/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "intro/index.html"
+{%endace%}
+
+Você pode ver o exemplo em funcionamento [aqui](http://embed.plnkr.co/A8JOWp4A85IzNE4NBzNW/preview).
 
 No exemplo, o trecho de código a seguir merece destaque:
 
@@ -65,4 +69,8 @@ Para criar elementos, o objeto `document` fornece o método `createElement(tag)`
 
 O exemplo a seguir apresenta uma situação em que vários métodos do DOM são chamados para manipular o documento.
 
-<iframe src="https://embed.plnkr.co/X37GpqvFnKFvzaU85z9U/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "manipulacao/index.html"
+{%endace%}
+
+Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/X37GpqvFnKFvzaU85z9U/preview).

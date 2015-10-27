@@ -46,6 +46,10 @@ O Bootstrap (via CSS) calcula automaticamente o tamanho real da coluna conforme 
 
 O exemplo a seguir demonstra a utilização do grid.
 
-<iframe src="https://embed.plnkr.co/Svg75ZcVd7J0WiprAGGN/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "grid/index.html"
+{%endace%}
 
-Se você abrir o exemplo em telas de tamanho diferente (por exemplo, redimensionando a janela do browser) perceberá como o Bootstrap trata o grid.
+Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/Svg75ZcVd7J0WiprAGGN/preview).
+
+Se você abrir o exemplo em telas de tamanho diferente (por exemplo, redimensionando a janela do browser) perceberá como o Bootstrap trata o grid

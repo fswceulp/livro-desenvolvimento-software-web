@@ -6,7 +6,11 @@ Embora seja possível, por meio da árvore DOM, manipular qualquer tipo de docum
 
 O exemplo a seguir ilustra a utilização do HTML DOM para acessar dados do formulário.
 
-<iframe src="https://embed.plnkr.co/g79uKYMF2h5EfgmJdpfK/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "formularios/index.html"
+{%endace%}
+
+Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/g79uKYMF2h5EfgmJdpfK/preview).
 
 No HTML, é importante destacar o trecho referente ao formulário:
 
@@ -24,9 +28,6 @@ No HTML, é importante destacar o trecho referente ao formulário:
     </div>
     <button type="submit" onclick="enviarDados()">Enviar dados</button>
 </form>
-
-<p>Seu nome completo é:</p>
-<div id="mensagem"></div>
 ```
 
 No elemento `form` está sendo utilizado o evento `onsubmit`, que é disparado quando o formulário está enviando seus dados. O envio dos dados do formulário é causado pelo clique em um botão ou pelo pressionar da tecla `ENTER` em um campo de texto. O valor do atributo `onsubmit` é `return false;` e representa o código necessário para cancelar o envio de dados do formulário. Isto é necessário para que a página não faça um "refresh".
@@ -110,7 +111,11 @@ A lista a seguir apresenta as restrições mais comuns em campos de formulário:
 
 O exemplo a seguir ilustra a utilização de vários campos de formulários e restrições sobre eles.
 
-<iframe src="https://embed.plnkr.co/5GezzqU2yd5cuwpeOCVE/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "formularios-tipos/index.html"
+{%endace%}
+
+Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/5GezzqU2yd5cuwpeOCVE/preview).
 
 > **Exercícios**
 

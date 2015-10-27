@@ -3,7 +3,7 @@
         "website": "styles/website.css"
     },
     "plugins": [
-        "anchors", "richquotes", "edit-link"
+        "anchors", "richquotes", "edit-link", "include", "ace"
     ],
     "pluginsConfig": {
         "ga": {

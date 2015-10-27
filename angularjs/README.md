@@ -30,7 +30,13 @@ Um dos principais recursos do Angular são as **diretivas**, que estendem o HTML
 
 O exemplo a seguir ilustra alguns dos conceitos, que serão destacados posteriormente.
 
-<iframe src="https://embed.plnkr.co/Q2DapCZkodDahG1k21AT/preview" width="100%" height="300"></iframe>
+{%ace lang="html"%}
+{%raw%}
+!INCLUDE "app-intro/index.html"
+{%endraw%}
+{%endace%}
+
+Você pode ver o exemplo em funcionamento [aqui](http://embed.plnkr.co/Q2DapCZkodDahG1k21AT/preview).
 
 ## Conceitos iniciais
 

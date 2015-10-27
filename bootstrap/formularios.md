@@ -4,7 +4,11 @@ O Bootstrap fornece classes para lidar com formulários. As classes CSS mais uti
 
 O código a seguir ilustra um formulário.
 
-<iframe src="https://embed.plnkr.co/lsqlyDyrECTmTNkuaC2g/preview" width="100%" height="400"></iframe>
+{%ace%}
+!INCLUDE "formulario/index.html"
+{%endace%}
+
+Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/lsqlyDyrECTmTNkuaC2g/preview).
 
 Para lidar com `radiobutton` e `checkbox` é necessário utilizar as classes `radio` e `checkbox`, respectivamente. Exemplo:
 

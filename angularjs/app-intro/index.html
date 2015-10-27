@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo - Data binding</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+<body >
+  <div ng-app ng-init="quantidade=1;custo=2">
+  <b>Pedido:</b>
+  <div>
+    Quantidade: <input type="number" min="0" ng-model="quantidade">
+  </div>
+  <div>
+    Custo: <input type="number" min="0" ng-model="custo">
+  </div>
+  <div>
+    <b>Total:</b> {{quantidade * custo | currency}}
+  </div>
+</div>
+</body>
+</html>

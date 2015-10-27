@@ -11,9 +11,9 @@ Uma regra CSS consiste de um **seletor** e de um **bloco de declaração**:
 ### Seletores
 
 O seletor, como o nome indica, permite selecionar o elemento ou o conjunto de elementos do HTML que serão afetados pelas regras de formatação presentes no bloco de declaração. O seletor pode ser:
-- **seletor de elemento**: exemplo: `h1 { ... }` aplica-se ao elemento `h1`
-- **seletor de id**: exemplo: `#pagina { ... }` aplica-se ao elemento com id `pagina`
-- **seletor de classe**: exemplo: `.paragrafo { ... }` aplica-se a todos os elementos que tiverem a classe `paragrafo`
+- **seletor de elemento**: exemplo: `h1` aplica-se ao elemento `h1`
+- **seletor de id**: exemplo: `#pagina` aplica-se ao elemento com `id="pagina"`
+- **seletor de classe**: exemplo: `.paragrafo` aplica-se a todos os elementos que tiverem `paragrafo` como uma de suas classes (atributo `class`).
 
 Independentemente do seletor, ele também pode ser combinado, aplicando a regra a vários elementos. Para isso, basta separar os seletores por vírgula. Exemplo: `h1, .paragrafo, #pagina { ... }` aplica-se ao elemento `h1`, a todos os elementos que tiverem a classe `paragrafo` e ao elemento com id `pagina`.
 
