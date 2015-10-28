@@ -27,7 +27,7 @@ O arquivo `index.html` representa a **View**, ou seja, a parte visual do aplicat
 
 Na linha 17, a diretiva `ng-controller` é utilizada para indicar que o elemento `body` em questão está no contexto do **Controller** chamado `HomeController`. Um **controller** é outro elemento do MVC, responsável por ligar a **view** ao **model** (e vice-versa) e representar a lógica de negócio. O restante do código HTML é responsável por apresentar uma mensagem na tela (linha 19) por meio de uma expressão.
 
-### Controller
+### Módulo e Controller
 
 O arquivo `app.js` possui o seguinte conteúdo:
 
