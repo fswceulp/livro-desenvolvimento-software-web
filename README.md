@@ -7,3 +7,5 @@ Este livro é um pouco mais do que uma fonte de referência em programação. Ex
 O conteúdo do livro é dividido em partes:
 * Parte 1: **Fundamentos**. Aqui você verá conteúdo sobre comunicação na Web, protocolos, HTML, CSS e JavaScript
 * Parte 2: **Tecnologias Front-end**. Aqui o espaço é reservado para Bootstrap e AngularJS
+
+Como um livro de programação, também estão disponíveis os códigos-fontes dos aplicativos de exemplo utilizados nos conteúdos. Para ter acesso a eles, acesse o repositório https://github.com/jacksongomesbr/livro-web-codigo-fonte (utilize o branch `gh-pages`).

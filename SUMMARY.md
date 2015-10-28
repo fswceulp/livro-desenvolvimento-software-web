@@ -24,3 +24,5 @@
     * [Diretiva ng-repeat](angularjs/ng-repeat.md)
     * [Model complexo](angularjs/model-complexo.md)
     * [Validação de formulários](angularjs/form-validacao.md)
+    * [Serviço http](angularjs/http.md)
+    * [Módulo ngRoute](angularjs/ng-route.md)
