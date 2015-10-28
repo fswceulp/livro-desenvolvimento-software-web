@@ -122,7 +122,7 @@ Para estruturar a interface desta maneira (em colunas) foram utilizados recursos
 
 Para a lista de cidades, a parte principal está no trecho de código a seguir:
 
-```html{%raw%}
+```html {%raw%}
 <tr ng-repeat="cidade in cidades | filter:q | orderBy:estado.uf">
     <td>{{$index}}</td>
     <td>{{cidade.estado.uf}}</td>
