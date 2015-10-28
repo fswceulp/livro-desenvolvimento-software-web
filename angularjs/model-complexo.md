@@ -149,7 +149,7 @@ A última coluna apresenta dois botões de ação: excluir e editar. O clique no
 
 O formulário à direita realiza a função de cadastrar e editar os dados de uma cidade. O trecho de código a seguir apresenta a parte principal desta seção do aplicativo:
 
-```html{%raw%}
+```html {%raw%}
 <form class="form">
     <div class="form-group">
         <label for="nomeDaCidade">Nome
