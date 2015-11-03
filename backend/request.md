@@ -77,8 +77,7 @@ Como os dados serão transmitidos via GET, a rota `/` é tratada via este protoc
 
 Do lado do frontend, o código de exemplo desta seção está nos arquivos `index.html` e `app.js`. No arquivo `index.html` há o trecho:
 
-```html
-{%raw%}
+```html {%raw%}
 <body ng-controller="Home">
     <p>Número A: <input type="text" ng-model="numero1"></p>
     <p>Número B: <input type="text" ng-model="numero2"></p>
