@@ -6,7 +6,7 @@ Com base no que já foi visto até o momento, pode-se evoluir em sentido de arqu
 
 A figura a seguir apresenta a arquitetura da solução proposta nesta seção do livro.
 
-![](arquitetura-aplicativo-api-cliente.jpg)
+![](arquitetura-aplicativo-api-cliente.JPG)
 
 Os componentes da arquitetura são:
 
@@ -31,7 +31,7 @@ O Backend representa o *lado servidor*. Utilizando Silex, o Backend fornece uma 
 
 O Banco de Dados armazena dados de cidades e Estados. A figura a seguir ilustra a estrutura do banco de dados.
 
-![](modelo-er-cidades.jpg)
+![](modelo-er-cidades.JPG)
 
 ### API REST
 
