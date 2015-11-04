@@ -75,7 +75,7 @@ Embora a consulta SQL seja represenada por uma string, por questões de seguran�
 $sql = "SELECT * FROM Cidades WHERE id = ?";
 $query = $db->executeQuery($sql, array(1));
 $cidade = $query->fetch();
-``
+```
 
 A instrução SQL possui o símbolo `?` para indicar que deve se recuperado o registro cuja coluna `id` corresponde a um valor (ainda não informado).
 
