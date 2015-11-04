@@ -4,6 +4,8 @@ O **Backend** representa outro componente importante do modelo de desenvolviment
 
 Esta seção apresenta o conteúdo sobre backend necessário para a criação da lógica do lado do servidor, utilizando um modelo de **API REST**. Para isso, será utilizada uma combinação de PHP+Silex.
 
+## API REST
+
 ## Silex
 
 O conteúdo desta seção é baseado na [documentação oficial do Silex](http://silex.sensiolabs.org/).
