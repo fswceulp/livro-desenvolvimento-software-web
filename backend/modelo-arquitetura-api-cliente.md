@@ -40,8 +40,14 @@ A API REST, desenvolvida sobre Silex, atende as seguintes rotas:
 |Rota|Método|Descrição|
 |----|------|---------|
 |`/estados`|GET|Retorna a lista de Estados. Um `array` cujos elementos são objetos com três atributos: `id`, `nome` e `uf`|
-|`/estados`|POST|Salva um Estado no banco de dados|
+|`/estados`|POST|Salva um Estado (cadastra ou edita) no banco de dados|
+|`/estados/{id}`|GET|Retorna o Estado com identificador igual ao parâmetro `id`. Um objeto com os atributos: `id`, `nome` e `uf`|
 |`/estados/{id}`|DELETE|Exclui o Estado com identificador igual ao parâmetro `id`|
+|`/cidades`|GET|Retorna a lista de Cidades. Um `array` cujos elementos são objetos com os atributos: `id`, `nome`, `idEstado`, `ufEstado` e `nomeEstado`|
+|`/cidades`|POST|Salva uma Cidade (cadastra ou edita) no banco de dados|
+|`/cidades/{id}`|GET|Retorna a Cidade com identificador igual ao parâmetro `id`. Um objeto com os atributos: `id`, `nome`, `idEstado`, `ufEstado` e `nomeEstado`|
+|`/cidades/{id}`|DELETE|Exclui a Cidade com identificador igual ao parâmetro `id`|
+
 
 ## Frontend
 
