@@ -4,7 +4,7 @@ Ao abrir o arquivo `index.html` do **Passo 0** no browser, você irá verá a me
 
 O código a seguir é o conteúdo do arquivo `index.html`:
 
-```html {%raw%}
+```html
 <!doctype html>
 <html lang="pt-br" ng-app>
 <head>
@@ -28,7 +28,6 @@ O código a seguir é o conteúdo do arquivo `index.html`:
 </div>
 </body>
 </html>
-{%endraw%}
 ```
 
 Este código é bastante padrão para qualquer aplicativo Angular que você criar daqui para a frente (inclusive os demais passos). Perceba o código utiliza alguns componentes:
@@ -78,9 +77,8 @@ O Bootstrap fornece a classe `container`. O arquivo `index.html`, está sendo ap
 
 O conteúdo do elemento `body` é bastante simples, mas demonstra recursos interessantes do Angular:
 
-```html {%raw%}
+```html
 <p>Nada aqui {{'ainda' + '!'}}</p>
-{%endraw%}
 ```
 
 A linha, conteúdo do elemento `p` demonstra duas características principais dos recursos de template do Angular:
@@ -112,9 +110,8 @@ A estrutura do aplicativo é atualmente muito simples. O *template* contém apen
 
 Tente adicionar expressões matemáticas ao template e ver o resultado. Por exemplo, adicione o seguinte ao elemento `body`:
 
-```html {%raw%}
+```html
 <p>1 + 2 = {{1 + 2}}</p>
-{%endraw%}
 ```
 
 O que acontece se você inserir no template uma expressão Angular com erro?
