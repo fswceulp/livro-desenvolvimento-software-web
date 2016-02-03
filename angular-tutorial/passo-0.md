@@ -84,7 +84,7 @@ O conteúdo do elemento `body` é bastante simples, mas demonstra recursos inter
 ```
 
 A linha, conteúdo do elemento `p` demonstra duas características principais dos recursos de template do Angular:
-* Uma vinculação (*binding*), entre por chaves duplas `{{ }}`
+* Uma vinculação (*binding*), entre por chaves duplas (`{{`e `}}`)
 * Uma expressão é usada na vinculação: `'ainda' + '!'`.
 
 A vinculação diz ao Angular que deve avaliar uma expressão e inserir o resultado no DOM, no local da vinculação. Um recurso muito interessante é que atualizações na expressão implicam em atualizações automáticas do DOM.
