@@ -19,6 +19,7 @@
     * [Formulários](bootstrap/formularios.md)
 * [AngularJS](angularjs/README.md)
     * [Iniciando](angularjs/iniciando.md)
+    * [Tutorial](angular-tutorial/README.md)
     * [Diretiva ng-click](angularjs/ng-click.md)
     * [Diretiva ng-show](angularjs/ng-show-hide.md)
     * [Diretiva ng-repeat](angularjs/ng-repeat.md)
