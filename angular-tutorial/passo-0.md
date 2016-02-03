@@ -5,7 +5,6 @@ Ao abrir o arquivo `index.html` do **Passo 0** no browser, você irá verá a me
 O código a seguir é o conteúdo do arquivo `index.html`:
 
 ```html
-{% raw %}
 <!doctype html>
 <html lang="pt-br" ng-app>
 <head>
@@ -29,7 +28,6 @@ O código a seguir é o conteúdo do arquivo `index.html`:
 </div>
 </body>
 </html>
-{% endraw %}
 ```
 
 Este código é bastante padrão para qualquer aplicativo Angular que você criar daqui para a frente (inclusive os demais passos). Perceba o código utiliza alguns componentes:
