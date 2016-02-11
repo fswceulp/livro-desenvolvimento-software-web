@@ -14,6 +14,12 @@ npm init
 
 A interface baseada em texto apresentará algumas perguntas, as quais, depois de respondidas, levarão à criação do arquivo `package.json`. Este arquivo contém informações sobre o pacote (projeto atual) e sobre as suas dependências, tanto de desenvolvimento quanto de produção.
 
+Um atalho, que cria um arquivo `package.json` padrão, é utilizar a opção `--yes`:
+
+````
+npm init --yes
+```
+
 As dependências de desenvolvimento são aquelas que não serão disponibilizadas no servidor de produção. Em outras palavras, represemtam ferramentas, por exemplo, que executarão apenas localmente, durante o tempo de desenvolvimento (como o **Webpack**).
 
 As dependências de produção, ao contrário das dependências de desenvolvimento, serão implantadas no servidor de produção. Exemplo deste tipo de dependência são o Bootstrap e o Angular.
@@ -30,11 +36,13 @@ npm install angular bootstrap
 
 O comando anterior instala os pacotes localmente e os salva no diret´rio `node_modules` (cada pacote também está armazenado localmente de forma individual, no seu próprio diretório).
 
-Como dito anteriormente, as dependências do projeto local estão no arquivo `package.json`. O comando `npm install` possui uma opção que salva automaticamente as dependências no arquivo `package.json`:
+Como dito anteriormente, as dependências do projeto local estão no arquivo `package.json`. O comando `npm install` possui duas opções que editam o arquivo `package.json`:
+* `--save`: para dependências de produção
+* `--save-dev`: para dependências de desenvolvimento
+
+Exemplos:
 
 ```
 npm install angular bootstrap --save
+npm install http-server --save-dev
 ```
-
-O comando instala os pacotes, como já informado, e modifica o arquivo `package.json`, para incluir as dependências dos pacotes informados na linha de comando.
-
