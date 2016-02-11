@@ -18,3 +18,15 @@ As dependências de desenvolvimento são aquelas que não serão disponibilizada
 
 As dependências de produção, ao contrário das dependências de desenvolvimento, serão implantadas no servidor de produção. Exemplo deste tipo de dependência são o Bootstrap e o Angular.
 
+## Instalar dependência (pacote)
+
+A instalação de dependências permite que o projeto atual reutilize pacotes que fornecem as mais variadas funcionalidades. Por exemplo, um projeto que utiliza Angular e Boostrap depende deles.
+
+Para instalar uma dependência é executado o comando `npm install`:
+
+```
+npm install angular bootstrap
+```
+
+O comando anterior instala os pacotes localmente e os salva no diret´rio `node_modules` (cada pacote também está armazenado localmente de forma individual, no seu próprio diretório).
+
