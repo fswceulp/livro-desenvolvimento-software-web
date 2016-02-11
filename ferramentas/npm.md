@@ -30,3 +30,11 @@ npm install angular bootstrap
 
 O comando anterior instala os pacotes localmente e os salva no diret´rio `node_modules` (cada pacote também está armazenado localmente de forma individual, no seu próprio diretório).
 
+Como dito anteriormente, as dependências do projeto local estão no arquivo `package.json`. O comando `npm install` possui uma opção que salva automaticamente as dependências no arquivo `package.json`:
+
+```
+npm install angular bootstrap --save
+```
+
+O comando instala os pacotes, como já informado, e modifica o arquivo `package.json`, para incluir as dependências dos pacotes informados na linha de comando.
+
