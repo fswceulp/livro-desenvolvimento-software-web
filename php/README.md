@@ -14,6 +14,3 @@ Dado o sucesso que esta funcionalidade trouxe à época, Rasmus se inspirou a de
 Depois da segunda versão, Rasmus liberou o acesso ao código fonte do PHP/FI a outros programadores, que desenvolveram uma série de outras funcionalidades, como por exemplo, o acesso a banco de dados. Esta estratégia popularizou ainda mais o PHP/FI. A popularização foi tão grande que em 1997 já existiam em torno de 60.000 páginas utilizando PHP/FI. Após este marco de 1997, em 1998, dois programadores israelitas se juntaram e reescreveram o PHP: Andi Gutmans e Zeev Suraski, e neste momento, na versão 3.0, o PHP passou a ser chamada de PHP Hypertext Preprocessor e considerado uma linguagem de programação. A linguagem se popularizou tanto que já em 1999 estimava-se que aproximadamente 10% dos sites já utilizavam o PHP. 
 Do seu surgimento até hoje, várias versões surgiram, com o acréscimo de diversas funcionalidades com o propósito de torna-la uma linguagem mais robusta e que atenda com maior eficácia as necessidades dos usuários. Atualmente já está versão 5.6.
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
