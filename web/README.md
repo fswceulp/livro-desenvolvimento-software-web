@@ -1,3 +1,33 @@
+# Funcionamento de uma Aplicação Web
+
+Diferentemente de uma aplicação Desktop (em uma máquina local), uma aplicação Web funciona sob uma arquitetura diferente: Cliente-Servidor. Na arquitetura Cliente-Servidor, o processamento das requisições é realizado por dois “lados” o Servidor (Server side) e Cliente (Client side). Assim, quando o usuário (cliente), através de um browser (navegador) faz acesso a uma página específica, o servidor faz o processamento da requisição, processa-a e enviar de para o cliente arquivos em diferentes formatos, por exemplo, HTML ou CSS. Desta forma, uma aplicação web possui basicamente dois programas que podem ser executados:
+
+- O código que está no servidor e responde às requisições HTTP;
+- E o código que está no cliente (interpretado pelo browser) e responde às entradas dos usuários.
+
+## Códigos do “lado” do Servidor (Server side)
+
+O código disponibilizado do “lado” do servidor possui algumas peculiaridades, dentre elas:
+- São quaisquer códigos que podem ser executados no Servidor e que podem responder às requisições HTTP. Por exemplo, códigos Java, C# e PHP. 
+- Permite a persistência de dados;
+- Não pode ser visualizado pelo usuário;
+-	Respondem às requisições HTTP através de uma particular URL;
+- Caso a aplicação seja web, cria páginas que o usuário pode visualizar através de um navegador (browser).
+
+Um Servidor Web tem como função receber requisições e, a partir delas, oferecer respostas para o cliente.  Estas requisições podem ser realizadas através de um navegador de internet (browser) pelo usuário e, geralmente, recebem como resposta uma página HTML que é interpretada pelo browser e apresentada ao usuário. Mais informações relacionadas a estas comunicação são apresentadas na seção de **Comunicação e Serviços**.
+
+## Códigos do “lado” do Cliente (Client side)
+
+O código disponibilizado do “lado” do cliente também possui suas particularidades, dentre elas
+
+-	Permite o uso das linguagens HTML, CSS e JavaScript;
+-	Código interpretado pelo browser do usuário;
+-	Reage às entradas dos usuários; 
+-	Permite a leitura de arquivos de um servidor através de requisições HTTP;
+-	Torna possível a exibição de conteúdos (por exemplo, uma página web) para os usuários.
+
+Os códigos do “lado” do cliente são analisados pelo próprio navegador do cliente e são, geralmente, gerados a partir de solicitações destes clientes ao servidor. Se por acaso o servidor hospedar um determinado documento HTML (processado do lado do cliente), o servidor então tira uma cópia deste arquivo HTML e o envia para o cliente. 
+
 # Comunicação e serviços
 
 A comunicação no ambiente web é feita sobre a internet e, portanto, utiliza protocolos de comunicação e intercâmbio de dados em rede. O principal protocolo de comunicação na internet é o HTTP (HyperText Transfer Protocol). Como protocolo, o HTTP estabelece uma série de critérios de comunicação entre duas partes, chamadas cliente e servidor. Para mais detalhes do HTTP, leia a [sua especificação](http://tools.ietf.org/html/rfc2616).
