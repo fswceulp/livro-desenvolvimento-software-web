@@ -1,6 +1,6 @@
 # PHP - Hypertext Preprocessor
 
-PHP é uma linguagem de programação de script, interpretada e multiplataforma para o desenvolvimento de aplicações Web. O site oficial do PHP é http://php.net/ - lá você ter acesso às definições do PHP e sua documentação (acesso online ou download).  
+PHP é uma linguagem de programação de script, interpretada e multiplataforma para o desenvolvimento de aplicações Web. O site oficial do [PHP](http://php.net/) é http://php.net/ - lá você ter acesso às definições do PHP e sua documentação (acesso online ou download).  
 Para que o desenvolvimento de scripts PHP possa ser iniciado, antes de mais nada, é necessário ter um Servidor Web Apache e um interpretador de PHP instalado na máquina. Depois que estiver um servidor devidamente instalado e configurado, pronto, já podemos começar a desenvolver scripts PHP. 
 
 ## 2.	História do PHP
