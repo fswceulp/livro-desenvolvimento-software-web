@@ -121,7 +121,7 @@ A função `mostrarDetalhes()` realiza duas operações:
 * modifica o valor da propriedade `ui_estado` para `"detalhes"` (indicando que a tela de detalhes se tornará visível)
 * modifica o valor da propriedade `telefone` para que seja possível apresentar informações do telefone em questão (o passado como parâmetro) 
 
-### Função mostrarLista()
+### Função `mostrarLista()`
 
 A função lista realiza apenas uma operação: modifica o valor da propriedade `ui_estado` para `"lista"`, indicando que a tela de lista de telefones se tornará visível.
 
