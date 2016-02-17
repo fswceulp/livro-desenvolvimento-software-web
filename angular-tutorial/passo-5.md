@@ -62,4 +62,8 @@ Com isso obtém-se o comportamento de "ocultar-e-mostrar" as telas, e o aplicati
 </ul>  
 ```
 
-O elemento `a` (para cada telefone) possui o atributo `ng-click`. Seu valor representa a chamada da função `mostrarDetalhes()` passando como parâmetro `telefone` (ou seja, o telef 
+O elemento `a` (para cada telefone) possui o atributo `ng-click`. Seu valor representa a chamada da função `mostrarDetalhes()` passando como parâmetro `telefone` (ou seja, o telefone em questão, na lista de telefones).
+
+Isso significa que quando o usuário clicar no botão "Detalhes", será chamada uma função que está definida no controller
+ (arquivo `app.js`):
+
