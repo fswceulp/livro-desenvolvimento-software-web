@@ -93,6 +93,8 @@ O código indica que o elemento `a` possui a diretiva `ng-click` com valor `most
 
 ## Controller
 
+O **controller**, ou seja, o arquivo `app.js`, é modificado para incluir o trecho a seguir.
+
 ```javascript
 $scope.ui_estado = 'lista';
 $scope.telefone = null;
@@ -101,13 +103,32 @@ $scope.mostrarDetalhes = function(telefone) {
     $scope.ui_estado = 'detalhes';
     $scope.telefone = telefone;
 };
+
+$scope.mostrarLista = function() {
+    $scope.ui_estado = 'lista';
+};
 ```
 
-Desta forma, o código indica que o **model** possui três propriedades:
+O código indica que o **model** possui quatro propriedades:
 * `ui_estado`: é utilizada para controlar qual tela do aplicativo está visível (seu valor inicial indica que a primeira tela visível é a lista dos telefones)
 * `telefone`: representa o "telefone atual" e é utilizada na tela de detalhes do telefone
-* `mostrarDetalhes` é uma função que aceita como parâmetro um objeto que representa um telefone.
+* `mostrarDetalhes`: é uma função que aceita como parâmetro um objeto que representa um telefone e será utilizada para mostrar a tela de detalhes de um telefone
+* `mostrarLista`: é uma função que será utilizada para mostrar a tela de lista de telefones
+
+### Função `mostrarDetalhes()`
 
 A função `mostrarDetalhes()` realiza duas operações:
-* modifica o valor de `ui_estado` para `detalhes` (indicando que a tela de detalhes se tornará visível)
-* modifica o telefone atual
+* modifica o valor da propriedade `ui_estado` para `"detalhes"` (indicando que a tela de detalhes se tornará visível)
+* modifica o valor da propriedade `telefone` para que seja possível apresentar informações do telefone em questão (o passado como parâmetro) 
+
+### Função mostrarLista()
+
+A função lista realiza apenas uma operação: modifica o valor da propriedade `ui_estado` para `"lista"`, indicando que a tela de lista de telefones se tornará visível.
+
+O **Passo 5** adicionou funcionalidades importantes ao aplicativo e aumentou, certamente, a necessidade de atenção aos detalhes do código que tornam viáveis essas funcionalidades:
+* Apresenta a lista de telefones (como nos passos anteriores)
+* Apresenta detalhes de um telefone a partir do clique em um botão de "detalhes" na lista de telefones
+* Permite retornar à tela de lista de telefones a partir da tela de detalhes de um telefone
+* Apresenta a noção de "tela" como forma de representar "navegação" no aplicativo. Em web sites convencionais, essa mudança seria entendida como "mudança de página" ou "navegação de página".
+
+Os passos seguintes apresentarão melhorias no aplicativo, principalmente em relação ao carregamento dos dados dos telefones e à navegação.
