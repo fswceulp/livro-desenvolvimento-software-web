@@ -67,3 +67,43 @@ O elemento `a` (para cada telefone) possui o atributo `ng-click`. Seu valor repr
 Isso significa que quando o usuário clicar no botão "Detalhes", será chamada uma função que está definida no controller
  (arquivo `app.js`):
 
+```javascript
+$scope.ui_estado = 'lista';
+$scope.telefone = null;
+
+$scope.mostrarDetalhes = function(telefone) {
+    $scope.ui_estado = 'detalhes';
+    $scope.telefone = telefone;
+};
+```
+
+Desta forma, o código indica que o **model** possui três propriedades:
+* `ui_estado`: é utilizada para controlar qual tela do aplicativo está visível (seu valor inicial indica que a primeira tela visível é a lista dos telefones)
+* `telefone`: representa o "telefone atual" e é utilizada na tela de detalhes do telefone
+* `mostrarDetalhes` é uma função que aceita como parâmetro um objeto que representa um telefone.
+
+A função `mostrarDetalhes()` realiza duas operações:
+* modifica o valor de `ui_estado` para `detalhes` (indicando que a tela de detalhes se tornará visível)
+* modifica o telefone atual
+
+## Tela de detalhes do telefone
+
+O trecho de código a seguir apresenta a parte do arquivo `index.html` que está relacionada à tela de detalhes de um telefone.
+
+```html
+<div ng-show="ui_estado == 'detalhes'">
+    <h1>
+    <a href="" class="btn btn-default pull-right" role="button" ng-click="mostrarLista()">
+        <i class="glyphicon glyphicon-th-large"></i> Lista
+    </a>
+    {{telefone.name}}
+    </h1>
+    <p>{{telefone.description}}</p>
+</div>
+```
+
+A figura a seguir ilustra a tela de detalhes do telefone.
+
+![](passo-5-detalhes.jpg)
+
+
