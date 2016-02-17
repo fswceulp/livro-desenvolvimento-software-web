@@ -33,6 +33,7 @@
     * [Validação de formulários](angularjs/form-validacao.md)
     * [Serviço http](angularjs/http.md)
     * [Módulo ngRoute](angularjs/ng-route.md)
+* [PHP](php/README.md)
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
