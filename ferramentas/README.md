@@ -13,3 +13,7 @@ Acesse o site do [Git](http://git-scm.com/) e faça download e instale o mesmo. 
 O [Node.js](https://nodejs.org) é um ambiente de execução do JavaScript construído sobre o motor [JavaScript V8 do Google Chrome](https://developers.google.com/v8/). Node.js fornece também um ecossistema de pacotes, chamado **npm** (considerado atualmente o maior ecossistema para projetos open source).
 
 Acesse o site do [Node.js](https://nodejs.org) e faça download e instale o mesmo.
+
+## npm
+
+O [npm](npm.md) é o gerenciador de pacotes do NodeJS.
