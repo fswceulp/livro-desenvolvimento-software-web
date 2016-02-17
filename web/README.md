@@ -34,7 +34,7 @@ O código disponibilizado do “lado” do servidor possui algumas peculiaridade
 -	Respondem às requisições HTTP através de uma particular URL;
 - Caso a aplicação seja web, cria páginas que o usuário pode visualizar através de um navegador (browser).
 
-Um Servidor Web tem como função receber requisições e, a partir delas, oferecer respostas para o cliente.  Estas requisições podem ser realizadas através de um navegador de internet (browser) pelo usuário e, geralmente, recebem como resposta uma página HTML que é interpretada pelo browser e apresentada ao usuário. Mais informações relacionadas a estas comunicação são apresentadas na seção de **Comunicação e Serviços**.
+Um Servidor Web tem como função receber requisições e, a partir delas, oferecer respostas para o cliente.  Estas requisições podem ser realizadas através de um navegador de internet (browser) pelo usuário e, geralmente, recebem como resposta uma página HTML que é interpretada pelo browser e apresentada ao usuário. 
 
 #### Códigos do “lado" do Cliente (Client side)
 
