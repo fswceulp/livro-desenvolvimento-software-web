@@ -16,9 +16,9 @@ O código disponibilizado do “lado” do servidor possui algumas peculiaridade
 
 Um Servidor Web tem como função receber requisições e, a partir delas, oferecer respostas para o cliente.  Estas requisições podem ser realizadas através de um navegador de internet (browser) pelo usuário e, geralmente, recebem como resposta uma página HTML que é interpretada pelo browser e apresentada ao usuário. Mais informações relacionadas a estas comunicação são apresentadas na seção de **Comunicação e Serviços**.
 
-## Códigos do “lado” do Cliente (Client side)
+## Códigos do “lado" do Cliente (Client side)
 
-O código disponibilizado do “lado” do cliente também possui suas particularidades, dentre elas
+O código disponibilizado do "lado" do cliente também possui suas particularidades, dentre elas
 
 -	Permite o uso das linguagens HTML, CSS e JavaScript;
 -	Código interpretado pelo browser do usuário;
