@@ -18,10 +18,10 @@ Do seu surgimento até hoje, várias versões surgiram, com o acréscimo de dive
 
 Sempre que existirem códigos dentro das super-tags <?php e ?>,  então estes serão tratados como códigos PHP. A seguir é apresentado um exemplo simples em PHP, que imprime uma simples mensagem:
 
-...php
+```php
 <?php
     echo "Isso é um teste!";
 ?>
-...
+```
 
 
