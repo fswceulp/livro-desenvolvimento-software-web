@@ -31,7 +31,7 @@ O conceito de "tela" é utilizado aqui para não confundir com "página". O apli
 
 Assim sendo, é necessária uma maneira de mudar de telas. A primeira forma de resolver isso, a usada neste passo, é bem simples: mostrar uma tela e ocultar a outra. Para isso, é utilizada a diretiva `ngShow` (atributo `ng-show`).
 
-## Diretiva `ng-show`
+### Diretiva `ng-show`
 
 A [diretiva `ng-show`](../angularjs/ng-show-hide.md) permite mostrar conteúdo com base em uma expressão. Neste caso, há uma expressão diferente para cada painel:
 * Lista de telefones: expressão é `ui_estado == 'lista'`
@@ -41,7 +41,7 @@ Assim, cada diretiva (aplicada aos elementos `div` correspondentes) está associ
 
 Com isso obtém-se o comportamento de "ocultar-e-mostrar" as telas, e o aplicativo fornece as funcionalidade esperadas.
 
-## Diretiva `ng-click`
+### Diretiva `ng-click`
 
 É necessária uma forma de mudar o valor da propriedade `ui_estado` do **model**. Uma maneira de fazer isso, respondendo a um comportamento do usuário, é permitir que o usuário clique em um botão e mostre os detalhes do telefone desejado. Este comportamento é conseguido por meio do uso da diretiva `ngClick` (atributo `ng-show`). O trecho de código a seguir apresenta a parte do arquivo `index.html` em que a diretiva `ng-click` está sendo utilizada.
 
@@ -64,8 +64,34 @@ Com isso obtém-se o comportamento de "ocultar-e-mostrar" as telas, e o aplicati
 
 O elemento `a` (para cada telefone) possui o atributo `ng-click`. Seu valor representa a chamada da função `mostrarDetalhes()` passando como parâmetro `telefone` (ou seja, o telefone em questão, na lista de telefones).
 
-Isso significa que quando o usuário clicar no botão "Detalhes", será chamada uma função que está definida no controller
- (arquivo `app.js`):
+Isso significa que quando o usuário clicar no botão "Detalhes", será chamada uma função que está definida no **controller**
+ (arquivo `app.js`).
+
+### Tela de detalhes do telefone
+
+A figura a seguir ilustra a tela de detalhes do telefone.
+
+![](passo-5-detalhes.jpg)
+
+A tela apresenta o nome do telefone, a descrição completa e um botão que permite retornar à lista de telefones.
+
+O trecho de código a seguir apresenta a parte do arquivo `index.html` que está relacionada à tela de detalhes de um telefone.
+
+```html
+<div ng-show="ui_estado == 'detalhes'">
+    <h1>
+    <a href="" class="btn btn-default pull-right" role="button" ng-click="mostrarLista()">
+        <i class="glyphicon glyphicon-th-large"></i> Lista
+    </a>
+    {{telefone.name}}
+    </h1>
+    <p>{{telefone.description}}</p>
+</div>
+```
+
+O código indica que o elemento `a` possui a diretiva `ng-click` com valor `mostrarLista()`. Isso demonstra que deve existir uma função com este nome no **controller**. Além disso, o conteúdo também indica que está vinculado à propriedade `telefone` do **model**. É importante lembrar do conceito de *escopo* para entender que `telefone` não é o mesmo objeto da lista de telefones (da diretiva `ng-repeat`). 
+
+## Controller
 
 ```javascript
 $scope.ui_estado = 'lista';
@@ -85,25 +111,3 @@ Desta forma, o código indica que o **model** possui três propriedades:
 A função `mostrarDetalhes()` realiza duas operações:
 * modifica o valor de `ui_estado` para `detalhes` (indicando que a tela de detalhes se tornará visível)
 * modifica o telefone atual
-
-## Tela de detalhes do telefone
-
-O trecho de código a seguir apresenta a parte do arquivo `index.html` que está relacionada à tela de detalhes de um telefone.
-
-```html
-<div ng-show="ui_estado == 'detalhes'">
-    <h1>
-    <a href="" class="btn btn-default pull-right" role="button" ng-click="mostrarLista()">
-        <i class="glyphicon glyphicon-th-large"></i> Lista
-    </a>
-    {{telefone.name}}
-    </h1>
-    <p>{{telefone.description}}</p>
-</div>
-```
-
-A figura a seguir ilustra a tela de detalhes do telefone.
-
-![](passo-5-detalhes.jpg)
-
-
