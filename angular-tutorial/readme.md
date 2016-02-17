@@ -9,7 +9,7 @@ Cada passo do tutorial apresentará como utilizar novos recursos do Angular e, a
 - [Passo 1: Template estático](passo-1.md)
 - [Passo 2: Templates do Angular](passo-2.md)
 - [Passo 3: Filtrando Repeaters](passo-3.md)
-- Passo 4: Vinculação de Dados de Via dupla
+- [Passo 4: Vinculação de Dados de Via dupla](passo-4.md)
 - Passo 5: XHR e Injeção de Dependência
 - Passo 6: Utilizando links e imagens nos templates
 - Passo 7: Roteamento e Múltiplas Views
