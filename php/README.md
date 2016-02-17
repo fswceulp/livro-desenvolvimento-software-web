@@ -3,7 +3,7 @@
 PHP é uma linguagem de programação de script, interpretada e multiplataforma para o desenvolvimento de aplicações Web. O site oficial do [PHP](http://php.net/) é http://php.net/ - lá você ter acesso às definições do PHP e sua documentação (acesso online ou download).  
 Para que o desenvolvimento de scripts PHP possa ser iniciado, antes de mais nada, é necessário ter um Servidor Web Apache e um interpretador de PHP instalado na máquina. Depois que estiver um servidor devidamente instalado e configurado, pronto, já podemos começar a desenvolver scripts PHP. 
 
-## 2.	História do PHP
+## História do PHP
 
 Tim Berners-Lee, em 1990, foi o idealizador da World Wide Web, que tornava possível o funcionamento de página HTML através do protocolo HTTP. O protocolo HTTP permite que páginas disponibilizadas em um determinado servidor sejam enviadas requisitadas/enviadas para os clientes que requererem. 
 
@@ -56,8 +56,8 @@ No exemplo apresentado anteriormente, a variável `$variavel_teste` recebe a str
 
 Assim como em outras linguagens, na PHP, um script é desenvolvido por uma série de instruções. São vários os tipos de instruções, tais como, atribuições, uma condição, ou um laço de repetição. O fim de uma instrução é determinado por um ponto e vírgula (`;`). Estas instruções podem ser agrupadas em um grupo de comandos com o uso das chaves `{}`. Cada grupo de instruções também é denominado uma instrução. Estes grupos de comandos denominados, Estruturas de Controle, tem dois tipos de controle: de Seleção ou de Repetição. O propósito deste capítulo é apresentar os diferentes tipos de instruções disponíveis. 
 
-#### if...else
-O if habilita o uso de uma seleção (expressão condicional). A sintáxe básica utilizada é:
+#### `if...else`
+O `if` habilita o uso de uma seleção (expressão condicional). A sintáxe básica utilizada é:
 
 ```php
 if (expressao==true){
