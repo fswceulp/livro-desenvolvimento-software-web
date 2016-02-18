@@ -4,6 +4,8 @@ O **Passo 6** adiciona a funcionalidade de carregar dados dos telefones via AJAX
 
 Antes de continuar neste passo, é necessário que o projeto utilize um servidor web. Como sugestão, em tempo de desenvolvimento, pode ser utilizado o [**http-server**](https://www.npmjs.com/package/http-server).
 
+## npm e dependências 
+
 Na prática, o projeto referente a este passo que é disponibilizado no repositório do código-fonte do livro já está devidamente configurado para funcionar com esta e outras dependências. Na sua cópia local do repositório, no diretório referente ao **Passo 6**, no prompt de comando, digite:
 
 ```
