@@ -22,3 +22,10 @@ Este comando instala as dependências:
 
 Se você iniciar o projeto, então terá que adicionar as dependências. Para isso, é necessário utilizar o **npm**. Você pode acompanhar uma breve referência do **npm** [aqui mesmo neste livro](../ferramentas/npm.md).
 
+Como não há modificações no template, o restante deste passo se concentra no **controller**.
+
+## Dados dos telefones
+
+
+
+## Carregando dados via XHR (AJAX)
