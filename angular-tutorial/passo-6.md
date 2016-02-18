@@ -88,3 +88,19 @@ Como já informado, os dados dos telefones não são definidos diretamente no c�
 controller('Home', function($scope, $http) { ... });
 ```
 
+O processo de *injeção de dependência* entrará em ação para tornar disponível o objeto `$http`, que permitirá carregar os dados dos telefones. Na prática, este objeto permite gerar requisições HTTP via código. O método `get()` gera uma requisição GET:
+
+```javascript
+$http.get('data/phones/phones.json').then(function(response){
+    $scope.telefones = response.data;
+});
+```
+
+A requisição GET busca obter o arquivo `data/phones/phones.json`, ou seja, o arquivo que contém a lista dos telefones, como já informado. O método `get()` retorna um objeto que permite executar código no momento em que houver um retorno do servidor (o que é chamado de **callback**). Isso é possível por meio da função `then()`. Esta função pode receber dois parâmetros:
+1. uma função que será executada quando a requisição ocorrer com sucesso
+2. uma função que será executada quando a requisição ocorrer com erro
+
+No caso do trecho do código em questão, apenas a primeira função (que executa no sucesso da requisição) está sendo definida. 
+
+A função **callback** possui um parâmetro (`response`): um objeto que representa a requisição XHR (AJAX). Ele possui o atributo `data`, que contém os dados interpretados a partir da requisição. Neste caso, a lista de telefones (conforme a estrutura já apresentada). O código da função faz com que a propriedade `telefones` do **model** receba `response.data`.
+
