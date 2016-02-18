@@ -126,4 +126,12 @@ A função **callback** de sucesso da requisição GET que busca o arquivo assoc
 $scope.telefone = response.data;
 ```
 
-O **Passo 6** demonstrou como utilizar o módulo `$http` para gerar requisições XHR (AJAX) para um servidor e carregar dados dos telefones. Assim, os dados não são definidos diretamente no código do **controller** e é utilizada uma abordagem mais adequada para este problema (já que os dados são apenas de leitura).
+O **Passo 6** demonstrou como utilizar o módulo `$http` para gerar requisições XHR (AJAX) para um servidor e carregar dados dos telefones. Assim, os dados não são definidos diretamente no código do **controller** e é utilizada uma abordagem mais adequada para este problema (já que os dados são apenas de leitura). 
+
+Enxergando a solução empregada aqui neste passo de outro prisma, ela se aproxima do formato de *consumo de API* ou *API REST* que é, inclusive, utilizado neste livro na parte sobre **Back-end**.
+
+> **Exercício**
+
+> O formato de acesso a dados utilizado aqui no **Passo 6** é, na verdade, bastante utilizado em outras situações. Na prática, é um acesso a dados que funciona também com fontes remotas, ou seja, o aplicativo pode *consumir dados* de sites externos. Vários sites fornecem esse tipo de serviço, como Facebook e Google. Um dos serviços mais conhecidos é o [Rotten Tomatoes](http://developer.rottentomatoes.com/), que fornece informações sobre filmes e avaliações de usuários.
+> 
+> Crie um aplicativo angular para consumir dados de um serviço ou site externo. Fica a seu critério escolher uma fonte de dados e utilizá-la da forma apropriada. Algumas delas requerem um cadastro para obtenção de uma *chave de API*.
