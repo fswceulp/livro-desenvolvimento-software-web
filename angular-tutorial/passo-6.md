@@ -13,11 +13,11 @@ npm install
 ```
 
 Este comando instala as dependências:
-* de produção
+* de **produção**
     * `jquery`
     * `bootstrap`
     * `angular`
-* de desenvolvimento
+* de **desenvolvimento**
     * `http-server`
 
 Se você iniciar o projeto, então terá que adicionar as dependências. Para isso, é necessário utilizar o **npm**. Você pode acompanhar uma breve referência do **npm** [aqui mesmo neste livro](../ferramentas/npm.md).
