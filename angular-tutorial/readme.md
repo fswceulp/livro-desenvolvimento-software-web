@@ -11,7 +11,7 @@ Cada passo do tutorial apresentará como utilizar novos recursos do Angular e, a
 - [Passo 3: Filtrando Repeaters](passo-3.md)
 - [Passo 4: Vinculação de Dados de Via dupla](passo-4.md)
 - [Passo 5: Telas de lista e detalhes](passo-5.md)
-- Passo 6: XHR e Injeção de Dependência
+- [Passo 6: XHR e Injeção de Dependência](passo-6.md)
 - Passo 7: Roteamento e Múltiplas Views
 - Passo 8: Mais sobre templates
 - Passo 9: Filtros
