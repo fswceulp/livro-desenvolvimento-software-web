@@ -126,3 +126,4 @@ A função **callback** de sucesso da requisição GET que busca o arquivo assoc
 $scope.telefone = response.data;
 ```
 
+O **Passo 6** demonstrou como utilizar o módulo `$http` para gerar requisições XHR (AJAX) para um servidor e carregar dados dos telefones. Assim, os dados não são definidos diretamente no código do **controller** e é utilizada uma abordagem mais adequada para este problema (já que os dados são apenas de leitura).
