@@ -54,3 +54,37 @@ Em outras palavras, o objeto `telefone` possui o atributo `imageUrl`, que repres
 
 ## Carregando dados via XHR (AJAX)
 
+O **controller** é bastante modificado neste passo:
+
+```javascript
+'use strict';
+
+angular.module('phonecat', [])
+    .controller('Home', function($scope, $http) {
+        $http.get('data/phones/phones.json').then(function(response){
+            $scope.telefones = response.data;
+        });
+        
+        $scope.ui_estado = 'lista';
+        $scope.telefone = null;
+        
+        $scope.mostrarDetalhes = function(telefone) {
+            $scope.ui_estado = 'detalhes';
+            $http.get('data/phones/' + telefone.id + '.json').then(
+                function(response){
+                    $scope.telefone = response.data;
+                });
+        };
+        
+        $scope.mostrarLista = function() {
+            $scope.ui_estado = 'lista';
+        };
+    });
+```
+
+Como já informado, os dados dos telefones não são definidos diretamente no código. Portanto, para ter acesso aos dados que serão apresentados na **view**, é utilizado o módulo `$http` do angular. Importante notar que a declaração do **controller** indica a dependência desse módulo e do `$scope`:
+
+```javascript
+controller('Home', function($scope, $http) { ... });
+```
+
