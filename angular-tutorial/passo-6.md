@@ -50,5 +50,7 @@ Por causa da estrutura dos dados, há uma pequena modificação no template: o c
 <img class="img-responsive" ng-src="{{telefone.imageUrl}}">
 ```
 
+Em outras palavras, o objeto `telefone` possui o atributo `imageUrl`, que representa a URL da foto do telefone. Até o **Passo 5**, o mesmo dado era obtido ao acessar um `array` que representava um conjunto de fotos do telefone.
+
 ## Carregando dados via XHR (AJAX)
 
