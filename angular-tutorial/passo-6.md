@@ -104,3 +104,25 @@ No caso do trecho do código em questão, apenas a primeira função (que execut
 
 A função **callback** possui um parâmetro (`response`): um objeto que representa a requisição XHR (AJAX). Ele possui o atributo `data`, que contém os dados interpretados a partir da requisição. Neste caso, a lista de telefones (conforme a estrutura já apresentada). O código da função faz com que a propriedade `telefones` do **model** receba `response.data`.
 
+### Função `mostrarDetalhes()`
+
+A função `mostrarDetalhes()` também passa por uma modificação. Uma vez que os dados completos dos telefones estão em arquivos `json` separados, será necessário carregar o arquivo correspondente. 
+
+A exemplo do que ocorreu para carregar os dados do arquivo `data/phones/phones.json` aqui também é utilizado o módulo `$http`:
+
+```javascript
+$scope.mostrarDetalhes = function(telefone) {
+    $scope.ui_estado = 'detalhes';
+    $http.get('data/phones/' + telefone.id + '.json').then(
+        function(response){
+            $scope.telefone = response.data;
+        });
+};
+```
+
+A função **callback** de sucesso da requisição GET que busca o arquivo associado ao telefone em questão faz com que o "telefone atual" receba os dados do arquivo do telefone, ou seja:
+
+```javascript
+$scope.telefone = response.data;
+```
+
