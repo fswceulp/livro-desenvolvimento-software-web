@@ -26,8 +26,7 @@ $arr[3]=9;
 ```
 
 ###Acrescentando um novo valor ao array
-
-Se um `array` foi previamente definido, é possível modifica-lo acrescentando um novo elemento a ele, conforme exemplificação a seguir: 
+Se um `array`foi previamente definido, é possível modificá-lo acrescentando um novo elemento a ele, conforme exemplificado a seguir:
 
 ```php
 <?php
