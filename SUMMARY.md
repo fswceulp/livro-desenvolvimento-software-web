@@ -37,8 +37,9 @@
     * [Serviço http](angularjs/http.md)
     * [Módulo ngRoute](angularjs/ng-route.md)
 * [PHP](php/README.md)
-    * [Sintáxe Bási](php/referencias-linguagem.md)
-    * 
+    * [Sintáxe Básica](php/referencias-linguagem.md)
+    * [Estruturas de Controle](php/estruturas-de-controle.md)
+        - [if...else](php/if-else.md) 
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
