@@ -7,8 +7,8 @@ echo 'forma mais simples de especificar uma string';
 echo 'é possível imprimir "aspas" assim';
 ?>```
 
-Outra forma é especificá-la entre aspas duplas (caracter ), que faz com que o PHP interprete variáveis. 
 
+fasdf
 ```php
 <?php
 $valor=5;
