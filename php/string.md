@@ -5,10 +5,10 @@ A maneira mais simples para especificar uma string é coloca-la entre apóstrofo
 <?php
 echo 'forma mais simples de especificar uma string';
 echo 'é possível imprimir "aspas" assim';
-?>```
+?>
+```
+Com o uso das aspas simples, o valor `{$valor}` contido na string será interpretado como texto (`string`), diferente do uso das aspas duplas (`“` ).
 
-
-fasdf
 ```php
 <?php
 $valor=5;
