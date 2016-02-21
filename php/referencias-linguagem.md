@@ -36,4 +36,7 @@ $variavel_exemplo ="teste variável";
 No exemplo apresentado anteriormente, a variável `$variavel_teste` recebe a string `“teste variável”`.
 
 
+## Referêncais da Linguagem
+
+
 
