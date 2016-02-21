@@ -25,7 +25,7 @@ $arr[3]=9;
 ?>
 ```
 
-###Acrescentando um novo valor ao array
+###Acrescentando um novo valor ao `array`
 Se um `array`foi previamente definido, é possível modificá-lo acrescentando um novo elemento a ele, conforme exemplificado a seguir:
 
 ```php
@@ -37,7 +37,9 @@ $arr[4]=11;
 //$arr[]=11;
 ?>
 ```
-Se o índice for omitido (conforme linha comentada acima), o PHP identifica automaticamente o último índice utilizado associa o novo valor ao índice seguinte (no caso anterior, seria o índice 4 que receberia o valor 11.
+Se o índice for omitido (conforme linha comentada no código acima), o PHP identifica automaticamente o último índice utilizado e associa o novo valor ao índice seguinte (no exemplo supracitado, seria o índice de valor **4** que receberia o valor **11**.
+
+###Percorrendo todos os valores do `array`
 
 
 
