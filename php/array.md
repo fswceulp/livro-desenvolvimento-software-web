@@ -41,6 +41,17 @@ Se o índice for omitido (conforme linha comentada no código acima), o PHP iden
 
 ###Percorrendo todos os valores do `array`
 
+A seguir é apresentado um exemplo em que o `array` é percorrido e todos os seus elementos são apresentados.
+
+```php
+<?php
+$arr = array (3, 5, 7, 9);
+for ($i=0;$i<4;$i++){
+    echo $arr[$i];
+    echo "</br>"; // quebra de linha
+}
+?>
+```
 
 
 
