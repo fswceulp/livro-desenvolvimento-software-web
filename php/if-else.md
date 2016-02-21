@@ -1,4 +1,4 @@
-#### `if...else`
+# `if...else`
 O `if` habilita o uso de uma seleção (expressão condicional). A sintáxe básica utilizada é:
 
 ```php
