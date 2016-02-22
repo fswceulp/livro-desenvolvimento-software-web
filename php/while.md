@@ -42,7 +42,7 @@ endwhile
 ```
 Da mesma forma como na **estrutura condicional** que possui uma sintaxe alternativa para o seu uso, assim também funciona a estrutura `while`.
 
-> **Exercícios**
+>**Exercícios**
 
 >**Exercício 1**: Desenvolva um código PHP que crie automaticamente uma tabela em HTML como mostrado a seguir. O número **N** de linha e o **M** de colunas devem ser ajustáveis, ou seja, devem existir variáveis que controlam suas respectivas quantidades. 
 
