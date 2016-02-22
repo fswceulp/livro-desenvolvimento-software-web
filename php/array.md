@@ -139,6 +139,94 @@ Para exemplificação de um **array multidimensional** utilizaremos a tabela apr
 | Francisca | Masculino | 20 |
 
 
+Para representar os dados da tabela anterior em um **array multidimensional**, o seguinte código poderia ser utilizado:
+
+```php
+<?php
+$dados = array
+    (
+    array("João", "Masculino", 18),
+    array("Paula", "Feminino", 19),
+    array("Francisco", "Masculino", 20),
+    );
+?>
+```
+
+Para que cada elemento deste `array` possa ser acessado, é necessário fazer referência a dois índices, a linha e a coluna. Por exemplo:
+
+```php
+<?php
+echo "Nome: ".$dados[0]{0}.", Sexo: ".$dados[0][1].", Idade: ".$dados[0]{2}."</br>";
+echo "Nome: ".$dados[1]{0}.", Sexo: ".$dados[1][1].", Idade: ".$dados[1]{2}."</br>";
+echo "Nome: ".$dados[2]{0}.", Sexo: ".$dados[2][1].", Idade: ".$dados[2]{2};
+?>
+```
+
+###Acrescentando um novo valor ao array
+
+Conforme sintaxes previamente apresentadas, é possível acrescentar novos valores a um `array` previamente definido. A seguir é apresentado um exemplo de código com várias formas possíveis de fazer esta modificação.
+
+```php
+<?php
+$dados = array
+(
+    array("João", "Masculino", 18),
+    array("Paula", "Feminino", 19),
+    array("Francisco", "Masculino", 20),
+);
+
+$dados[3] = array ("Maria", "Femenino",21);
+
+// OU
+
+//$dados[] = array ("Maria", "Femenino",21);
+
+// OU
+
+/*
+$dados[3][0]="Maria";
+$dados[3][1]="Feminino";
+$dados[3][2]=21;
+*/
+
+// OU
+
+/*
+$dados[3][]="Maria";
+$dados[3][]="Feminino";
+$dados[3][]=21;
+*/
+?>
+```
+
+
+Para testar as demais alternativas, basta **retirar os comentários** das outras abordagens e comentar as demais.
+
+###Percorrendo todos os valores do `array`
+
+Também é possível percorrer todos os elementos do `array` através de uma **estrutura de repetição**. O código a seguir exemplifica o uso de um laço de repetição:
+
+```php
+<?php
+for ($linha=0; $linha<3; $linha++){
+    echo "linha n.º $linha";
+    echo "<ul";
+    for ($coluna=0; $coluna<3; $coluna++){
+       // echo "<li>. $dados[$linha][$coluna].</li>";
+        echo "<li> {$dados[$linha][$coluna]}</li>";
+    }
+    echo "</ul>";
+}
+?>
+```
+
+
+
+
+
+
+
+
 
 
 
