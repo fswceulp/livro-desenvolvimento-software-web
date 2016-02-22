@@ -38,6 +38,7 @@ No exemplo apresentado anteriormente, a variável `$variavel_teste` recebe a str
 
 ## [Estruturas de Controle](php/estruturas-de-controle.md)
 * [if...else](php/if-else.md)
+* [while](php/while.md)
 
 
 
