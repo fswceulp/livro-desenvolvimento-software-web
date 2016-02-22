@@ -38,7 +38,7 @@
     * [Módulo ngRoute](angularjs/ng-route.md)
 * [PHP](php/README.md)
     * [Sintáxe Básica](php/referencias-linguagem.md)
-    * [Tipos de Dados](php/tipo)
+    * [Tipos de Dados](php/tipos/README.md)
     * [Estruturas de Controle](php/estruturas-de-controle.md)
         - [if...else](php/if-else.md) 
         - [while](php/while.m)
