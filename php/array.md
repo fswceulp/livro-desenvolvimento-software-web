@@ -53,6 +53,62 @@ for ($i=0;$i<4;$i++){
 ?>
 ```
 
+##Arrays associativos
+
+Os **arrays associativos** são mapas que permitem relacionar valores às chaves.  Assim, para cada valor representado no `array` há uma chave equivalente que permite acessá-lo. A estrutura básica de um array associativos é:
+
+```php
+array(  chave =>  valor
+     , ...
+     )
+// chave pode ser tanto string ou um integer
+// valor pode ser qualquer coisa
+```
+
+Um `array` associativo pode ser criado conforme código apresentado a seguir:
+
+```php
+<?php
+$arr = array("salvador" => "Jesus Cristo", 10 => true);
+?>
+```
+Os arrays associativos permitem a criação de chaves e valores heterogêneos (tipos diferentes). No exemplo apresentado anteriormente, existem dois tipos de chave, uma `string (“salvador”)`, com uma `string` como valor (“Jesus Cristo”); e outra chave do tipo `inteiro (10)` com um valor `booleano (true)`.
+
+Da mesma forma que o **array indexado**, os elementos de um **array associativo** também podem ser criados um a um. 
+
+```php
+<?php
+$arr["salvador"] ="Jesus Cristo";
+$arr [10]=true;
+?>
+```
+Um exemplo que mostra como é realizada a impressão dos elementos de um **array associativo** é mostrado a seguir:
+
+```php
+<?php
+$arr = array("salvador" => "Jesus Cristo", 10 => true);
+echo $arr["salvador"]; // saída: Jesus Cristo
+echo "</br>"; // quebra de linha em HTML
+echo $arr[10]; // saída: 1
+//echo $arr[12];   #dará erro porque não existe esta chave
+?>
+```
+
+O acesso a uma chave que não tenha sido previamente definida gerará uma **exceção** *(tire o comentário da linha que tenta imprimir o array co a chave **12** para testar)*. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
