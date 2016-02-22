@@ -45,7 +45,7 @@
        - [Aritméticos](php/operadores-aritmeticos.md)
     * [Estruturas de Controle](php/estruturas-de-controle.md)
         - [if...else](php/if-else.md) 
-        - [while](php/while.m)
+        - [while](php/while.md)
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
