@@ -41,7 +41,7 @@
     * [Tipos de Dados](php/tipos/README.md)
         - [string](php/tipos/string.md) 
         - [array](php/tipos/array.md)
-    * [Operadores]()
+    * Operadores
        - [Aritméticos](php/operadores-aritmeticos.md)
     * [Estruturas de Controle](php/estruturas-de-controle.md)
         - [if...else](php/if-else.md) 
