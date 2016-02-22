@@ -222,7 +222,11 @@ for ($linha=0; $linha<3; $linha++){
 
 >**Exercícios**
 
-> **Exercício 1**: Utilizando array indexado, faça um script PHP que armazene uma lista de pessoas, em que cada uma é identificada por um código. Deve ser armazenado somente o nome de cada pessoa. O código que identifica cada pessoa é o próprio índice do vetor. Apresente os dados das pessoas (nome e código) em uma tabela formatada em HTML.
+>**Exercício 1**: Utilizando *array indexado*, faça um script PHP que armazene uma lista de pessoas, em que cada uma é identificada por um código. Deve ser armazenado somente o nome de cada pessoa. O código que identifica cada pessoa é o próprio índice do vetor. Apresente os dados das pessoas (nome e código) em uma tabela formatada em HTML.
+
+>**Exercício 2**:Utilizando *array multidimensional*, altere o exercício anterior acrescentando mais dados para cada pessoa, que são Sobrenome e RG.
+
+>**Exercício 3**: Agora, utilizando *array associativo*, incremente os exercícios anteriores, acrescentando *Endereço* para cada pessoa. O Endereço deve ser representado em outro array e deve conter: Logradouro, Bairro, número e CEP.  Os nomes das chaves devem estar coerentes com a sua representação, por exemplo, para identificar o nome de uma pessoa, utilize a chave nome.  
 
 
 
