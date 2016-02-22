@@ -36,9 +36,9 @@ $variavel_exemplo ="teste variável";
 No exemplo apresentado anteriormente, a variável `$variavel_teste` recebe a string `“teste variável”`.
 
 
-## [Estruturas de Controle](php/estruturas-de-controle.md)
-* [if...else](php/if-else.md)
-* [while](php/while.md)
+## [Estruturas de Controle](estruturas-de-controle.md)
+* [if...else](if-else.md)
+* [while](while.md)
 
 
 
