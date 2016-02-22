@@ -42,7 +42,7 @@
         - [string](php/tipos/string.md) 
         - [array](php/tipos/array.md)
     * [Operadores](php/operadores/README.md)
-       - [Aritméticos](php/operadores-aritmeticos.md)
+       - [Aritméticos](php/operadores/operadores-aritmeticos.md)
     * [Estruturas de Controle](php/estruturas-de-controle.md)
         - [if...else](php/if-else.md) 
         - [while](php/while.md)
