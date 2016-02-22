@@ -41,6 +41,7 @@
     * [Tipos de Dados](php/tipo)
     * [Estruturas de Controle](php/estruturas-de-controle.md)
         - [if...else](php/if-else.md) 
+        - [while](php/while.m)
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
