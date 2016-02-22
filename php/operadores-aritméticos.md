@@ -27,3 +27,8 @@ echo '/<br> O resto da divisão de A por B é: '.($a%$b);
 echo '/<br> A potência de A elevado a B é: '.($a**$b) ;
 ?>
 ```
+
+>**Exercícios**
+
+>**Exercício 1**: Faça um programa que gere como saída as tabuadas de adição, subtração, multiplicação e divisão dos números 1, 2, 3, 4, 5, 6, 7, 8, 9 e 10. A saída deve ser em HTML e cada linha da tabuada deve ser gerada automaticamente (através do uso do laço de repetição). 
+
