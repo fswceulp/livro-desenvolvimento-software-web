@@ -45,5 +45,5 @@ echo '</br> A potência de A elevado a B é: '.($a**$b) ;
 | 8x1=8  | 9x2=18 |
 | 10x1=10  | 10x2=20 |
 
-**[Resolução do Exercício](exercicio-1-operadores.php)** por um aluno.
+**[Resolução do Exercício 1](exercicio-1-operadores.php)** por um aluno.
 
