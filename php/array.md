@@ -96,8 +96,47 @@ echo $arr[10]; // saída: 1
 
 O acesso a uma chave que não tenha sido previamente definida gerará uma **exceção** *(tire o comentário da linha que tenta imprimir o array co a chave **12** para testar)*. 
 
+###Acrescentando um novo valor ao array
 
+É possível adicionar novo par de **chave-valor** a um `array` previamente definido.
 
+```php
+<?php
+$arr = array("num1"=>2, "num2"=>4);
+$arr["num3"]=8;
+echo $arr["num3"];
+?>
+```
+Neste exemplo anterior, foi acrescentada a **chave** `num3` associando ao **valor** `8`.
+
+###Percorrendo todos os valores do array
+
+Para percorrer todos os elementos pode ser utilizada a estrutura de controle `foreach`, da seguinte forma:
+
+```php
+<?php
+$arr = array("num1"=>2, "num2"=>4);
+$arr["num3"]=8;
+echo "Imprimindo os valores do array";
+foreach ($arr as $i=>$valor)
+{
+    echo "</br>";
+    echo ($arr[$i]);
+}
+?>
+```
+
+##Arrays Multidimensionais
+
+Um **array multidimensional** é um `array` com várias dimensões, que pode conter um ou mais arrays. 
+
+Para exemplificação de um **array multidimensional** utilizaremos a tabela apresentada a seguir:
+
+| Nome |Sexo | Idade|
+| -- | -- | -- |
+| João | Masculino | 18 |
+| Paula | Feminino | 19 |
+| Francisca | Masculino | 20 |
 
 
 
