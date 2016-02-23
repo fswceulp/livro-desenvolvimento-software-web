@@ -128,7 +128,7 @@ $scope.telefone = response.data;
 
 ## Executando o aplicativo
 
-A execução do aplicativo a partir do **Passo 66** não pode ser feita abrindo-se o arquivo `index.html` diretamente no browser. Isso proque os recurso utilizados requerem a presença de um servidor web. Neste caso, o aplicativo utiliza o `http-server`.
+A execução do aplicativo a partir do **Passo 66** não pode ser feita abrindo-se o arquivo `index.html` diretamente no browser. Isso acontece porque os recurso utilizados requerem a presença de um servidor web. Neste caso, o aplicativo utiliza o `http-server`.
 
 Para iniciar o aplicativo, execute o comando a seguir:
 
