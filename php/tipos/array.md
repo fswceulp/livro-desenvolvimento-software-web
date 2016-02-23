@@ -175,11 +175,11 @@ $dados = array
     array("Francisco", "Masculino", 20),
 );
 
-$dados[3] = array ("Maria", "Femenino",21);
+$dados[3] = array ("Maria", "Feminino",21);
 
 // OU
 
-//$dados[] = array ("Maria", "Femenino",21);
+//$dados[] = array ("Maria", "Feminino",21);
 
 // OU
 
