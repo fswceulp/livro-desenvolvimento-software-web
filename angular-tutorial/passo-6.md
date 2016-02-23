@@ -142,7 +142,7 @@ A animação a seguir ilustra esse processo.
 
 Ao ser executado, o `http-server` inicia um processo que representa um servidor web. Por padrão, a execução utiliza todos os endereços IPs disponíveis no momento e a porta `8080`. A opção `-c-1` indica que o `http-server` instruirá o browser a não fazer cache do conteúdo, o que é útil para garantir que o aplicativo, ao ser acessado pelo browser, esteja sempre atualizado.
 
-Para utilizaqr o aplicativo, no browser, acesse `http://localhost:8080`.
+Para utilizar o aplicativo, no browser, acesse `http://localhost:8080`.
 
 O **Passo 6** demonstrou como utilizar o módulo `$http` para gerar requisições XHR (AJAX) para um servidor e carregar dados dos telefones. Assim, os dados não são definidos diretamente no código do **controller** e é utilizada uma abordagem mais adequada para este problema (já que os dados são apenas de leitura). 
 
