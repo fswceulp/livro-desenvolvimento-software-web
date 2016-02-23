@@ -126,6 +126,22 @@ A função **callback** de sucesso da requisição GET que busca o arquivo assoc
 $scope.telefone = response.data;
 ```
 
+## Executando o aplicativo
+
+A execução do aplicativo a partir do **Passo 66** não pode ser feita abrindo-se o arquivo `index.html` diretamente no browser. Isso proque os recurso utilizados requerem a presença de um servidor web. Neste caso, o aplicativo utiliza o `http-server`.
+
+Para iniciar o aplicativo, execute o comando a seguir:
+
+```
+hs -c-1
+```
+
+A animação a seguir ilustra esse processo.
+
+![](passo-6-http-server.gif)
+
+Ao ser executado, o `http-server` inicia um processo que representa um servidor web. Por padrão, a execução utiliza todos os endereços IPs disponíveis no momento e a porta `8080`. A opção `-c-1` indica que o `http-server` instruirá o browser a não fazer cache do conteúdo, o que é útil para garantir que o aplicativo, ao ser acessado pelo browser, esteja sempre atualizado.
+
 O **Passo 6** demonstrou como utilizar o módulo `$http` para gerar requisições XHR (AJAX) para um servidor e carregar dados dos telefones. Assim, os dados não são definidos diretamente no código do **controller** e é utilizada uma abordagem mais adequada para este problema (já que os dados são apenas de leitura). 
 
 Enxergando a solução empregada aqui neste passo de outro prisma, ela se aproxima do formato de *consumo de API* ou *API REST* que é, inclusive, utilizado neste livro na parte sobre **Back-end**.
