@@ -13,3 +13,13 @@ $quant_itens = count($arr);
 echo $quant_itens;
 ?>
 ```
+
+## `array_push()`
+
+A função `array_push()` permite adicionar um ou vários elementos no final de um `array`. 
+
+
+
+
+
+
