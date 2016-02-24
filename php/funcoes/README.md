@@ -18,7 +18,7 @@ function primeira_funcao_param ($arg_1)
     return $arg_1;
 }
 ```
-
+Conforme apresenteado, as funções podem ser definidas pelos usuários. Existem também uma série de funçõe definidas na linguagem PHP, por exemplo, funções para manipular strings ou [`arrays`](funcoes-array.md). 
 
 >**Exercícios**
 
