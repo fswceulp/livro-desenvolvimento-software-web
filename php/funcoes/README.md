@@ -12,3 +12,14 @@ function nome_da_funcao ()
 
 Uma **função** pode ou não ter parâmetros. A seguir é apresentada uma  função com 1 parâmetro. Caso necessite passar mais parâmetros para uma função, basta inserí-los esepará-los por vírgula (`,`).
 
+```php
+function primeira_funcao_param ($arg_1)
+{
+    return $arg_1;
+}
+```
+
+>**Exercícios**
+
+
+>**Exercício 1**: Faça um programa que gere como saída as tabuadas de adição, subtração, multiplicação e divisão dos números 1, 2, 3, 4, 5, 6, 7, 8, 9 e 10. A saída deve ser em HTML e cada linha da tabuada deve ser gerada automaticamente (através do uso do laço de repetição). Seu código deve ser organizado em funções. Devem conter, no mínimo, 4 funções, uma para cada operação matemática: soma, subtração, multiplicação, divisão. 
