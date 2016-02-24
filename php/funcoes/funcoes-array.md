@@ -44,6 +44,23 @@ for ($i=0; $i<count($arr);$i++){
 ?>
 ```
 
+##`array_shift()`
+
+A função `array_shift()` retorna o primeiro elemento de um array, removendo-o do array passado por parâmetro.
+
+```php
+<?php
+$arr = array (2, 4, 6, 8);
+$primeiro_elemento = array_shift($arr);
+echo "Primeiro elemento:".($primeiro_elemento);
+echo "</br> Novo Array: </br>" ;
+for ($i=0; $i<count($arr);$i++){
+    echo $arr[$i]."</br>";
+}
+?>
+```
+
+
 
 
 
