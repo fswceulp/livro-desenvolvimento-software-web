@@ -47,7 +47,9 @@
         - [if...else](php/if-else.md) 
         - [while](php/while.md)
     * [Funções](php/funcoes/README.md)
+        - [Funções para manipulações de variáveis](php/funcoes/funcoes-manipulacoes-variaveis.md)
         - [Funções para `array`](php/funcoes/funcoes-array.md)
+        
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
