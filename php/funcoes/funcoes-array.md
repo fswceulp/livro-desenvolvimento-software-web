@@ -14,10 +14,23 @@ echo $quant_itens;
 ?>
 ```
 
-## `array_push()`
+##`array_push()`
 
-A função `array_push()` permite adicionar um ou vários elementos no final de um `array`. 
+A função `array_push()` permite adicionar um ou vários elementos no final de um array. 
 
+```php
+<?php
+$arr = array (2, 4, 6, 8);
+array_push($arr, 10);
+for ($i=0; $i<count($arr);$i++){
+    echo $arr[$i]."</br>";
+}
+?>
+```
+
+##`array_pop()`
+
+A função `array_pop()` retorna o último elemento de um array, removendo-o do array passado por parâmetro. 
 
 
 
