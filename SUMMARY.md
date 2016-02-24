@@ -46,6 +46,7 @@
     * [Estruturas de Controle](php/estruturas-de-controle.md)
         - [if...else](php/if-else.md) 
         - [while](php/while.md)
+    * [Funções](php/funcoes/README.md)
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
