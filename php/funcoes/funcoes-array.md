@@ -32,6 +32,18 @@ for ($i=0; $i<count($arr);$i++){
 
 A função `array_pop()` retorna o último elemento de um array, removendo-o do array passado por parâmetro. 
 
+```php
+<?php
+$arr = array (2, 4, 6, 8);
+$ultimo_elemento = array_pop($arr);
+echo "Ùltimo elemento:".($ultimo_elemento);
+echo "</br> Novo Array: </br>" ;
+for ($i=0; $i<count($arr);$i++){
+    echo $arr[$i]."</br>";
+}
+?>
+```
+
 
 
 
