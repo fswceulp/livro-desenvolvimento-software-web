@@ -75,4 +75,9 @@ for ($i=0; $i<count($arr);$i++){
 ?>
 ```
 
+##`array_pad()`
+
+A função `array_pad()` permite expandir (aumentar) o tamanho de um array para um tamanho *N* e inserir um determinado valor em cada uma das novas posições do array. 
+
+No exemplo seguinte, a função `array_pad` recebe por parâmetro: um array `$arr` com 4 elementos; o limite de expansão do novo array que será gerado; e o elemento que será inserido em cada nova posição do novo array. Assim, o novo arrat passará a ter 7 elementos, com mais 3 elementos de valor 10.
 
