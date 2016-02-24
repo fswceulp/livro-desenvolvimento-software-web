@@ -220,6 +220,7 @@ for ($linha=0; $linha<3; $linha++){
 ?>
 ```
 
+
 > **Exercícios**
 
 >**Exercício 1**: Utilizando *array indexado*, faça um script PHP que armazene uma lista de pessoas, em que cada uma é identificada por um código. Deve ser armazenado somente o nome de cada pessoa. O código que identifica cada pessoa é o próprio índice do vetor. Apresente os dados das pessoas (nome e código) em uma tabela formatada em HTML.
