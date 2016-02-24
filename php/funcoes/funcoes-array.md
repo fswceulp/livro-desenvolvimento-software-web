@@ -81,3 +81,18 @@ A função `array_pad()` permite expandir (aumentar) o tamanho de um array para 
 
 No exemplo seguinte, a função `array_pad` recebe por parâmetro: um array `$arr` com 4 elementos; o limite de expansão do novo array que será gerado; e o elemento que será inserido em cada nova posição do novo array. Assim, o novo arrat passará a ter 7 elementos, com mais 3 elementos de valor 10.
 
+```php
+<?php
+$arr = array (2, 4, 6, 8);
+$arr = array_pad($arr, 7, 10);
+echo "</br> Novo Array: </br>" ;
+for ($i=0; $i<count($arr);$i++){
+    echo $arr[$i]."</br>";
+}
+?>
+```
+O array só será expandido se o tamanho *N* for maior que o tamanho atual do array. No exemplo anterior, se o novo tamanho `N` passado por parâmetro for 2, então nada acontecerá, porque o tamanho atual do array é 4. 
+
+O tamanho `N` pode ser negativo. Neste caso, os novos elementos serão inseridos nas posições inicias do novo array.  
+
+
