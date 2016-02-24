@@ -92,6 +92,7 @@ for ($i=0; $i<count($arr);$i++){
 ?>
 ```
 O array só será expandido se o tamanho *N* for maior que o tamanho atual do array. No exemplo anterior, se o novo tamanho `N` passado por parâmetro for 2, então nada acontecerá, porque o tamanho atual do array é 4. 
+
 O tamanho `N` pode ser negativo. Neste caso, os novos elementos serão inseridos nas posições inicias do novo array.  
 
 
