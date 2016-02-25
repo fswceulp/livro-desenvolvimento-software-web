@@ -144,3 +144,6 @@ A quarta e última coluna apresenta informações sobre *conectividade*.
 ```
 
 O template apresenta os valores das propriedades do objeto `telefone.connectivity`: `bluetooth`, `cell`, `gps`, `infrared` e `wifi`.
+
+## Controller
+
