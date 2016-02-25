@@ -148,7 +148,7 @@ O **Passo 6** demonstrou como utilizar o módulo `$http` para gerar requisiçõe
 
 Enxergando a solução empregada aqui neste passo de outro prisma, ela se aproxima do formato de *consumo de API* ou *API REST* que é, inclusive, utilizado neste livro na parte sobre **Back-end**.
 
-> **Exercício**
+> **Note** Exercício
 >
 > O formato de acesso a dados utilizado aqui no **Passo 6** é, na verdade, bastante utilizado em outras situações. Na prática, é um acesso a dados que funciona também com fontes remotas, ou seja, o aplicativo pode *consumir dados* de sites externos. Vários sites fornecem esse tipo de serviço, como Facebook e Google. Um dos serviços mais conhecidos é o [Rotten Tomatoes](http://developer.rottentomatoes.com/), que fornece informações sobre filmes e avaliações de usuários.
 > 
