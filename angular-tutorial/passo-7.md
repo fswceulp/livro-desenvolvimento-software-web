@@ -186,4 +186,4 @@ O **Passo 7** adicionou ao aplicativo **PhoneCat** a funcionalidade da apresenta
 
 > **Exercício**
 > 
-> O Bootstrap fornece um componente interessante para apresentar fotos (imagens) de uma forma diferente: o **Carousel** (ou **slider**). Modifique a tela de detalhes do telefone utilizando o componente **Carousel** para apresentar as fotos do telefone.
+> O Bootstrap fornece um componente interessante para apresentar fotos (imagens) de uma forma diferente: o **Carousel** (ou **slider**). Modifique a tela de detalhes do telefone utilizando o componente **Carousel** para apresentar as fotos do telefone. Neste caso, não será necessário utilizar as miniaturas.
