@@ -107,6 +107,8 @@ foreach ($arr as $i=>$valor)
 }
 ?>
 ```
+No trecho de código mostrado acima, foi removida a chave `“num3”` do **array** `$arr`.
+
 
 ##Funnção `var_dump()`
 
