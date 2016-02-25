@@ -34,7 +34,7 @@ Para instalar uma dependência é executado o comando `npm install`:
 npm install angular bootstrap
 ```
 
-O comando anterior instala os pacotes localmente e os salva no diret´rio `node_modules` (cada pacote também está armazenado localmente de forma individual, no seu próprio diretório).
+O comando anterior instala os pacotes localmente e os salva no diretório `node_modules` (cada pacote também está armazenado localmente de forma individual, no seu próprio diretório).
 
 Como dito anteriormente, as dependências do projeto local estão no arquivo `package.json`. O comando `npm install` possui duas opções que editam o arquivo `package.json`:
 * `--save`: para dependências de produção
