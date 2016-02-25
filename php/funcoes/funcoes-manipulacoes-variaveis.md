@@ -124,3 +124,13 @@ Esta função tem um segundo parâmetro, `return`, que se definido como `True`, 
 
 ##Funlão `strval()`
 A função `strval()` retorna de uma variável convertido em `string`. 
+
+```php
+ <?php
+$v1 = 5.0;
+echo $v1. "é: ".gettype($v1);
+echo "</br>"; // quebra de linha
+$v1 = strval($v1);
+echo $v1. "é: ".gettype($v1);
+?>
+```
