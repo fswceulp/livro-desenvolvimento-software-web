@@ -147,3 +147,9 @@ O template apresenta os valores das propriedades do objeto `telefone.connectivit
 
 ## Controller
 
+Em relação ao **controller** há poucas mudanças em relação ao **Passo 6**: 
+* alteração na função `mostrarDetalhes()`
+* inclusão da função `mostrarImagem()`
+
+### Função `mostrarDetalhes()`
+
