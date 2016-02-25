@@ -153,3 +153,29 @@ Em relação ao **controller** há poucas mudanças em relação ao **Passo 6**:
 
 ### Função `mostrarDetalhes()`
 
+A função `mostrarDetalhes()` passa a ser definida como:
+
+```javascript
+$scope.mostrarDetalhes = function(telefone) {
+    $scope.ui_estado = 'detalhes';
+    $http.get('data/phones/' + telefone.id + '.json').then(
+        function(response){
+            $scope.telefone = response.data;
+            $scope.telefone.imageUrl = $scope.telefone.images[0];
+        });
+};
+```
+
+Ou seja, a única alteração em relação ao **Passo 6** é a criação do atributo `imageUrl` no objeto `$scope.telefone`. Este atributo é utilizado para apresentar a foto maior e, por isso, recebe o endereço da primeira foto do array `$scope.telefone.images`.
+
+### Função `mostrarImagem()`
+
+A função `mostrarImagem()` é responsável por alternar a foto grande da página de detalhes do telefone. Seu código é:
+
+```javascript
+$scope.mostrarImagem = function(imagem) {
+    $scope.telefone.imageUrl = imagem;
+}
+```
+
+Como informado, o atributo `$scope.telefone.imageUrl` representa a imagem utilizada no momento como a foto grande do telefone. Assim, a função `mostrarImagem()` recebe como parâmetro o caminho da nova imagem que se tornará a foto grande.
