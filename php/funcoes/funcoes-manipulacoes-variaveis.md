@@ -94,7 +94,7 @@ if (!isset($variável)){
 ```
 ##Funnção `var_dump()`
 
-A função `var_damp()` mostra informações de uma variável de maneira estruturada, inclusive o seu tipo. Se a variável for um `array`, mostra a quantidade de elemento, os próprios elementos e seus tipos.
+A função `var_damp()` mostra informações de uma variável de maneira estruturada, inclusive o seu tipo. Se a variável for um `array`, mostra a quantidade de elementos, os próprios elementos e seus tipos.
 
 ```php
 <?php
