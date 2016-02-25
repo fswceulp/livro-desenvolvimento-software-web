@@ -92,6 +92,22 @@ if (!isset($variável)){
 }
 ?>
 ```
+A seguir é apresentado um exemplo de aplicação da função `unset()`aplicado a um **array associativo**.
+
+```php
+<?php
+echo "</br> </br> removendo ";
+$arr = array("nume1"=>2, "num2"=>4);
+$arr["num3"]=8;
+unset($arr["num2"]); // removendo a chave "num2"
+foreach ($arr as $i=>$valor)
+{
+    echo "</br>";
+    echo ($i."=>".$arr[$i]);
+}
+?>
+```
+
 ##Funnção `var_dump()`
 
 A função `var_damp()` mostra informações de uma variável de maneira estruturada, inclusive o seu tipo. Se a variável for um `array`, mostra a quantidade de elementos, os próprios elementos e seus tipos.
