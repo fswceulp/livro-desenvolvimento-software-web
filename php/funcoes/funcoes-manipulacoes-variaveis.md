@@ -15,3 +15,19 @@ Os seguintes valores são considerados vazios: 1.
 6. `array` (um array vazio)
 7. `var $var;` (um variável delcarada, mas sem atribuição de valor)
 
+```php
+<?php
+$varInteira = 0;
+$varString = "0";
+$varString="";
+$varBooleana=False;
+$varArray = array();
+$varNula= NULL;
+
+if (empty($varInteira) && empty($varString) && empty($varString)
+            && empty($varBooleana) && empty($varArray) && empty($varNula)){
+    echo "Todas as variáveis são vazias!";
+}
+?>
+
+```
