@@ -61,4 +61,18 @@ De maneira similar, existem funções para verificar outros tipos, dentre elas: 
 
 ##Função `isset()`
 
-A função `iset()` verifica se uma variável foi iniciada. Se sim, retorna `True`, caso contrário, `False`. 
+A função `iset()` verifica se uma variável foi iniciada. Se sim, retorna `True`, caso contrário, `False`.
+
+```php
+<?php
+$variavel=NULL;
+if (!isset($variável)){
+    echo "A não variável foi inciada </br>";
+}
+$variavel ="";
+if (!isset($variável)){
+    echo "Agora sim, a variável foi inciada";
+}
+?>
+```
+
