@@ -8,3 +8,5 @@ A tela de detalhes do telefone apresenta informações adicionais:
 * fotos do telefone
 * especificações técnicas como detalhes da bateria e conectividade
 
+## Template
+
