@@ -183,3 +183,7 @@ Como informado, o atributo `$scope.telefone.imageUrl` representa a imagem utiliz
 ## Conclusão
 
 O **Passo 7** adicionou ao aplicativo **PhoneCat** a funcionalidade da apresentação de mais informações na tela de detalhes do telefone. Sendo o **Passo 6** o que mais causou modificações estruturais no aplicativo, até o momento, o passo atual apenas utilizou o conhecimento já fundamentado para chegar ao objetivo proposto.
+
+> **Exercício**
+> 
+> O Bootstrap fornece um componente interessante para apresentar fotos (imagens) de uma forma diferente: o **Carousel** (ou **slider**). Modifique a tela de detalhes do telefone utilizando o componente **Carousel** para apresentar as fotos do telefone.
