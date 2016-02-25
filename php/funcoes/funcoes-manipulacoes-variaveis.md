@@ -58,3 +58,7 @@ if (!is_array($dados[0]))
 ?>
 ```
 De maneira similar, existem funções para verificar outros tipos, dentre elas: `is_bool()`, `is_float()`, `is_int()`, `is_integer()`, `is_null()`. A relação completa pode ser encontrada na [documentação oficial do PHP](http://php.net). 
+
+##Função `isset()`
+
+A função `iset()` verifica se uma variável foi iniciada. Se sim, retorna `True`, caso contrário, `False`. 
