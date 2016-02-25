@@ -76,3 +76,31 @@ if (!isset($variável)){
 ?>
 ```
 
+##Função `unset()`
+
+A função `unset()` destrói uma variável especificada. 
+
+```php
+<?php
+$variavel ="";
+if (!isset($variável)){
+    echo "A variável foi inciada </br>";
+}
+unset($variavel);
+if (!isset($variável)){
+    echo "A não variável não existe </br>";
+}
+?>
+```
+
+##Função print_r()
+
+A função `print_r()` imprime informações de uma variável. Se a variável for do tipo `array`, então todos seus valores serão impressos, no formato de chave e valor.
+
+```php
+<?php
+$arr= array (1, 2, 3, 4);
+print_r($arr); // Saída: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )
+?>
+```
+Esta função tem um segundo parâmetro, `return`, que se definido como `True`, retornará o resultado, ao invés de imprimi-lo.  
