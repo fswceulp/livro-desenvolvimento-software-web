@@ -45,4 +45,4 @@ for ($i=0; $i<count($dados); $i++){
 ```
 ##Função `is_array()`
 
-A função is_array() verifica se uma variável é um array. Se for, retorna True, caso contrário, retorna False.  
+A função `is_array()` verifica se uma variável é um array. Se for, retorna `True`, caso contrário, retorna `False`.  
