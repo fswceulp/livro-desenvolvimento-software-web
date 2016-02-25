@@ -27,6 +27,7 @@
     * [Passo 4: Vinculação de Dados de Via dupla](angular-tutorial/passo-4.md)
     * [Passo 5: Telas de lista e detalhes](angular-tutorial/passo-5.md)
     * [Passo 6: XHR e Injeção de Dependência](angular-tutorial/passo-6.md)
+    * [Passo 7: Mais detalhes do telefone](angular-tutorial/passo-7.md)
 * [AngularJS](angularjs/README.md)
     * [Iniciando](angularjs/iniciando.md)
     * [Diretiva ng-click](angularjs/ng-click.md)
