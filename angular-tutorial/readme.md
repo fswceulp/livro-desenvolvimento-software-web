@@ -12,10 +12,11 @@ Cada passo do tutorial apresentará como utilizar novos recursos do Angular e, a
 - [Passo 4: Vinculação de Dados de Via dupla](passo-4.md)
 - [Passo 5: Telas de lista e detalhes](passo-5.md)
 - [Passo 6: XHR e Injeção de Dependência](passo-6.md)
-- Passo 7: Roteamento e Múltiplas Views
-- Passo 8: Mais sobre templates
-- Passo 9: Filtros
-- Passo 10: Tratadores de evento
-- Passo 11: REST e Serviços personalizados
-- Passo 12: Aplicando animações
+- [Passo 7: Mais detalhes do telefone](passo-7.md)
+- Passo 8: Roteamento e Múltiplas Views
+- Passo 9: Mais sobre templates
+- Passo 10: Filtros
+- Passo 11: Tratadores de evento
+- Passo 12: REST e Serviços personalizados
+- Passo 13: Aplicando animações
 - Fim
