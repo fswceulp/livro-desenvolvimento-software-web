@@ -93,7 +93,7 @@ if (!isset($variável)){
 ?>
 ```
 
-##Função print_r()
+##Função `print_r()`
 
 A função `print_r()` imprime informações de uma variável. Se a variável for do tipo `array`, então todos seus valores serão impressos, no formato de chave e valor.
 
