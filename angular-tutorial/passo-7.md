@@ -179,3 +179,7 @@ $scope.mostrarImagem = function(imagem) {
 ```
 
 Como informado, o atributo `$scope.telefone.imageUrl` representa a imagem utilizada no momento como a foto grande do telefone. Assim, a função `mostrarImagem()` recebe como parâmetro o caminho da nova imagem que se tornará a foto grande.
+
+## Conclusão
+
+O **Passo 7** adicionou ao aplicativo **PhoneCat** a funcionalidade da apresentação de mais informações na tela de detalhes do telefone. Sendo o **Passo 6** o que mais causou modificações estruturais no aplicativo, até o momento, o passo atual apenas utilizou o conhecimento já fundamentado para chegar ao objetivo proposto.
