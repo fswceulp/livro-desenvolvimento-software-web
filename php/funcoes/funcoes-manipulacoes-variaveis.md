@@ -29,5 +29,20 @@ if (empty($varInteira) && empty($varString) && empty($varString)
     echo "Todas as variáveis são vazias!";
 }
 ?>
-
 ```
+
+##Função `gettype()`
+
+A função `gettype()` retorna o tipo de uma variável.
+
+```php
+<?php
+$dados = array(1, 1., NULL, True, "texto");
+for ($i=0; $i<count($dados); $i++){
+    echo (gettype($dados[$i]))."</br>";
+}
+?>
+```
+##Função `is_array()`
+
+A função is_array() verifica se uma variável é um array. Se for, retorna True, caso contrário, retorna False.  
