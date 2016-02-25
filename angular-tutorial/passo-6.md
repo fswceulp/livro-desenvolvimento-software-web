@@ -128,7 +128,7 @@ $scope.telefone = response.data;
 
 ## Executando o aplicativo
 
-A execução do aplicativo a partir do **Passo 66** não pode ser feita abrindo-se o arquivo `index.html` diretamente no browser. Isso acontece porque os recurso utilizados requerem a presença de um servidor web. Neste caso, o aplicativo utiliza o `http-server`.
+A execução do aplicativo a partir do **Passo 66** não pode ser feita abrindo-se o arquivo `index.html` diretamente no browser. Isso acontece porque os recursos utilizados requerem a presença de um servidor web. Neste caso, o aplicativo utiliza o `http-server`.
 
 Para iniciar o aplicativo, execute o comando a seguir:
 
@@ -140,7 +140,7 @@ A animação a seguir ilustra esse processo.
 
 ![](passo-6-http-server.gif)
 
-Ao ser executado, o `http-server` inicia um processo que representa um servidor web. Por padrão, a execução utiliza todos os endereços IPs disponíveis no momento e a porta `8080`. A opção `-c-1` indica que o `http-server` instruirá o browser a não fazer cache do conteúdo, o que é útil para garantir que o aplicativo, ao ser acessado pelo browser, esteja sempre atualizado.
+Ao ser executado, o `http-server` inicia um processo que representa um servidor web. Por padrão, a execução utiliza todos os endereços IPs disponíveis no computador atual e a porta `8080`. A opção `-c-1` indica que o `http-server` instruirá o browser a não fazer cache do conteúdo, o que é útil para garantir que o aplicativo, ao ser acessado pelo browser, esteja sempre atualizado.
 
 Para utilizar o aplicativo, no browser, acesse `http://localhost:8080`.
 
