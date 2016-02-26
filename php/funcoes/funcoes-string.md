@@ -39,3 +39,5 @@ for ($i=0; $i<count($arr); $i++){
 }
 ?>
 ```
+A aplicação da função `explode()` no código mostrado, gera um array `$arr` com *8 posições*, uma vez que o caracter delimitador é o *espaço em branco* (`“ “`). 
+
