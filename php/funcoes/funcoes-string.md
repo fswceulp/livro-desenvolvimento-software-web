@@ -23,3 +23,7 @@ print ("Esta é uma mensagem simples </br>");
 print "esta é uma mensagem "."concatenada! </br>";
 ?>
 ```
+
+##Função `explode()`
+
+
