@@ -26,4 +26,4 @@ print "esta é uma mensagem "."concatenada! </br>";
 
 ##Função `explode()`
 
-
+A função `explode()` transforma uma `string` em um `array` de strings. Para isso, é necessário passar por parâmetro um *caracter delimitador*, em que que, sempre  que for identificado na *string base*, será gerada uma nova *posição no array*.   
