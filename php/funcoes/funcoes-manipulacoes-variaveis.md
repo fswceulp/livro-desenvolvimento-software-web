@@ -13,7 +13,7 @@ Os seguintes valores são considerados vazios: 1.
 4. `NULL` 
 5. `FALSE` (um booleano vazio)
 6. `array` (um array vazio)
-7. `var $var;` (um variável delcarada, mas sem atribuição de valor)
+7. `var $var;` (um variável declarada, mas sem atribuição de valor)
 
 ```php
 <?php
