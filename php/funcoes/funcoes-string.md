@@ -43,3 +43,5 @@ A aplicação da função `explode()` no código mostrado, gera um array `$arr` 
 
 
 ##Função `implode()`
+
+A função `implode()` forma uma string única a partir dos elemento de um determinado *array*. Para isso, é necessário informar o caracter que irá separar um elemento do outro. 
