@@ -16,5 +16,5 @@ O módulo `angular-route` fornece serviços necessários para que o aplicativo u
 
 O arquivo `package.json` precisa incluir o módulo `angular-route` nas suas dependências.
 
-## Múltiplas views
+## Múltiplas views e Template de Layout
 
