@@ -37,7 +37,7 @@ A função `gettype()` retorna o tipo de uma variável.
 
 ```php
 <?php
-$dados = array(1, 1., NULL, True, "texto");
+$dados = array(1, 1.0, NULL, True, "texto");
 for ($i=0; $i<count($dados); $i++){
     echo (gettype($dados[$i]))."</br>";
 }
@@ -49,7 +49,7 @@ A função `is_array()` verifica se uma variável é um array. Se for, retorna `
 
 ```php
 <?php
-$dados = array(1, 1., NULL, True, "texto");
+$dados = array(1, 1.0, NULL, True, "texto");
 if (is_array($dados)){
     echo 'a variável $dados é um array </br>';
 }
