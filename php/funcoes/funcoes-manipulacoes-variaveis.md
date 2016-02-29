@@ -67,11 +67,12 @@ A função `iset()` verifica se uma variável foi iniciada. Se sim, retorna `Tru
 <?php
 $variavel=NULL;
 if (!isset($variável)){
-    echo "A não variável foi inciada </br>";
+    echo "A variável não foi inciada </br>";
 }
-$variavel ="";
-if (!isset($variável)){
-    echo "Agora sim, a variável foi inciada";
+
+$var = "";
+if (isset($var)) {
+    echo '$var está "setado" apesar de vazia!';
 }
 ?>
 ```
