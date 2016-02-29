@@ -8,3 +8,11 @@ Um aplicativo de única página (SPA) (do inglês *Single Page Appplication*) é
 
 > Se quiser saber mais sobre o conceito de SPA, pode começar lendo esse artigo da wikipedia (em inglês): https://en.wikipedia.org/wiki/Single-page_application.
 
+Até o passo 7, quando o usuário clica no botão "Detalhes", a tela de lista de telefones é ocultada e é apresentada a tela de detalhes do telefone. O Pass 8 utiliza o módulo `angular-route` para fornecer uma alternativa mais adequada.
+
+## Dependências
+
+O módulo `angular-route` fornece serviços necessários para que o aplicativo utilize o conceito de múltiplas views. 
+
+O arquivo `package.json` precisa incluir o módulo `angular-route` nas suas dependências.
+
