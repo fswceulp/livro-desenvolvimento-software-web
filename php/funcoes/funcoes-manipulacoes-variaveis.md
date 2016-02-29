@@ -141,7 +141,7 @@ print_r($arr); // Saída: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )
 ```
 Esta função tem um segundo parâmetro, `return`, que se definido como `True`, retornará o resultado, ao invés de imprimi-lo. 
 
-##Funlão `strval()`
+##Função `strval()`
 A função `strval()` retorna de uma variável convertido em `string`. 
 
 ```php
