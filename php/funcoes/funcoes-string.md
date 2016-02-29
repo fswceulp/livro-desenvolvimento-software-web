@@ -53,5 +53,19 @@ $str = implode(" ",$arr);
 echo $str;
 ?>
 ```
+Conforme código apresentado anteriormente, a função `implode()` utiliza os elementos do array `$arr` e os une em uma só string com o caracter delimitador espaço em branco `“ “`, formando uma só frase, que foi atribuída à variável `$str`.
 
-Conforme código apresentado anteriormente, a função `implode()` utiliza os elementos do array `$arr` e os une em uma só string com o caracter delimitador espaço em branco `“ “`, formando uma só frase, que foi atribuída à variável `$str`.  
+##Função `trim()`
+A função `trim()` retirar os espaços em branco de uma string tanto do final quanto do início. 
+
+```php
+<?php
+$str = " exemplo da função trim ";
+if ($str = "exemplo da função trim")
+    echo 'As strings NÃO são iguais iguais!';
+$str = trim($str);
+echo "</br>"; // imprime quebra de linha em HTML
+if ($str = "exemplo da função trim")
+    echo 'As strings agora são iguais';
+?>
+```
