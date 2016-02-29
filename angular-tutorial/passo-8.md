@@ -22,3 +22,5 @@ Uma "**rota**" é um recurso que permite ao navegador mudar o endereço (a URL) 
 
 Um "**template de layout**" é responsável por definir um template que é comum à todas as views do aplicativo. As views são chamadas de "**templates parciais**" porque incluem somente a parte do template que é necessária para cada tela.
 
+Portanto, o que chamamos de "tela" até o momento, chamaremos "template parcial" daqui para frente.
+
