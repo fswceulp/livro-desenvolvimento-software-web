@@ -20,6 +20,12 @@ O arquivo `package.json` precisa incluir o módulo `angular-route` nas suas depe
 
 Uma "**rota**" é um recurso que permite ao navegador mudar o endereço (a URL) atual sem, efetivamente, mudar de página. A princípio, isso pode soar estranho, mas é um recurso amplamente utilizado em desenvolvimento web moderno. O módulo `angular-route` fornece o serviço `$route`, que permite relacionar controllers, views e a URL atual do navegador.
 
+Uma rota é representada no navegador por uma URL, por exemplo:
+* `http://localhost:8080/#/telefones`
+* `http://localhost:8080/#/telefones/motorola-xoom-with-wi-fi`
+
+Importante observar a presenta do caractere `#` (chamado de **hash**) na URL. Uma rota, portanto, é apresentada na URL a partir de `#`.
+
 Um "**template de layout**" é responsável por definir um template que é comum à todas as views do aplicativo. As views são chamadas de "**templates parciais**" porque incluem somente a parte do template que é necessária para cada tela.
 
 ## Estrutura do aplicativo
