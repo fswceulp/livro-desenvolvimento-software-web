@@ -134,6 +134,15 @@ Anteriormente, o aplicativo não possuía dependências, agora, são duas:
 * `ngRoute`
 * `moduloTelefone` (definido no arquivo `telefones/modulo.js`)
 
+### Função `config()` e rotas
+
+O objeto criado pela função `angular.module()` possui a função `config()`, que é utilizada para realizar tarefas de configuração do módulo, que executam no momento em que o módulo é carregado. Neste caso, é injetado na função `config()` o objeto `$routeProvider`, que representa uma API de acesso ao módulo `angular-route` para, principalmente, definir **rotas**.
+
+No código da função `config()` o objeto `$routeProvider` é utilizado para criar rotas. Há duas rotas:
+* `/telefones`
+* `/telefones/:id`
+
+A rota `/telefones`
 
 ## Módulo **Telefones**
 
