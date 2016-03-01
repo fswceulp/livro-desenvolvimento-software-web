@@ -154,7 +154,28 @@ Como já informado, uma rota é um padrão. Assim, quando o padrão definido por
 * o padrão da rota na URL
 * um objeto que configura a vinculação entre a rota, template parcial e controller
 
-A rota `/telefones`
+A rota `/telefones` é definida por:
+
+```javascript
+.when('/telefones', {
+    templateUrl: 'telefones/lista.html',
+    controller: 'TelefonesListaController'
+})
+```
+
+O segundo parâmetro da função `when()` indica que, quando a rota atual for `/telefones`, será utilizado o template parcial definido no arquivo `telefones/lista.html` e o controller `TelefonesListaController`.
+
+A rota `/telefones/:id` é definida por:
+
+```javascript
+when('/telefones/:id', {
+    templateUrl: 'telefones/detalhes.html',
+    controller: 'TelefonesDetalhesController'
+})
+```
+
+
+
 
 ## Módulo **Telefones**
 
