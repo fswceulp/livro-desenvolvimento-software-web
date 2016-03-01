@@ -90,4 +90,6 @@ O módulo `angular-route` fornece a diretiva `ng-view`. Por meio dessa diretiva 
 
 A figura a seguir ajuda a ilustrar este conceito.
 
+![](passo-8-template-de-layout.JPG)
 
+A figura demonstra que os **templates parciais** são incluídos de modo exclusivo dentro da `div` que está com a diretiva `ng-view`.
