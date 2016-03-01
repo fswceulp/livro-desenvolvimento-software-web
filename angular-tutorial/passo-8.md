@@ -99,3 +99,38 @@ O módulo `angular-route` permite a utilização de apenas uma diretiva `ng-view
 ## Código JavaScript do aplicativo
 
 O código JavaScript do aplicativo PhoneCat muda bastante em relação ao **Passo 7**.
+
+O arquivo `app.js` passa a ter o seguinte conteúdo:
+
+```JavaScript
+'use strict';
+
+angular.module('phonecat', ['ngRoute', 'moduloTelefone'])
+    .config(function($routeProvider){
+        $routeProvider
+            .when('/telefones', {
+                templateUrl: 'telefones/lista.html',
+                controller: 'TelefonesListaController'
+            })
+            .when('/telefones/:id', {
+                templateUrl: 'telefones/detalhes.html',
+                controller: 'TelefonesDetalhesController'
+            })
+            .otherwise({
+                redirectTo: '/telefones'
+            });
+    });
+```
+
+### Dependências
+
+A primeira novidade está em relação às dependências.
+
+```JavaScript
+angular.module('phonecat', ['ngRoute', 'moduloTelefone'])
+```
+
+Anteriormente, o aplicativo não possuía dependências, agora, são duas:
+* módulo `ngRoute`
+* módulo `moduloTelefone` (definido no arquivo `telefones/modulo.js`)
+
