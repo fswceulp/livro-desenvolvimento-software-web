@@ -24,7 +24,7 @@ Uma rota é representada no navegador por uma URL, por exemplo:
 * `http://localhost:8080/#/telefones`
 * `http://localhost:8080/#/telefones/motorola-xoom-with-wi-fi`
 
-Importante observar a presenta do caractere `#` (chamado de **hash**) na URL. Uma rota, portanto, é apresentada na URL a partir de `#`. 
+Importante observar a presenta do caractere `#` (chamado de **hash**) na URL. Uma rota, portanto, é apresentada na URL a partir de `#`. P
 
 Um "**template de layout**" é responsável por definir um template que é comum à todas as views do aplicativo. As views são chamadas de "**templates parciais**" porque incluem somente a parte do template que é necessária para cada tela.
 
