@@ -131,6 +131,6 @@ angular.module('phonecat', ['ngRoute', 'moduloTelefone'])
 ```
 
 Anteriormente, o aplicativo não possuía dependências, agora, são duas:
-* módulo `ngRoute`
-* módulo `moduloTelefone` (definido no arquivo `telefones/modulo.js`)
+* `ngRoute`
+* `moduloTelefone` (definido no arquivo `telefones/modulo.js`)
 
