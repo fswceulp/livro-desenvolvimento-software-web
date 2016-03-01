@@ -63,7 +63,7 @@ passo-8
 
 O diretório `telefones` representa o módulo **telefones**, que apresenta a lista e os detalhes de telefones. A ideia de separar o aplicativo em módulos representa uma proposta de arquitetura para o software que pretende isolar ou separar partes do software em módulos, isto é, se consegue, com isso, modularização.
 
-## Template
+## Template de layout
 
 O arquivo `index.html`, utilizado como **template de layout** é bastante modificado em relação ao **Passo 7**, como mostra o trecho de código a seguir:
 
