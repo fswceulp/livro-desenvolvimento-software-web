@@ -176,6 +176,16 @@ when('/telefones/:id', {
 
 A rota `/telefones/:id` inclui um **parâmetro de rota**. Um parâmetro de rota representa uma parte da rota que pode ser substituída por um valor, o qual poderá ser tratado posteriormente no controller. O template parcial está definido no arquivo `telefones/detalhes.html` e o controller é `TelefonesDetalhesController`.
 
+Por fim, o objeto `$routeProvider` fornece a função `otherwise()`:
+
+```javascript
+otherwise({
+    redirectTo: '/telefones'
+})
+```
+
+A função `otherwise()` recebe como parâmetro um objeto que determina o que acontece quando nenhuma rota for encontrada. Neste caso, o módulo `angular-route` redirecionará para a rota `/telefones`.
+
 Importante relembrar que esses templates parciais e controllers estão definidos no módulo **Telefones**, que será apresentado a seguir.
 
 
