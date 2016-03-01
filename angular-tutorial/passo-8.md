@@ -53,7 +53,41 @@ passo-8
 
 ```
 
+O diretório `telefones` representa o módulo **telefones**, que apresenta a lista e os detalhes de telefones. A ideia de separar o aplicativo em módulos representa uma proposta de arquitetura para o software que pretende isolar ou separar partes do software em módulos, isto é, se consegue, com isso, modularização.
+
 ## Template
 
-O arquivo `index.html` 
+O arquivo `index.html`, utilizado como **template de layout** é bastante modificado em relação ao **Passo 7**, como mostra o trecho de código a seguir:
+
+```
+<!doctype html>
+<html lang="pt-br" ng-app="phonecat">
+<head>
+  ...
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="telefones/modulo.js"></script>
+  <script src="app.js"></script>
+  ...
+</head>
+<body>
+<div class="container">
+    <div ng-view></div>
+</div>
+</body>
+</html>
+```
+
+Na seção de arquivos JavaScript importados no arquivo `index.html` estão os arquivos:
+* `node_modules/angular-route/angular-route.min.js` (do módulo `angular-route`)
+* `telefones/modulo.js` (que implementa o módulo telefone)
+
+A ordem de inclusão dos arquivos JavaScript é importante, uma vez que o arquivo `app.js` depende do módulo telefone.
+
+### Diretiva `ng-view`
+
+O módulo `angular-route` fornece a diretiva `ng-view`. Por meio dessa diretiva os **templates parciais** são dinamicamente embutidos neste local (dentro de `<div class="container">`).
+
+A figura a seguir ajuda a ilustrar este conceito.
+
 
