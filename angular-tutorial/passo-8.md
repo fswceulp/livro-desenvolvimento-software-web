@@ -18,9 +18,42 @@ O arquivo `package.json` precisa incluir o módulo `angular-route` nas suas depe
 
 ## Múltiplas views, Rotas e Template de Layout
 
-Uma "**rota**" é um recurso que permite ao navegador mudar o endereço (a URL) atual sem, efetivamente, mudar de página. A princípio, isso pode soar estranho, mas é um recurso amplamente utilizado em desenvolvimento web moderno. No Angular, o módulo `$routeProvider` fornece o serviço `$route`, que permite relacionar controllers, views e a URL atual do navegador.
+Uma "**rota**" é um recurso que permite ao navegador mudar o endereço (a URL) atual sem, efetivamente, mudar de página. A princípio, isso pode soar estranho, mas é um recurso amplamente utilizado em desenvolvimento web moderno. O módulo `angular-route` fornece o serviço `$route`, que permite relacionar controllers, views e a URL atual do navegador.
 
 Um "**template de layout**" é responsável por definir um template que é comum à todas as views do aplicativo. As views são chamadas de "**templates parciais**" porque incluem somente a parte do template que é necessária para cada tela.
 
+## Estrutura do aplicativo
 
+A partir de então, o aplicativo será organizado por "módulos". A estrutura de arquivos é a seguinte:
+
+```
+passo-8
+│   app.css
+│   app.js
+│   index.html
+│   package.json
+│
+├───data
+│   └───phones
+│           dell-streak-7.json
+|           ...
+│
+├───img
+│   └───phones
+│           dell-streak-7.0.jpg
+|           ...
+│
+├───node_modules
+|   ...
+│
+└───telefones
+        detalhes.html
+        lista.html
+        modulo.js
+
+```
+
+## Template
+
+O arquivo `index.html` 
 
