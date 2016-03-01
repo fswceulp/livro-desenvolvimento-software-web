@@ -96,10 +96,6 @@ A figura demonstra que os **templates parciais** são incluídos de modo exclusi
 
 O módulo `angular-route` permite a utilização de apenas uma diretiva `ng-view` no **template de layout**.
 
-## Módulo **Telefones**
-
-
-
 ## Código JavaScript do aplicativo
 
 O código JavaScript do aplicativo PhoneCat muda bastante em relação ao **Passo 7**.
@@ -137,4 +133,7 @@ angular.module('phonecat', ['ngRoute', 'moduloTelefone'])
 Anteriormente, o aplicativo não possuía dependências, agora, são duas:
 * `ngRoute`
 * `moduloTelefone` (definido no arquivo `telefones/modulo.js`)
+
+
+## Módulo **Telefones**
 
