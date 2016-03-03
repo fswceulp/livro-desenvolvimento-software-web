@@ -72,6 +72,8 @@ O arquivo `index.html`, utilizado como **template de layout** é bastante modifi
 <html lang="pt-br" ng-app="phonecat">
 <head>
   ...
+  <title ng-bind="pageTitle"></title>
+  ...
   <script src="node_modules/angular/angular.min.js"></script>
   <script src="node_modules/angular-route/angular-route.min.js"></script>
   <script src="telefones/modulo.js"></script>
@@ -85,6 +87,8 @@ O arquivo `index.html`, utilizado como **template de layout** é bastante modifi
 </body>
 </html>
 ```
+
+A diretiva `ng-bind` está sendo aplicada ao elemento `title` para que o título da janela seja definido dinamicamente, no controller. O valor do atributo representa uma propriedade do model. Neste caso, a propriedade é `pageTitle`. Os passos anteriores 
 
 Na seção de arquivos JavaScript importados no arquivo `index.html` estão os arquivos:
 * `node_modules/angular-route/angular-route.min.js` (do módulo `angular-route`)
