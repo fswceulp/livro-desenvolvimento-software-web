@@ -150,9 +150,23 @@ No código da função `config()` o objeto `$routeProvider` é utilizado para cr
 * `/telefones`
 * `/telefones/:id`
 
-Como já informado, uma rota é um padrão. Assim, quando o padrão definido por uma rota estiver presente na URL, o módulo `angular-route` entrará em ação para definir o que acontecerá. Por definição, isso é semelhante a um **evento de troca da URL**, ou seja, . Por isso o objeto `$routeProvider` fornece a função `when()` que recebe dois parâmetros:
-* o padrão da rota na URL
-* um objeto que configura a vinculação entre a rota, template parcial e controller
+Como já informado, uma rota é um padrão. Assim, quando o padrão definido por uma rota estiver presente na URL, o módulo `angular-route` entrará em ação para definir o que acontecerá. Por exemplo, a URL:
+
+```
+http://localhost/#/telefones
+```
+
+atende a rota `/telefones`. De forma semelhante, a URL:
+
+```
+http://localhost/#/telefones/galaxy
+```
+
+atende a rota `/telefones/:id`.
+
+Por definição, isso é semelhante a um **evento de troca da URL**, ou seja, . Por isso o objeto `$routeProvider` fornece a função `when()` que recebe dois parâmetros:
+1. o padrão da rota na URL
+2. um objeto que configura a vinculação entre a rota, template parcial e controller
 
 A rota `/telefones` é definida por:
 
