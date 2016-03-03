@@ -28,4 +28,8 @@ class Pessoa
     }   
 }
 ```
-Na classe `Pessao` definida anteriormente, foram definidos os métodos **Getters** e **Setters**, que possibilitam acessar e definir os atributos da classe. Os seus atributos são `$cpf` e `$nome`.
+Na classe `Pessao` definida anteriormente (`pessoa.php`), foram definidos os métodos **Getters** e **Setters**, que possibilitam acessar e definir os atributos da classe. Os seus atributos são `$cpf` e `$nome.
+
+#Objetos
+Os objetos são instâncias de uma determinada classe. Por exemplo, considerando a classe `Pessoa` previamente definida, poderiam existir vários objetos desta classe, tais como, pessoa1, pessoa2 e pessoa3, cada um assumindo seus respectivos valores. A seguir é a
+
