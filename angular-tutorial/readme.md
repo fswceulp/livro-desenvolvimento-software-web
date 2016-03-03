@@ -13,7 +13,7 @@ Cada passo do tutorial apresentará como utilizar novos recursos do Angular e, a
 - [Passo 5: Telas de lista e detalhes](passo-5.md)
 - [Passo 6: XHR e Injeção de Dependência](passo-6.md)
 - [Passo 7: Mais detalhes do telefone](passo-7.md)
-- Passo 8: Roteamento e Múltiplas Views
+- [Passo 8: Roteamento e múltiplas Views](passo-8.md)
 - Passo 9: Mais sobre templates
 - Passo 10: Filtros
 - Passo 11: Tratadores de evento
