@@ -51,7 +51,7 @@
         - [Funções para manipulações de variáveis](php/funcoes/funcoes-manipulacoes-variaveis.md)
         - [Funções para `string`](php/funcoes/funcoes-string.md)
         - [Funções para `array`](php/funcoes/funcoes-array.md)
-      * [Orientação a Objetos em PHP](php/tipos/README.md)  
+    * [Orientação a Objetos em PHP](php/php/orientacao_objetos_php/README.md)  
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
