@@ -326,3 +326,16 @@ $http.get('data/phones/' + $routeParams.id + '.json').then(
 ```
 
 O restante do controller é semelhante ao já apresentado, por isso os detalhes do código, bem como sua reprodução, serão omitidos.
+
+## Conclusões
+
+O **Passo 8** implementa várias mudanças no aplicativo. Primeiro, a arquitetura do software foi modificada por meio da modularização, a qual impacta também a organização dos arquivos do projeto. Segundo, o recurso de rotas permitiu uma nova visão sobre como mudar "telas" do aplicativo.
+
+## Exercício
+
+Estenda o **Passo 8**, criando funcionalidades que, implementando o módulo **Fabricantes**, permitam ao usuário:
+* Ver a lista de fabricantes de telefones celulares (ex: rota `/fabricantes`)
+* Ver os detalhes de um fabricante (tela de detalhes do fabricante) com nome, descrição e lista de telefones [do fabricante em questão]
+* Filtrar a lista de telefones por fabricante (módulo **Telefones**)
+
+Utilize arquivos .json para representar os dados dos fabricantes. Pode ser necessário alterar arquivos .json dos telefones para representar o "relacionamento" entre fabricante e telefone.
