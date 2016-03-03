@@ -13,7 +13,7 @@ Os seguintes valores são considerados vazios: 1.
 4. `NULL` 
 5. `FALSE` (um booleano vazio)
 6. `array` (um array vazio)
-7. `var $var;` (um variável delcarada, mas sem atribuição de valor)
+7. `var $var;` (um variável declarada, mas sem atribuição de valor)
 
 ```php
 <?php
@@ -37,7 +37,7 @@ A função `gettype()` retorna o tipo de uma variável.
 
 ```php
 <?php
-$dados = array(1, 1., NULL, True, "texto");
+$dados = array(1, 1.0, NULL, True, "texto");
 for ($i=0; $i<count($dados); $i++){
     echo (gettype($dados[$i]))."</br>";
 }
@@ -49,7 +49,7 @@ A função `is_array()` verifica se uma variável é um array. Se for, retorna `
 
 ```php
 <?php
-$dados = array(1, 1., NULL, True, "texto");
+$dados = array(1, 1.0, NULL, True, "texto");
 if (is_array($dados)){
     echo 'a variável $dados é um array </br>';
 }
@@ -67,11 +67,12 @@ A função `iset()` verifica se uma variável foi iniciada. Se sim, retorna `Tru
 <?php
 $variavel=NULL;
 if (!isset($variável)){
-    echo "A não variável foi inciada </br>";
+    echo "A variável não foi inciada </br>";
 }
-$variavel ="";
-if (!isset($variável)){
-    echo "Agora sim, a variável foi inciada";
+
+$var = "";
+if (isset($var)) {
+    echo '$var está "setado" apesar de vazia!';
 }
 ?>
 ```
@@ -140,7 +141,7 @@ print_r($arr); // Saída: Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 )
 ```
 Esta função tem um segundo parâmetro, `return`, que se definido como `True`, retornará o resultado, ao invés de imprimi-lo. 
 
-##Funlão `strval()`
+##Função `strval()`
 A função `strval()` retorna de uma variável convertido em `string`. 
 
 ```php
