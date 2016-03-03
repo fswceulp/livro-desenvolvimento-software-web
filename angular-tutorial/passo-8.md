@@ -331,7 +331,7 @@ O restante do controller é semelhante ao já apresentado, por isso os detalhes 
 
 O **Passo 8** implementa várias mudanças no aplicativo. Primeiro, a arquitetura do software foi modificada por meio da modularização, a qual impacta também a organização dos arquivos do projeto. Segundo, o recurso de rotas permitiu uma nova visão sobre como mudar "telas" do aplicativo.
 
->> **Note** **Exercício**
+> **Note** **Exercício**
 
 Estenda o **Passo 8**, criando funcionalidades que, implementando o módulo **Fabricantes**, permitam ao usuário:
 * Ver a lista de fabricantes de telefones celulares (ex: rota `/fabricantes`)
