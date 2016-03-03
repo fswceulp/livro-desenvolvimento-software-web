@@ -46,3 +46,25 @@ Exemplos:
 npm install angular bootstrap --save
 npm install http-server --save-dev
 ```
+
+## Scripts
+
+O arquivo `package.json` de um projeto pode conter scripts, que permitem simplificar o processo de execução de códigos no prompt de comando. Exemplo:
+
+```javascript
+{
+  "name": "app",
+  "version": "1.0.0",
+  "scripts": {
+    "clear": "rmdir /S /Q node_modules"
+  }
+}
+```
+
+O trecho de código anterior, que demonstra um arquivo `package.json`, o atributo `scripts` permite definir scripts que podem ser executados via npm. Neste caso, há um script `clear`, que executa a linha de comando `rmdir /S /Q node_modules`. Para executar o script, deve-se utilizar:
+
+```
+npm run clear
+```
+
+O script do exemplo é útil para limpar o projeto em questão, apagando o diretório `node_modules`.
