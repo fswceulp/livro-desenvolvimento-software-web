@@ -61,7 +61,7 @@ passo-8
 
 ```
 
-O diretório `telefones` representa o módulo **telefones**, que apresenta a lista e os detalhes de telefones. A ideia de separar o aplicativo em módulos representa uma proposta de arquitetura para o software que pretende isolar ou separar partes do software em módulos, isto é, se consegue, com isso, modularização.
+O diretório `telefones` representa o módulo **Telefones**, que apresenta a lista e os detalhes de telefones. A ideia de separar o aplicativo em módulos representa uma proposta de arquitetura para o software que pretende isolar ou separar partes do software em módulos, isto é, se consegue, com isso, modularização.
 
 ## Template de layout
 
@@ -205,3 +205,103 @@ Importante relembrar que esses templates parciais e controllers estão definidos
 
 ## Módulo **Telefones**
 
+O módulo Telefones é definido no arquivo `/telefones/modulo.js` e seu código é apresentado a seguir.
+
+```javascript
+'use strict';
+
+angular.module('moduloTelefone', [])
+    .controller('TelefonesListaController', 
+      function($rootScope, $scope, $http, $location){
+        $rootScope.pageTitle = 'Telefones - PhoneCat';
+        $http.get('data/phones/phones.json').then(function(response){
+            $scope.telefones = response.data;
+        });
+    })
+    .controller('TelefonesDetalhesController', 
+      function($rootScope, $scope, $http, $routeParams){
+        $http.get('data/phones/' + $routeParams.id + '.json').then(
+            function(response){
+                $scope.telefone = response.data;
+                $scope.telefone.imageUrl = $scope.telefone.images[0];
+                $rootScope.pageTitle = $scope.telefone.name + ' - Phonecat';
+            });
+        $scope.mostrarImagem = function(imagem) {
+            $scope.telefone.imageUrl = imagem;
+        };
+    });
+```
+
+O módulo declara dois controllers: 
+* `TelefonesListaController`: implementa a funcionalidade de apresentar a lista de telefones; e
+* `TelefonesDetalhesController`: implementa a funcionalidade de apresentar os detalhes de um telefone.
+
+Estes módulos e os templates parciais associados serão apresentados a seguir.
+
+### Lista de telefones
+
+#### Template parcial da lista de telefones
+
+O template parcial da lista de telefones está definido no arquivo `telefones/lista.html`. Seu código é exatamente o mesmo de parte do template principal do **Passo 7** (arquivo `index.html`) que representava a "tela" de lista de telefones. Por este motivo, o código não será apresentado novamente aqui.
+
+#### Controller `TelefonesListaController`
+
+O controller `TelefonesListaController` é definido da seguinte forma:
+
+```javascript
+.controller('TelefonesListaController', 
+  function($rootScope, $scope, $http){
+    $rootScope.pageTitle = 'Telefones - PhoneCat';
+    $http.get('data/phones/phones.json').then(function(response){
+        $scope.telefones = response.data;
+    });
+})
+```
+
+Na função que define o controller são injetados três objetos:
+* `$rootScope`
+* `$scope`
+* `$http`
+
+Dentre estes, os objetos `$scope` e `$http` já são conhecidos. O objeto `$rootScope` permite acessar o escopo raiz do aplicativo. Na prática, é semelhante ao `$scope` (ou seja, permite acessar o model) tendo o escopo como única diferença. Neste caso, `$rootScope` é utilizado para alterar o título da página, modificando a propriedade `pageTitle` do model:
+
+```javascript
+$rootScope.pageTitle = 'Telefones - PhoneCat';
+```
+
+O restante do controller é idêntico ao definido no **Passo 7** e não será detalhado aqui.
+
+### Detalhes de um telefone
+
+#### Template parcial dos detalhes de um telefone
+
+O template parcial dos detalhes de um telefone está definido no arquivo `telefones/detalhes.html`. Seu código é exatamente o mesmo de parte do template principal do **Passo 7** (arquivo `index.html`) que representava a "tela" de detalhes de um telefone. Por este motivo, o código não será apresentado novamente aqui.
+
+#### Controller `TelefoneDetalhesController`
+
+O controller `TelefonesDetalhesController` é definido da seguinte forma:
+
+```javascript
+.controller('TelefonesDetalhesController', 
+  function($rootScope, $scope, $http, $routeParams){
+    $http.get('data/phones/' + $routeParams.id + '.json').then(
+        function(response){
+            $scope.telefone = response.data;
+            $scope.telefone.imageUrl = $scope.telefone.images[0];
+            $rootScope.pageTitle = $scope.telefone.name + ' - Phonecat';
+        });
+    $scope.mostrarImagem = function(imagem) {
+        $scope.telefone.imageUrl = imagem;
+    };
+});
+```
+
+Na função que define o controller são injetados quatro objetos:
+* `$rootScope`
+* `$scope`
+* `$http`
+* `$routeParams`
+
+Dentre estes objetos, o que precisa de destaque é `$routeParams`, que é fornecido pelo módulo `angular-route`.
+
+Como já informado, uma rota pode possuir um parâmetro de rota, que é definido seguindo a sintaxe: sinal de dois pontos seguido pelo nome do parâmetro. Assim, a rota `/telefones/:id` possui um parâmetro chamado `id`. 
