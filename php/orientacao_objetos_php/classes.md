@@ -44,5 +44,5 @@ echo "CPF: ".$objPessoa->getCpf()."</br>NOME:".$objPessoa->getNome();
 ```
 A instrução `require(“Pessoa.php”)` habilita o uso de todas as definições disponíveis no arquivo **“Pessoa.php”** (neste caso, a definição da classe `Pessoa`) no arquivo atual. Assim, é possível instanciar objetos da referida classe e, naturalmente, realizar ações sobre estes através dos seus métodos. 
 
-No exemplo mostrado anteriormente, é instanciado o objeto objPessoa da classe Pessoa, através da instrução new Pessoa(), logo em seguida são realizadas ações através do métodos Setters para definições dos valores dos atributos Nome e Cpf. Por fim, os valores são apresentados através da instrução echo. 
+No exemplo mostrado anteriormente, é instanciado o objeto `objPessoa` da classe `Pessoa`, através da instrução `new Pessoa()`, logo em seguida são realizadas ações através do métodos *Setters* para definições dos valores dos atributos Nome e Cpf. Por fim, os valores são apresentados através da instrução `echo`. 
 
