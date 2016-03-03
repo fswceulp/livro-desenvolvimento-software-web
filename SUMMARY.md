@@ -53,6 +53,7 @@
         - [Funções para `string`](php/funcoes/funcoes-string.md)
         - [Funções para `array`](php/funcoes/funcoes-array.md)
     * [Orientação a Objetos em PHP](/php/orientacao_objetos_php/README.md)  
+     * [Classes e Objetos](php/classes-objetos.md)
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
