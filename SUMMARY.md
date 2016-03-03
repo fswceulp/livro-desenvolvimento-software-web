@@ -51,10 +51,11 @@
         - [Funções para manipulações de variáveis](php/funcoes/funcoes-manipulacoes-variaveis.md)
         - [Funções para `string`](php/funcoes/funcoes-string.md)
         - [Funções para `array`](php/funcoes/funcoes-array.md)
-        
+      * [Orientação a Objetos em PHP](php/tipos/README.md)  
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
     * [Acesso a Bancos de Dados](backend/banco-de-dados.md)
     * [DBAL](backend/dbal.md)
     * [Arquitetura de uma API](backend/modelo-arquitetura-api-cliente.md)
+    * 
