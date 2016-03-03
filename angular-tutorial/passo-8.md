@@ -88,7 +88,7 @@ O arquivo `index.html`, utilizado como **template de layout** é bastante modifi
 </html>
 ```
 
-A diretiva `ng-bind` está sendo aplicada ao elemento `title` para que o título da janela seja definido dinamicamente, no controller. O valor do atributo representa uma propriedade do model. Neste caso, a propriedade é `pageTitle`. Os passos anteriores 
+A diretiva `ng-bind` está sendo aplicada ao elemento `title` para que o título da janela seja definido dinamicamente, no controller. O valor do atributo representa uma propriedade do model. Neste caso, a propriedade é `pageTitle`. Os passos anteriores apresentaram como interagir com o escopo de um controller. Como será visto posteriormente, o **Passo 8** demonstra como interagir com o escopo raiz do aplicativo.
 
 Na seção de arquivos JavaScript importados no arquivo `index.html` estão os arquivos:
 * `node_modules/angular-route/angular-route.min.js` (do módulo `angular-route`)
@@ -314,3 +314,15 @@ Como já informado, uma rota pode possuir um parâmetro de rota, que é definido
 $http.get('data/phones/' + $routeParams.id + '.json')
 ```
 
+O objeto `$rootScope` é utilizado novamente para definir o valor da propriedade `pageTitle`. Desta vez, o objetivo é fazer com o que o título da janela apresente o nome do telefone. Isso está presente na função callback da função `$http.get()`:
+
+```javascript
+$http.get('data/phones/' + $routeParams.id + '.json').then(
+    function(response){
+        $scope.telefone = response.data;
+        $scope.telefone.imageUrl = $scope.telefone.images[0];
+        $rootScope.pageTitle = $scope.telefone.name + ' - Phonecat';
+    });
+```
+
+O restante do controller é semelhante ao já apresentado, por isso os detalhes do código, bem como sua reprodução, serão omitidos.
