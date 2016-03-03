@@ -304,4 +304,9 @@ Na função que define o controller são injetados quatro objetos:
 
 Dentre estes objetos, o que precisa de destaque é `$routeParams`, que é fornecido pelo módulo `angular-route`.
 
-Como já informado, uma rota pode possuir um parâmetro de rota, que é definido seguindo a sintaxe: sinal de dois pontos seguido pelo nome do parâmetro. Assim, a rota `/telefones/:id` possui um parâmetro chamado `id`. 
+Como já informado, uma rota pode possuir um parâmetro de rota, que é definido seguindo a sintaxe: sinal de dois pontos seguido pelo nome do parâmetro. Assim, a rota `/telefones/:id` possui um parâmetro chamado `id`. Para ter acesso ao parâmetro de rota, é utilizado o objeto `$routeParams`. O controller `TelefonesDetalhesController` o utiliza para esssa função:
+
+```javascript
+$http.get('data/phones/' + $routeParams.id + '.json')
+```
+
