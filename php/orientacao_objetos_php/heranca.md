@@ -12,16 +12,21 @@ class Funcionario extends Pessoa
     public $CodFuncionario;
     public $Salario;
 
+    function Funcionario(){
+        parent::Pessoa();
+        echo "Chamando o método construtor de Funcionario..";
+    }
+
     public function mostrarDados(){
         echo "</br> Subclasse Funcionario </br> ";
         echo "Cpf: ".$this->Cpf;
         echo "</br>";
-        echo "Cód. Funcionário:".$this->CodFuncionario;
+        echo "Cód. Funcionário: ".$this->CodFuncionario;
     }
 }
 ?>
 ```
-Na classe `Funcionario` foram definidas duas propriedades, `CodFuncionario` e `Salario`, além de u método mostrarDados. O método `mostrarDados` mostra o *Cpf*, propriedade definida na classe base (superclasse `Pessoa`) e o *Código do Funcionário* que é uma propriedade da classe `Funcionario`. A instrução  `require_once ("Pessoa.php")` requer/importa as definições da classe `Pessoa`, que estão em um arquivo *“Pessoa.php”*  para que possam ser utilizadas. A instrução `require_once` só importa o arquivo solicitado se este já não tiver sido importado anteriormente.  
+Na classe `Funcionario` foram definidas duas propriedades, `CodFuncionario` e `Salario`, além do método `mostrarDados` e o método construtor (`Funcionario`). O método `mostrarDados` imprime o *Cpf* , propriedade definida na classe base (superclasse) e o *Código do Funcionário*, que é uma propriedade da classe `Funcionario`. No método construtor é usada a instrução `parent::`, que é utilizada para acessar definições (por exemplo, métodos e propriedades) da classe base (superclasse).  Neste exemplo específico, a instrução `parent::Pessoa()` invoca o método construtor da classe `Pessoa`,
 
 Agora, é mostrado um script PHP que faz uso das definições anteriores da classe `Pessoa` e `Funcionario`.
 
