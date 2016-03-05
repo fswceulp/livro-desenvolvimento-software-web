@@ -1,4 +1,4 @@
-#Construtor
+#Construtores
 Os *métodos construtores* são aqueles métodos que são invocados sempre que uma instância de uma classe (um objeto) é criada. Um *método construtor* pode ser construído conforme a sintaxe mostrada abaixo:
 
 ```php
