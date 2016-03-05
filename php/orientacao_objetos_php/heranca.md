@@ -23,4 +23,16 @@ class Funcionario extends Pessoa
 ```
 Na classe `Funcionario` foram definidas duas propriedades, `CodFuncionario` e `Salario`, além de u método mostrarDados. O método `mostrarDados` mostra o *Cpf*, propriedade definida na classe base (superclasse `Pessoa`) e o *Código do Funcionário* que é uma propriedade da classe `Funcionario`. A instrução  `require_once ("Pessoa.php")` requer/importa as definições da classe `Pessoa`, que estão em um arquivo *“Pessoa.php”*  para que possam ser utilizadas. A instrução `require_once` só importa o arquivo solicitado se este já não tiver sido importado anteriormente.  
 
-Agora, é mostrado um script PHP que faz uso das definições anteriores da classe `Pessoa` e `Funcionario`. 
+Agora, é mostrado um script PHP que faz uso das definições anteriores da classe `Pessoa` e `Funcionario`.
+
+```php
+<?php
+
+$f1 = new Funcionario();
+$f1->Cpf = "000-000-000-00";
+$f1->CodFuncionario="010101";
+x$f1->mostrarDados();
+?>
+```
+No código mostrado, foi instanciado um objeto da classe `Funcionário`, logo em seguida foi definido um valor para propriedade *Cpf*, que pode ser acessada porque a classe `Funcionario` herda todas as definições de `Pessoa` e, por fim, foi invocado o método `mostrarDados`, definido na classe `Funcionario`.  
+
