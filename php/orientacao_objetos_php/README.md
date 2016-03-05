@@ -6,3 +6,5 @@ O propósito aqui não é discutir a literatura de Orientação a Objetos, por i
 [Construtores](metodos-construtores.md)
 
 [Propriedades](propriedades.md)
+
+[Herança](herança.md)
