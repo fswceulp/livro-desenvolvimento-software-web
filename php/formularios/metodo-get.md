@@ -52,4 +52,4 @@ Para resolvermos o problema do erro gerado no primeiro acesso, pode ser realizad
     }
 ?>
 ```
-No código mostrado anteriormente foi realizada uma verificação com o auxílio da função `isset` para identificarmos se a chave `textNome` existe. Mais informações sobre a função `isset` estão disponíveis no capítulo de [Funções](php/funcoes/README.md). 
+No código mostrado anteriormente foi realizada uma verificação com o auxílio da função `isset` para identificarmos se a chave `textNome` existe. Mais informações sobre a função `isset` estão disponíveis no capítulo de [Funções](../funcoes/README.md). 
