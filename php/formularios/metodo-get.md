@@ -61,4 +61,4 @@ As exemplificações mostradas anteriormente sempre enviam os dados para a pági
 ```html
 <a href="mostrar-dados.php?Cod=2&Nome='John'"> Passando CÓDIGO e NOME via link </a>
 ```
-O código mostrado acima cria um link em HTML definindo o *array* de parâmetros que serão enviados para a página `mostrar-dados.php`. O projeto completo para que você possa testar está disponível para download aqui. 
+O código mostrado acima cria um link em HTML definindo o *array* de parâmetros que serão enviados para a página `mostrar-dados.php`. O projeto completo para que você possa testar está disponível para download [aqui](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/formularios/metodo-get/projeto2). 
