@@ -1,3 +1,4 @@
+
 #Método GET
 O método GET cria um **array** de chaves e valores *(exemplo, chave1=>valor1, chave2=>valor2, ..., chaven=>valorn)*, em que as chaves correspondem aos nomes dos controles dos formulários e os valores correspondem aos dados de entradas fornecidos pelo usuário. 
 
@@ -40,3 +41,5 @@ Vamos usar o código HTML definido anteriormente para acrescentar um script PHP 
 </html>
 ```
 Na primeira vez que a página acima for carregada, um erro PHP será gerado porque o array `$_GET` e seus valores ainda **não** existem. Uma vez que o formulário for preenchido pelo usuário e o botão *Enviar* for acionado, o *array* será criado, os dados serão mostrados no *browser* e os erros deixarão de existir.
+
+Para resolvermos o problema do erro gerado no primeiro acesso, pode ser realizada uma verificação com o intuito de identificarmos se os valores de `$_GET` não estão nulos, conforme código mostrado a seguir: 
