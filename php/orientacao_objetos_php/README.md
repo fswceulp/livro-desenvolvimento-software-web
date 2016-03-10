@@ -7,4 +7,4 @@ O propósito aqui não é discutir a literatura de Orientação a Objetos, por i
 
 [Propriedades](propriedades.md)
 
-[Herança](herança.md)
+[Herança](heranca.md)
