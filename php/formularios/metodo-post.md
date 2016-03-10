@@ -13,3 +13,24 @@ O atributo `method` define o método de envio dos dados do formulário, conforme
 </body>
 </html>
 ```
+
+Uma vez que o usuário informar algum valor no campo de texto do formulário e clicar no botão *Enviar*, um *array* de pares chave=>valor será criado e passado via método *HTTP POST*. Diferentemente do método *GET*, o *array* não fica visível na URL.
+##Acessando os dados do formulário em PHP
+Quando os valores são enviados via método *POST*, automaticamente é criada um *array* chamado `$_POST` que contém todos os valores preenchidos no formulário e que agora poderão ser acessados via código PHP. O *array* definido em `$_POST` é global para o script (página) corrente e pode ser acessado a qualquer momento, independente do escopo (e.g. em uma função ou em uma classe), sem necessidade de nenhum tratamento especial. 
+
+Vamos usar o código HTML definido anteriormente para acrescentar um script PHP que acessa os dados enviados via método *POST* e mostra-los no *browser*. 
+```php
+<html>
+<body>
+    <?php
+        $nome = $_POST["textNome"];
+        echo "Nome: ".$nome;
+    ?>
+    <form name="form1" method="POST">
+        <input name="textNome" type="text">
+        <input name="btnEnviar" type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+```
+
