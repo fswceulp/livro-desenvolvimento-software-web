@@ -36,3 +36,14 @@ Vamos usar o código HTML definido anteriormente para acrescentar um script PHP 
 
 Na primeira vez que a página acima for carregada, um erro será gerado porque o array `$_POST` e seus valores ainda não existem. Uma vez que o formulário for preenchido pelo usuário e o botão *Enviar* for acionado, o *array* será criado, o nome informado será mostrado no *browser* e o erro deixará de existir.
 
+Para resolvermos o problema do erro gerado no primeiro acesso, pode ser realizada uma verificação com o intuito de identificarmos se os valores de `$_POST` não estão nulos. A seguir é apresentado o código PHP com esta verificação, que deve substituir o código PHP mostrado anteriormente:
+
+```php
+<?php
+    if (isset($_POST["textNome"])){
+        $nome = $_POST["textNome"];
+        echo "Nome: ".$nome;
+    }
+?>
+```
+
