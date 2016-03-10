@@ -15,7 +15,9 @@ No código HTML apresentado anteriormente, foi criado um formulário com nome `f
 
  Para que os dados digitados nos formulários possam ser enviados para um script PHP, são utilizados os métodos (verbos) **GET** e **POST**. 
  
- [Método Get](metodo-get.md)
+ [Método GET](metodo-get.md)
+ 
+ [Método POST](metodo-post.md)
 
 
 
