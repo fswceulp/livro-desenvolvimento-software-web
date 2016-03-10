@@ -43,3 +43,14 @@ Vamos usar o código HTML definido anteriormente para acrescentar um script PHP 
 Na primeira vez que a página acima for carregada, um erro PHP será gerado porque o array `$_GET` e seus valores ainda **não** existem. Uma vez que o formulário for preenchido pelo usuário e o botão *Enviar* for acionado, o *array* será criado, os dados serão mostrados no *browser* e os erros deixarão de existir.
 
 Para resolvermos o problema do erro gerado no primeiro acesso, pode ser realizada uma verificação com o intuito de identificarmos se os valores de `$_GET` não estão nulos, conforme código mostrado a seguir: 
+
+```php
+<?php
+    if (isset($_GET["textNome"])){
+        $nome = $_GET["textNome"];
+        echo "Nome: ".$nome;
+    }
+?>
+```
+
+
