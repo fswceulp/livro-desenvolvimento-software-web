@@ -30,3 +30,9 @@ O atributo `method` define o método de envio dos dados do formulário, conforme
 </body>
 </html>
 ```
+
+Uma vez que o usuário informar algum valor no campo de texto do formulário e clicar no botão **Enviar**, um array de **chave=>valor** será criado e passado via URL. Este array é também chamado de **Query String**. 
+
+
+
+
