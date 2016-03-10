@@ -19,5 +19,4 @@ Uma vez que o usuário informar algum valor no campo de texto do formulário e c
 Supondo que o usuário digite **John** no campo de texto e clique no botão **Enviar**, o seguinte array será criado e enviado pela URL: 
 **?textNome=John&btnEnviar=Enviar**. O caracter **?** separa a URL base do array com os valores. Cada par *chave=>valor* é separado pelo caráter **&**. Por exemplo, se página carregada fosse *index.php*, e estivesse dentro da pasta exemplo, então a URL base poderia ser * http://localhost/exemplo/index.php* . 
 ##Acessando os dados do formulário em PHP
-
 Quando os valores são enviados via *método GET*, automaticamente é criada um array chamado `$_GET` que contém todos os valores passados para o corrente *script* via URL. O array definido em `$_GET` é global para o script corrente e pode ser acessado a qualquer momento, independente do escopo (e.g. em uma função ou em uma classe), sem necessidade de nenhum tratamento especial. 
