@@ -59,6 +59,8 @@
      * [Herança](php/orientacao_objetos_php/heranca.md)
     
  * [Formulários HTML e PHP](/php/formularios/README.md)  
+   * [Método GET](php/formularios/metodo-get.md)
+   * [Método POST](php/formularios/metodo-post.md)
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
