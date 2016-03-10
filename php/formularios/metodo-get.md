@@ -54,4 +54,11 @@ Para resolvermos o problema do erro gerado no primeiro acesso, pode ser realizad
 ```
 No código mostrado anteriormente foi realizada uma verificação com o auxílio da função `isset` para identificarmos se a chave `textNome` existe. Mais informações sobre a função `isset` estão disponíveis no capítulo de [Funções](../funcoes/README.md). 
 
-As exemplificações mostradas anteriormente sempre enviam os dados para a página PHP corrente. Caso necessite enviar os dados para outra página (outro script PHP), pode ser utilizado o atributo `action` do formulário. Assim, deve ser atribuído ao atributo `action` o nome da página destino, por exemplo, `action="pagina_destino.php"` . A seguir você pode fazer [download](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/formularios/metodo-get/projeto-1) de um projeto PHP que mostra a utilização do envio de dados para uma página diferente utilizado um formlário com método GET.  
+As exemplificações mostradas anteriormente sempre enviam os dados para a página PHP corrente. Caso necessite enviar os dados para outra página (outro script PHP), pode ser utilizado o atributo `action` do formulário. Assim, deve ser atribuído ao atributo `action` o nome da página destino, por exemplo, `action="pagina_destino.php"` . A seguir você pode fazer [download](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/formularios/metodo-get/projeto-1) de um projeto PHP que mostra a utilização do envio de dados para uma página diferente utilizado um formlário com método GET. 
+
+>**DICA IMPORTANTE:**
+> Caso necessite enviar parâmetros via URL é possível criar esse *array* manualmente e colocá-lo como parte do endereço. Assim, os dados também podem ser enviados via *GET* diretamente pela URL. 
+```html
+<a href="mostrar-dados.php?Cod=2&Nome='John'"> Passando CÓDIGO e NOME via link </a>
+```
+O código mostrado acima cria um link em HTML definindo o *array* de parâmetros que serão enviados para a página `mostrar-dados.php`. O projeto completo para que você possa testar está disponível para download aqui. 
