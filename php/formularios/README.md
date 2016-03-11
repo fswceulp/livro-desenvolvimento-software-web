@@ -17,7 +17,9 @@ No código HTML apresentado anteriormente, foi criado um formulário com nome `f
  
  [Método GET](metodo-get.md)
  
- [Método POST](metodo-post.md)
+ [Método POST](metodo-post.md)*
+ 
+ [Validação de Formulários](validacao-form.md)
 
 
 
