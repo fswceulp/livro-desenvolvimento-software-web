@@ -61,6 +61,7 @@
  * [Formulários HTML e PHP](/php/formularios/README.md)  
    * [Método GET](php/formularios/metodo-get.md)
    * [Método POST](php/formularios/metodo-post.md)
+   * [Validação de Formularios](/php/formularios/validacao-form.md)  
 * [Backend](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
