@@ -20,3 +20,8 @@ Site: <input type="text" name="txtSite">
 Observações:<textarea name="textAreaObservacoes" rows="7" cols="40"> </textarea>
 ```
 ##Campo para seleção exclusiva (`radio`)
+O campo para escolha do sexo oferece duas opções possíveis: *Masculino e Feminino*. Para isso, é utilizado um campo do tipo `radio`, conforme código apresentado a seguir:
+```html
+<input type="radio" name="radioSexo" value="Masculino"> Masculino
+<input type="radio" name="radioSexo" value="Feminino"> Feminino
+```
