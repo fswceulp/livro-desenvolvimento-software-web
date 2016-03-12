@@ -28,3 +28,5 @@ O campo para escolha do sexo oferece duas opções possíveis: *Masculino e Femi
 Se o usuário escolher a opção `Feminino`, a opção `Masculino` deverá estar desmarcada, e vice-versa. Para garantir esta escolha única, o nome de ambos os campos (Feminino e Masculino) devem ser o mesmo. Neste caso específico, o nome definido foi `radioSexo`.
 
 ##Botões para ações no formulário
+A qualquer momento, o usuário pode limpar o formulário ou enviar os dados para serem processados. Para isso, existem específicos botões: `reset` (limpar) e `submit` (submete). A seguir é apresentado o código HTML que os define:
+
