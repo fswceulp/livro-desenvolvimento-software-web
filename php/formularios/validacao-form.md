@@ -3,9 +3,9 @@ Neste capítulo, é apresentado o exemplo de criação de um formulário que con
 
 | Campo | Tipo | Requerido |
 | -- | -- | -- |
-| Nome | text | 2:2 |
-| CPF | text | 2:3 |
-| E-mail | text | 2:4 |
-| Site | text | 2:5 |
-| Observações | textarea | 2:6 |
-| Sexo | radio | 2:7 |
+| Nome | text | Sim |
+| CPF | text | Sim |
+| E-mail | text | Sim |
+| Site | text | Não |
+| Observações | textarea | Não |
+| Sexo | radio | Sim |
