@@ -29,8 +29,25 @@ Se o usuário escolher a opção `Feminino`, a opção `Masculino` deverá estar
 
 ##Botões para ações no formulário
 A qualquer momento, o usuário pode limpar o formulário ou enviar os dados para serem processados. Para isso, existem específicos botões: `reset` (limpar) e `submit` (submete). A seguir é apresentado o código HTML que os define:
-
 ```html
 <input type="submit" name="btnEnviar" value="Enviar">
 <input type="reset" name="resetBtn" value="Limpar">
 ```
+##Código PHP para validação
+Para que os dados possam ser validados, inicialmente deve-se definir todos os elementos apresentados anteriormente como elementos de um formulário. O método de envio dos dados no formulário deve ser POST. Depois disso, podemos passar para a etapa de codificação do código PHP que receberá os dados para verificação. A verificação que será realizada é a obrigatoriedade dos campos: *Nome, Cpf, E-mail e Sexo*. A seguir é apresentado um exemplo de codificação: 
+```php
+<?php
+$nomeError=$cpfError=$emailError= $sexoError="";
+if ($_SERVER["REQUEST_METHOD"]=="POST"){
+    if (empty($_POST["txtNome"])){
+        $nomeError = "Nome é obrigatório!";
+    }
+    if (empty($_POST["txtCpf"]))
+        $cpfError ="CPF é obrigatório!";
+    if (empty($_POST["txtEmail"]))
+        $emailError = "O e-mail é obrigatório1";
+    if (empty($_POST["radioSexo"]))
+        $sexoError = "O sexo é obrigatório1";
+}    
+```
+
