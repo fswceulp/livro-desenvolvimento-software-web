@@ -30,3 +30,7 @@ Se o usuário escolher a opção `Feminino`, a opção `Masculino` deverá estar
 ##Botões para ações no formulário
 A qualquer momento, o usuário pode limpar o formulário ou enviar os dados para serem processados. Para isso, existem específicos botões: `reset` (limpar) e `submit` (submete). A seguir é apresentado o código HTML que os define:
 
+```html
+<input type="submit" name="btnEnviar" value="Enviar">
+<input type="reset" name="resetBtn" value="Limpar">
+```
