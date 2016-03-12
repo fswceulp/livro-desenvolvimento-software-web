@@ -52,4 +52,4 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 ```
 Dentre as instruções apresentadas no código anterior, destaca-se o condicional que verifica se o método de envio dos dados é POST. Caso seja, os passos subsequentes fazem verificações se os campos estão ou não vazios. Caso algum campo esteja vazio, uma variável específica recebe a mensagem de erro que será mostrada para o usuário. 
 
-O código PHP completo com o funcionamento do exemplo mostrado anteriormente, pode ser encontrado aqui.
+O código PHP completo com o funcionamento do exemplo mostrado anteriormente, pode ser encontrado [aqui](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/formularios/metodo-post/projeto2).
