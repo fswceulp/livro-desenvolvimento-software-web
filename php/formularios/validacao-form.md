@@ -26,3 +26,4 @@ O campo para escolha do sexo oferece duas opções possíveis: *Masculino e Femi
 <input type="radio" name="radioSexo" value="Feminino"> Feminino
 ```
 Se o usuário escolher a opção `Feminino`, a opção `Masculino` deverá estar desmarcada, e vice-versa. Para garantir esta escolha única, o nome de ambos os campos (Feminino e Masculino) devem ser o mesmo. Neste caso específico, o nome definido foi `radioSexo`.
+
