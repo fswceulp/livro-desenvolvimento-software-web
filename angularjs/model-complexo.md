@@ -122,7 +122,7 @@ Para estruturar a interface desta maneira (em colunas) foram utilizados recursos
 
 Para a lista de cidades, a parte principal está no trecho de código a seguir:
 
-```html {%raw%}
+```html
 <tr ng-repeat="cidade in cidades | filter:q | orderBy:estado.uf">
     <td>{{$index}}</td>
     <td>{{cidade.estado.uf}}</td>
@@ -136,7 +136,6 @@ Para a lista de cidades, a parte principal está no trecho de código a seguir:
         </button>
     </td>
 </tr>
-{%endraw%}
 ```
 
 O trecho de código em questão representa a criação das linhas da tabela que apresenta a lista de cidades. Primeiro, perceba a utilização da diretiva `ng-repeat`. Seu valor indica que o elemento `tr` será repetido conforme o vetor `cidades` (definido no `CidadesController`), que cada elemento do vetor será representado, na repetição, por um objeto chamado `cidade`, que o vetor é filtrado pelo elemento `q` (vinculado a um elemento `input`) e ordenado por `estado.uf`. Perceba que a ordenação leva em consideração a estrutura do conteúdo do vetor, ou seja, cada elemento é do tipo `Cidade`, que possui um atributo `estado`, que é do tipo `Estado`, que possui um atributo `uf`.
@@ -149,7 +148,7 @@ A última coluna apresenta dois botões de ação: excluir e editar. O clique no
 
 O formulário à direita realiza a função de cadastrar e editar os dados de uma cidade. O trecho de código a seguir apresenta a parte principal desta seção do aplicativo:
 
-```html {%raw%}
+```html
 <form class="form">
     <div class="form-group">
         <label for="nomeDaCidade">Nome
@@ -170,7 +169,6 @@ O formulário à direita realiza a função de cadastrar e editar os dados de um
             ng-click="salvar(cidade)">Salvar</button>
     </div>
 </form>
-{%endraw%}
 ```
 
 Utilizando Bootstrap, o formulário possui dois campos: nome da cidade e Estado. O primeiro campo é representado por um elemento `input`, vinculado a `cidade.nome`. O segundo campo é um elemento `select`, vinculado a `cidade.estado.uf`. Importante notar que os elementos `option` do `select` são criados por meio da diretiva `ng-repeat`, com base no vetor de Estados definido no `CidadesController`. Ainda, o atributo `value` de cada elemento `option` está vinculado a `estado.uf`.
