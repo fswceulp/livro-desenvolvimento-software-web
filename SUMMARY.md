@@ -29,6 +29,7 @@
     * [Passo 6: XHR e Injeção de Dependência](angular-tutorial/passo-6.md)
     * [Passo 7: Mais detalhes do telefone](angular-tutorial/passo-7.md)
     * [Passo 8: Roteamento e múltiplas Views](angular-tutorial/passo-8.md)
+    * [Passo 9: REST e Serviços](angular-tutorial/passo-9.md)
 * [AngularJS](angularjs/README.md)
     * [Iniciando](angularjs/iniciando.md)
     * [Diretiva ng-click](angularjs/ng-click.md)
