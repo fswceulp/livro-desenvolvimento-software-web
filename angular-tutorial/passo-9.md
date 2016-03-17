@@ -160,3 +160,8 @@ O controller `TelefonesDetalhesController` também injeta o serviço `Telefones`
 ```
 
 O código do controller utiliza uma ação padrão `get()` para consultar os dados de um telefone. A função `get()` também retorna uma **promise**. A diferença para o código do controller anterior é que uma função **callback** é utilizada para realizar um determinado trecho do código (definir a imagem padrão e o título da janela do browser com base nos dados do telefone em questão).
+
+## Resumo
+
+O **passo 9** realiza modificações na arquitetura do software ao utilizar o conceito de **serviços personalizados**. Por meio dos serviços, que criam uma camada para acessar os dados via REST, os módulos e controllers do software não têm acesso a certos detalhes, como o endereço do arquivo de dados. Ainda, o código atual utiliza o conceito de **promise**, como maneira alternativa para acessar dados dos serviços.
+
