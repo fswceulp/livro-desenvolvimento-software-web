@@ -61,7 +61,6 @@
      * [Construtoress](php/orientacao_objetos_php/metodos-construtores.md)
      * [Propriedades](php/orientacao_objetos_php/propriedades.md)
      * [Herança](php/orientacao_objetos_php/heranca.md)
-    
  * [Formulários HTML e PHP](/php/formularios/README.md)  
    * [Método GET](php/formularios/metodo-get.md)
    * [Método POST](php/formularios/metodo-post.md)
