@@ -30,3 +30,19 @@ if ($_POST["textLogin"]=="usuario" && $_POST["textSenha"]="senhaacesso" ){
 ```
 
 No código apresentado anteriormente, inicialmente é realizada uma verificação se os dados de autenticação fornecidos pelo usuário são `usuario`  e `senhaacesso`. Se sim, a sessão é iniciada e o nome de usuário e a data e hora de acesso são armazenados na sessão. O *login de usuário* é associado à chave `user_name`, já a *hora de login* é associada à chave `login_time`.  Depois o usuário é direcionado para uma nova página, `profile.php`, através da função `header`. Caso os dados fornecidos pelo usuário não sejam conforme os esperados, este é direcionado para a página de login (`frmLogin.php`) passando pela QueryString um parâmetro `erroLogin` com valor `1`. Este parâmetro é importante para podermos verificar a podermos mostrar uma mensagem de erro ao usuário informando que os dados fornecidos estão incorretos.
+
+Na página `profile.php` os dados previamente definidos na sessão são acessados e mostrados no browser, conforme código apresentado a seguir:
+
+```php
+<?php
+session_start();
+
+$username = $_SESSION   ["user_name"];
+$hora_login = $_SESSION["login_time"];
+
+echo "Hora login:".$hora_login."</br>";
+echo "Username: ".$username."</br>";
+
+echo "</br> </br> <a href='frmLogin.php'> Página de Login </a>"
+?>
+```
