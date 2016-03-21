@@ -11,7 +11,7 @@ Para exemplificar a utilização da sessão, desenvolveremos um projeto simples 
     <input type="password" name="txtSenha" value=""> </br>
     <input type="submit" name="btnLogin" value="Login" >
 </form>
-`` 
+```
 
 O atributo `action` do formulário tem o valor `login.php`, que indica que os dados do presentes no formulário serão enviados para a referida página (mais informações sobre o assunto no capítulo sobre [Formulários](../formularios/README.md)). Na página `login.php`, coloque o código que segue:
 
