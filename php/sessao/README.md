@@ -8,7 +8,7 @@ Para exemplificar a utilização da sessão, desenvolveremos um projeto simples 
 ```html
 <form name="frmLogin" method="POST" action="login.php">
     <input type="text" name="textLogin"> </br>
-    <input type="password" name="txtSenha" value=""> </br>
+    <input type="password" name="textSenha" value=""> </br>
     <input type="submit" name="btnLogin" value="Login" >
 </form>
 ```
