@@ -17,7 +17,7 @@ O atributo `action` do formulário tem o valor `login.php`, que indica que os da
 
 ```php
 <?php
-if ($_POST["textLogin"]=="usuario" && $_POST["textSenha"]="senhaacesso" ){
+if ($_POST["textLogin"]=="usuario" && $_POST["textSenha"]=="senhaacesso" ){
     session_start();
     date_default_timezone_set("America/Sao_Paulo");
     $_SESSION["user_name"]= $_POST["textLogin"];
