@@ -49,4 +49,4 @@ echo "</br> </br> <a href='frmLogin.php'> Página de Login </a>"
 
 A cada nova página que se deseja acessar ou definir uma variável na sessão, inicialmente é necessário iniciá-la, através da função `session_start()`. A última linha do código supracitado redireciona o usuário para a página do formulário de login. 
 
-O projeto completo para download pode ser baixado aqui. 
+O projeto completo para download pode ser baixado [aqui](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/sessao/projeto1). 
