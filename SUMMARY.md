@@ -66,8 +66,7 @@
   * [Método POST](php/formularios/metodo-post.md)
   * [Validação de Formularios](/php/formularios/validacao-form.md)  
 * [Sessão](/php/sessao/README.md)  
- 
-* [API REST](backend/README.md)
+ * [API REST](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
     * [Acesso a Bancos de Dados](backend/banco-de-dados.md)
