@@ -3,3 +3,12 @@ Sessão permite que dados sejam armazenados em variáveis que possam ser usadas 
 
 Para iniciar uma seção, basta usar a função `session_start()`. Uma vez iniciada a sessão, é possível adicionar variáveis ao array global `$_SESSION`. Este *array* que contém todas as variáveis definidas na sessão de um usuário. 
 
+Para exemplificar a utilização da sessão, desenvolveremos um projeto simples para exemplificar uma situação de login em um sistema. Por isso, inicialmente será criada uma página `frmLogin.php`, que conterá um formulário com campos para que o usuário informe o login e senha, de acordo com trecho de código mostrado a seguir:
+
+```html
+<form name="frmLogin" method="POST" action="login.php">
+    <input type="tex]" name="textLogin"> </br>
+    <input type="password" name="txtSenha" value=""> </br>
+    <input type="submit" name="btnLogin" value="Login" >
+</form>
+`` 
