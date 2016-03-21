@@ -2,7 +2,7 @@
 
 Esta seção apresenta mais conteúdo sobre a maneira de tratar rotas e definir controllers.
 
-### Roteamento dinâmicro
+### Roteamento dinâmico
 
 O roteamento dinâmico é um recurso que permite definir *parâmetros de rota*. O exemplo a seguir demonstra como criar uma rota para acessar um post de um blog com base no seu identificador:
 
