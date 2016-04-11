@@ -7,3 +7,10 @@ Uma vez que o banco de dados tenha sido criado, é possível fazer operações s
 Uma das maneiras de realizar as operações no banco de dados é diretamente através de instruções *SQL (Structured Query Language)*. Assim, define-se uma string contendo a instrução SQL com os respectivos parâmetros e logo em seguida executa-se esta instrução. 
 
 Para realizar inserção via PDO com instrução SQL, a seguinte sintaxe pode ser utilizada:
+
+```php
+$conn = //abrir conexão com o banco de dados
+$sql = //definir a instrução SQL utilizando a cláusula INSERT
+$conn->exec($sql);
+```
+
