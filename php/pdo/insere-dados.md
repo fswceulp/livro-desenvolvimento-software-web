@@ -66,7 +66,7 @@ $coluna1=5;
 $stmt->execute();
 ```
 
-
+No código apresentado acima, é possível observar que uma mesma instrução SQL foi executada duas vezes, através da chamada ao método execute. Em cada execução, foi passado por parâmetro um valor diferente para o campo `“:coluna1”`, `4` e `5`. O método bindParam, que define o valor para o respectivo parâmetro, recebe a referência da variável, por isso que é possível apenas alterar o valor da variável passada por parâmetro, neste caso $coluna1 e executar novamente a instrução SQL, através do método execute() do objeto PDOStatement. 
 
 
 
