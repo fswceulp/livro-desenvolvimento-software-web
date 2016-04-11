@@ -17,3 +17,4 @@ foreach ($objPDOStatement as $linha):
    $linha["nome_da_coluna"]
 ```
 
+Pode-se percorrer os valores do objeto `PDOStatement` linha-a-linha e acessar os valores de cada coluna através de uma chave, que é equivalente ao nome da coluna definido no banco de dados.
