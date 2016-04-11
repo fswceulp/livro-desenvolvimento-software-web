@@ -14,3 +14,4 @@ $sql = //definir a instrução SQL utilizando a cláusula INSERT
 $conn->exec($sql);
 ```
 
+De acordo com o código apresentado anteriormente, primeiramente estabelece-se uma conexão com o banco de dados, logo em seguida pode ser definida uma instrução SQL que irá inserir um conjunto de dados em uma específica tabela e, por fim, basta executar a referida consulta a partir do método `exec`. O método `exec` retorna o número de linhas afetadas com a instrução SQL. Com o método `exec` é possível também executar instruções de **UPDATE** e **DELETE**, mas **não SELECT**(recuperação de dados - seção [Seleção de dados](recupera-dados.md)). 
