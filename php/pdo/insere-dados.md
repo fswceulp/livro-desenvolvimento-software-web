@@ -21,3 +21,33 @@ De acordo com o código apresentado anteriormente, primeiramente estabelece-se u
 Outra alternativa para realizar operações de inserções é utilizar uma instância de `PDOStatement`,  que permite a criação de sentenças que possibilita a mesma (ou uma similar) instrução SQL ser executada várias vezes. 
 
 Com o uso de um objeto `PDOStatement`, uma instrução SQL pode ter zero ou mais parâmetros que podem ser definidos de duas maneira distintas: através do seu próprio nome `“:nome_do_parâmetro”` ou através do caracter `“?”`. Os valores reais dos parâmetros são substituídos quando a instrução SQL é executada. 
+
+**Sintáxe com parâmetros nomeados**
+```php
+$conn = //abrir conexão com o banco de dados
+$sql = "INSERT INTO `nome_da_tabela`(`coluna1`, `coluna2`)
+            VALUES (:coluna1, :coluna2)";
+$stmt = $conn->prepare($sql);
+$valor1=// valor da coluna 1
+$valor2=// valor da coluna 2
+$stmt->bindParam(":coluna1",$valor1);
+$stmt->bindParam(":coluna2",$valor2);
+$stmt->execute();
+```
+**Sintáxe com parâmetros definidos pela `“?”**`
+
+```php
+$conn = //abrir conexão com o banco de dados
+$sql = "INSERT INTO `nome_da_tabela`(`coluna1`, `coluna2`)
+            VALUES (?, ?)";
+$stmt = $conn->prepare($sql);
+$valor1=// valor da coluna 1
+$valor2=// valor da coluna 2
+$stmt->bindParam(1,$valor1);
+$stmt->bindParam(2,$valor2);
+$stmt->execute();
+```
+
+
+
+
