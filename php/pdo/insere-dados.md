@@ -48,6 +48,11 @@ $stmt->bindParam(2,$valor2);
 $stmt->execute();
 ```
 
+##Executando várias instruções com um mesmo objeto `PDOStatement`
+
+Conforme mencionado anteriormente, um mesma instância de um objeto `PDOStatement` permite executar várias instruções SQL, conforme mostrado a seguir: 
+
+
 
 
 
