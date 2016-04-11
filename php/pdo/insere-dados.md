@@ -52,6 +52,20 @@ $stmt->execute();
 
 Conforme mencionado anteriormente, um mesma instância de um objeto `PDOStatement` permite executar várias instruções SQL, conforme mostrado a seguir: 
 
+```php
+$conn = //abrir conexão com o banco de dados
+$sql = "INSERT INTO `nome_da_tabela`(`coluna1`)
+            VALUES (:coluna1)";
+$stmt= $conn->prepare($sql);
+$stmt->bindParam(":coluna1",$coluna1);
+
+$coluna1=4;
+$stmt->execute();
+
+$coluna1=5;
+$stmt->execute();
+```
+
 
 
 
