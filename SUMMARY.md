@@ -67,6 +67,7 @@
       * [Validação de Formularios](/php/formularios/validacao-form.md)  
     * [Sessão](/php/sessao/README.md)  
     * [Acesso a Banco de dados via PDO](/php/pdo/README.md)  
+      * [Conexão via PDO](/php/pdo/conexao.md)  
 * [API REST](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
