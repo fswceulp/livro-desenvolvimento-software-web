@@ -12,3 +12,8 @@ De maneira similar a inserção, inicialmente deve-se estabelecer uma conexão c
 
 Para ter acesso aos valores retornados no objeto `PDOStatement`, a seguinte sintaxe pode ser utilizada:
 
+```php
+foreach ($objPDOStatement as $linha):
+   $linha["nome_da_coluna"]
+```
+
