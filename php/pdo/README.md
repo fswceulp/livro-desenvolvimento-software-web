@@ -11,7 +11,7 @@
 ##Exemplos de projetos com PDO
 Esta seção trará alguns exemplos de projetos com o PDO, tais como, projetos que mostra na prática a conexão com um respectivo banco de dados, operações de inserção, consulta, exclusão e alteração. 
 
-###Projeto de Conexão com um banco de dados
+###Projeto 1: Conexão com um banco de dados
 
 Para que possa ser possível realizar a conexão com um determinado banco de dados, inicialmente faz-se necessária a sua criação. Portanto, **crie um banco de dados** intitulados `“db-facul”`, logo em seguida, c**rie uma classe** `Connection`, com um método `Open`, que terá a implementação do código que realiza a conexão com o respectivo banco. O código é mostrado a seguir:
 
