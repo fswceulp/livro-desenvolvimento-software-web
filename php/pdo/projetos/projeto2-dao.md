@@ -100,5 +100,7 @@ private  function retorno($objResult){
 }
 ```
 
+O método `retorno` está preparado também para o caso do parâmetro passado para ela ser um `array`, que deverá ser percorrido e **mapeado para um array de objetos** `Aluno`. 
+
 
 
