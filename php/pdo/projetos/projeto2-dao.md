@@ -65,6 +65,17 @@ public static function add2($aluno){
 
 **Passo 6:** para exemplificar as operações *Retrieve*, na classe `AlunoDAO` devem ser implementados **dois** métodos: o `getById`, que recebe um `id` por parâmetro e retorna um objeto do tipo `Aluno`; e o `getAll`, que retorna todos os alunos cadastros (um `array` de alunos). 
 
+**Exemplo 1 para o método `getById`**
+```php
+public static function getById($idAluno){
+    $conn = Connection::Open();
+    $sql = "SELECT *FROM Alunos Where id=".$idAluno;
+    $objPDOStatement = $conn->query($sql);        
+    return AlunoDAO::retorno($objPDOStatement)[0];
+}
+```
+
+
 
 
 
