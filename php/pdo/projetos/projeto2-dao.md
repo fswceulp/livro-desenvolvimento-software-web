@@ -24,3 +24,5 @@ class Aluno
     // faça também o construtor
 ?>
 ```
+
+**Passo 4:** na pasta `classes`, crie a classe `AlunoDAO`. Esta classe conterá todas as operações de acesso a dados, as operações ***CRUD (Create-Retrieve-Update-Delete)***
