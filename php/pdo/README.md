@@ -44,10 +44,11 @@ Com a definição desta classe em seu projeto, sempre que necessário é possív
 A implementação deste projeto, inclusive, com o projeto de banco de dados desenvolvimento na ferramenta MYSQL WorkBench pode ser encontrado [aqui](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/pdo/projetos/conexao-db). 
 
 ###Projeto 2: operações DAO (`Data Access Object`) com 1 tabela
-No banco `db-facul`, crie a tabela `Aluno`, conforme figura apresentada a seguir:
+**Passo 1: **No banco `db-facul`, crie a tabela `Aluno`, conforme figura apresentada a seguir:
 
 ![Tabela `Alunos`](https://github.com/jacksongomesbr/livro-web-codigo-fonte/blob/master/php/pdo/projetos/projeto2-DAO/db-facul-MoldeloER.png?raw=true)
 
+**Passo 2:** agora crie uma pasta `classes` e dentro dela uma classe `Connection`, com um método estático `Open`, que retorna a conexão com o banco **db-facul**. 
 
 
 
