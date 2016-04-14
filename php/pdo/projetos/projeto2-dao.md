@@ -44,22 +44,25 @@ public static function add($aluno){
 ```
 
 **Exemplo 2 para o método `add`**
-
 ```php
 public static function add2($aluno){
-    $conn = Connection::Open();
-    $sql = "INSERT INTO `alunos`(`turma`, `nome`,`nota1`,
-                      `nota2`, `situacao`,`media`, `frequencia`)
-                VALUES (:turma, :nome, :nota1,
-                      :nota2, :situacao, :media, :frequencia)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(":turma",$aluno->Turma);
-    $stmt->bindParam(":nome",$aluno->Nome);
-    $stmt->bindParam(":nota1",$aluno->Nota1);
-    $stmt->bindParam(":nota2",$aluno->Nota2);
-    $stmt->bindParam(":situacao",$aluno->Situacao);
-    $stmt->bindParam(":media",$aluno->Media);
-    $stmt->bindParam(":frequencia",$aluno->Frequencia);
-    $stmt->execute();
-}
-`` 
+        $conn = Connection::Open();
+        $sql = "INSERT INTO `alunos`(`turma`, `nome`,`nota1`,
+                          `nota2`, `situacao`,`media`, `frequencia`)
+                    VALUES (:turma, :nome, :nota1,
+                          :nota2, :situacao, :media, :frequencia)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":turma",$aluno->Turma);
+        $stmt->bindParam(":nome",$aluno->Nome);
+        $stmt->bindParam(":nota1",$aluno->Nota1);
+        $stmt->bindParam(":nota2",$aluno->Nota2);
+        $stmt->bindParam(":situacao",$aluno->Situacao);
+        $stmt->bindParam(":media",$aluno->Media);
+        $stmt->bindParam(":frequencia",$aluno->Frequencia);
+        $stmt->execute();
+    }
+```
+
+fdsfd
+ffds
+
