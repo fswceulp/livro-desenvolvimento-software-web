@@ -63,6 +63,8 @@ public static function add2($aluno){
     }
 ```
 
-**Passo 6:** 
+**Passo 6:** para exemplificar as operações *Retrieve*, na classe `AlunoDAO` devem ser implementados **dois** métodos: o `getById`, que recebe um `id` por parâmetro e retorna um objeto do tipo `Aluno`; e o `getAll`, que retorna todos os alunos cadastros (um `array` de alunos). 
+
+
 
 
