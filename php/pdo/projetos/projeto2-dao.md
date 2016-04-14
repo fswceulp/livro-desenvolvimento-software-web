@@ -27,4 +27,4 @@ class Aluno
 
 **Passo 4:** na pasta `classes`, crie a classe `AlunoDAO`. Esta classe conterá todas as operações de acesso a dados, as operações ***CRUD (Create-Retrieve-Update-Delete)***
 
-**Passo 5:**  agora, considerando os conceitos que foram apresentados na seção [Acesso a Banco de dados via PDO](../README.MD) , pode ser realizada a implementação do método add, que recebe por parâmetro um objeto Aluno e o adiciona no banco de dados. 
+**Passo 5:**  agora, considerando os conceitos que foram apresentados na seção [Acesso a Banco de dados via PDO](../README.md) , pode ser realizada a implementação do método add, que recebe por parâmetro um objeto Aluno e o adiciona no banco de dados. 
