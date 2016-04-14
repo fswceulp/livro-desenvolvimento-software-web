@@ -1,4 +1,4 @@
-#Projeto 2: operações DAO (`Data Access Object`) com 1 tabela
+#PROJETO 2: operações DAO (`Data Access Object`) com 1 tabela
 **Passo 1: **No banco `db-facul`, crie a tabela `Aluno`, conforme figura apresentada a seguir:
 
 ![Tabela `Alunos`](https://github.com/jacksongomesbr/livro-web-codigo-fonte/blob/master/php/pdo/projetos/projeto2-DAO/db-facul-MoldeloER.png?raw=true)
