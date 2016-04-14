@@ -27,4 +27,39 @@ class Aluno
 
 **Passo 4:** na pasta `classes`, crie a classe `AlunoDAO`. Esta classe conterá todas as operações de acesso a dados, as operações ***CRUD (Create-Retrieve-Update-Delete)***
 
-**Passo 5:**  agora, considerando os conceitos que foram apresentados na seção [Acesso a Banco de dados via PDO](../README.md) , pode ser realizada a implementação do método add, que recebe por parâmetro um objeto Aluno e o adiciona no banco de dados. 
+**Passo 5:**  agora, considerando os conceitos que foram apresentados na seção [Acesso a Banco de dados via PDO](../README.md) , pode ser realizada a implementação do método add, que recebe por parâmetro um objeto Aluno e o adiciona no banco de dados.
+
+**Exemplo 1 para o método `add`**
+```php
+public static function add($aluno){
+    $conn = Connection::Open();
+    $sql = "INSERT INTO `alunos`(`turma`, `nome`,`nota1`,
+              `nota2`, `situacao`,`media`, `frequencia`)
+           VALUES ('$aluno->Turma', '$aluno->Nome',
+                   $aluno->Nota1,$aluno->Nota2,  '$aluno->Situacao',
+                   $aluno->Media, $aluno->Frequencia)";
+    $conn->exec($sql);
+   return $conn->lastInsertId();
+}
+```
+
+**Exemplo 2 para o método `add`**
+
+```php
+public static function add2($aluno){
+    $conn = Connection::Open();
+    $sql = "INSERT INTO `alunos`(`turma`, `nome`,`nota1`,
+                      `nota2`, `situacao`,`media`, `frequencia`)
+                VALUES (:turma, :nome, :nota1,
+                      :nota2, :situacao, :media, :frequencia)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":turma",$aluno->Turma);
+    $stmt->bindParam(":nome",$aluno->Nome);
+    $stmt->bindParam(":nota1",$aluno->Nota1);
+    $stmt->bindParam(":nota2",$aluno->Nota2);
+    $stmt->bindParam(":situacao",$aluno->Situacao);
+    $stmt->bindParam(":media",$aluno->Media);
+    $stmt->bindParam(":frequencia",$aluno->Frequencia);
+    $stmt->execute();
+}
+`` 
