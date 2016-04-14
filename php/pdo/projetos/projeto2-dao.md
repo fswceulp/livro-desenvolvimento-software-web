@@ -63,6 +63,5 @@ public static function add2($aluno){
     }
 ```
 
-fdsfd
-ffds
+
 
