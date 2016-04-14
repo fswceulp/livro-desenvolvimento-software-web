@@ -74,8 +74,31 @@ public static function getById($idAluno){
     return AlunoDAO::retorno($objPDOStatement)[0];
 }
 ```
+Após executar a consulta SQL, através do método `query`, é retornado um objeto `PDOStatement`. O objeto `PDOStatement` deve ser **mapeado** para um objeto `Aluno` . Este mapeamento é realizado através do método estático e privado nomeado `retorno`. A implementação deste método é mostrada a seguir:
 
-
+```php
+private  function retorno($objResult){
+    $alunos = array();
+    if ($objResult instanceof PDOStatement)
+    {
+        if ($objResult->rowCount()==0)
+            return null;
+        else{
+            foreach ($objResult as $linha) {
+                $aluno = AlunoDAO::fillObject($linha);
+                array_push($alunos, $aluno);
+              }
+         }
+    }else
+        if (is_array($objResult)){
+            for ($i=0; $i< count($objResult); $i++){
+                $aluno = AlunoDAO::fillObject($objResult[0]);
+                array_push($alunos, $aluno);
+            }
+        }
+    return $alunos;
+}
+```
 
 
 
