@@ -8,6 +8,8 @@
 * [Alteração de dados](altera-dados.md)
 * [Exclusão de dados](exclui-dados.md)
 
+Alguns exemplos de projetos com uso de PDO são mostrados [aqui](projetos/README.md);
+
 
 
 
