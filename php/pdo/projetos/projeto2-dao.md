@@ -95,7 +95,7 @@ private  function retorno($objResult){
     }else
         if (is_array($objResult)){
             for ($i=0; $i< count($objResult); $i++){
-                $aluno = AlunoDAO::fillObject($objResult[0]);
+                $aluno = AlunoDAO::fillObject($objResult[$i]);
                 array_push($alunos, $aluno);
             }
         }
