@@ -132,7 +132,7 @@ O uso desta sintáxe permite que o mapeamento do retorno para um objeto de uma d
       $retorno = $stmt->fetchAll(PDO::FETCH_CLASS, "Aluno");
       return $retorno[0];
 }
-`` 
+```
 
 De acordo com o código acima, a constante `PDO::FETCH_CLASS` e o nome da classe `Aluno` foram passados por parâmetro para o método `fetchAll`, assim o resultado após a execução da instrução SQL será mapeado para um objeto `Aluno`. 
 
@@ -140,6 +140,15 @@ De acordo com o código acima, a constante `PDO::FETCH_CLASS` e o nome da classe
 
 Passo 7:  para exemplificar a operação de *Update*, na classe `AlunoDAO` deve ser implementado um método `update`, que recebe um *objeto aluno* por parâmetro, localiza-o no banco a partir do seu identificador (`id`), e só então é realizada a operação de alteração.  
 
+```php
+    public static function update ($aluno){
+        $conn = Connection::Open();
+        $sql = "UPDATE `alunos` SET `nome`='$aluno->Nome',`turma`='$aluno->Turma',
+              `nota1`=$aluno->Nota1,`nota2`=$aluno->Nota2,`situacao`='$aluno->Situacao',
+              `media`=$aluno->Media,`frequencia`=$aluno->Frequencia WHERE `id`=$aluno->Id";
+        return $conn->exec($sql);
+    }
+```
 
-
+##Operações *Delete*
 
