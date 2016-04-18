@@ -136,3 +136,7 @@ O uso desta sintáxe permite que o mapeamento do retorno para um objeto de uma d
 
 De acordo com o código acima, a constante `PDO::FETCH_CLASS` e o nome da classe `Aluno` foram passados por parâmetro para o método `fetchAll`, assim o resultado após a execução da instrução SQL será mapeado para um objeto `Aluno`. 
 
+##Operações *Update*
+
+
+
