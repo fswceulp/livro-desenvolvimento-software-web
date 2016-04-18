@@ -74,6 +74,7 @@
       * [Exclusão de dados](php/pdo/exclui-dados.md)
       * [Exemplos de projetos com PDO](php/pdo/projetos/README.md)
         * [PROJETO 1: Conexão com o banco de dados](php/pdo/projetos/projeto1-conexao.md)
+        * [PROJETO 2: operações DAO (`Data Access Object`) com 1 tabela](php/pdo/projeto2-dao.md)
 * [API REST](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
