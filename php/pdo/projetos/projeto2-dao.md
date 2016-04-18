@@ -161,3 +161,5 @@ Passo 7:  para exemplificar a operação de *Update*, na classe `AlunoDAO` deve 
         return $conn->exec($sql);
     }
 ```
+
+Para fazer download do projeto completo, clique [aqui](https://github.com/jacksongomesbr/livro-web-codigo-fonte/tree/master/php/pdo/projetos/projeto1-dao).
