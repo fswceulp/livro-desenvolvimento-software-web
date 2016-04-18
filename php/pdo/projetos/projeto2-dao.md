@@ -27,6 +27,8 @@ class Aluno
 
 **Passo 4:** na pasta `classes`, crie a classe `AlunoDAO`. Esta classe conterá todas as operações de acesso a dados, as operações ***CRUD (Create-Retrieve-Update-Delete)***
 
+##Operações *Create*
+
 **Passo 5:**  agora, considerando os conceitos que foram apresentados na seção [Acesso a Banco de dados via PDO](../README.md) , pode ser realizada a implementação do método **add**(*Create*), que recebe por parâmetro um objeto Aluno e o adiciona no banco de dados.
 
 **Exemplo 1 para o método `add`**
@@ -62,6 +64,7 @@ public static function add2($aluno){
         $stmt->execute();
     }
 ```
+##Operações *Retrieve*
 
 **Passo 6:** para exemplificar as operações *Retrieve*, na classe `AlunoDAO` devem ser implementados **dois** métodos: o `getById`, que recebe um `id` por parâmetro e retorna um objeto do tipo `Aluno`; e o `getAll`, que retorna todos os alunos cadastros (um `array` de alunos). 
 
