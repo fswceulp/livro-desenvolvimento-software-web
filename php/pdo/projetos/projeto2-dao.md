@@ -119,6 +119,17 @@ O método `retorno` está preparado também para o caso do parâmetro passado pa
 }
 ```
 
+O uso desta sintáxe permite que o mapeamento do retorno para um objeto de uma determinada classe possa ser realizado a partir do método `fetchAll`, através `PDO::FETCH_CLASS`. O uso deste argumento para o método `fetchAll` mapeia o resultado para um *array* de instâncias de uma classe, nomeando cada uma das propriedades da classe de acordo com os nomes das colunas do resultado (nomes das colunas da tabela definida no banco de dados). O uso desta sintaxe evitaria o uso do método retorno mostrado anteriormente. 
 
-
+```php
+  public static function getById2($idAluno){
+      $conn = Connection::Open();
+      $sql = "SELECT *FROM Alunos Where id= ?";
+      $stmt= $conn->prepare($sql);
+      $stmt->bindParam(1, $idAluno);
+      $stmt->execute();
+      $retorno = $stmt->fetchAll(PDO::FETCH_CLASS, "Aluno");
+      return $retorno[0];
+}
+`` 
 
