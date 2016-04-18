@@ -105,5 +105,20 @@ private  function retorno($objResult){
 
 O método `retorno` está preparado também para o caso do parâmetro passado para ela ser um `array`, que deverá ser percorrido e **mapeado para um array de objetos** `Aluno`. 
 
+**Exemplo 2 para o método getById**
+
+```php
+  public static function getById($idAluno){
+      $conn = Connection::Open();
+      $sql = "SELECT *FROM Alunos Where id= ?";
+      $stmt= $conn->prepare($sql);
+      $stmt->bindParam(1, $idAluno);
+      $stmt->execute();
+      $result = $stmt->fetchAll();
+      return AlunoDAO::retorno($result)[0];
+}
+```
+
+
 
 
