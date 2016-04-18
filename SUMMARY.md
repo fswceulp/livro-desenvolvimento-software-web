@@ -73,6 +73,7 @@
       * [Alteração de dados](php/pdo/altera-dados.md)
       * [Exclusão de dados](php/pdo/exclui-dados.md)
       * [Exemplos de projetos com PDO](php/pdo/projetos/README.md)
+        *[Projeto 1](php/pdo/projetos/projeto1-dao/)
 * [API REST](backend/README.md)
     * [Roteamento](backend/roteamento.md)
     * [Request](backend/request.md)
