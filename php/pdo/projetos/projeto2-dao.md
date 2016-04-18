@@ -138,7 +138,7 @@ De acordo com o código acima, a constante `PDO::FETCH_CLASS` e o nome da classe
 
 ##Operações *Update*
 
-Passo 7:  para exemplificar a operação de *Update*, na classe `AlunoDAO` deve ser implementado um método `update`, que recebe um *objeto aluno* por parâmetro, localiza-o no banco a partir do seu identificador (`id`), e só então é realizada a operação de alteração.  
+**Passo 7: ** para exemplificar a operação de *Update*, na classe `AlunoDAO` deve ser implementado um método `update`, que recebe um *objeto aluno* por parâmetro, localiza-o no banco a partir do seu identificador (`id`), e só então é realizada a operação de alteração.  
 
 ```php
     public static function update ($aluno){
