@@ -152,3 +152,12 @@ Passo 7:  para exemplificar a operação de *Update*, na classe `AlunoDAO` deve 
 
 ##Operações *Delete*
 
+**Passo 8: ** por fim, para exemplificar a operação de *Delete*, na classe `AlunoDAO` deve ser implementado um método *delete*, que recebe por parâmetro o `id` do aluno a ser removido. 
+
+```php
+    public static function delete($idAluno){
+        $conn = Connection::Open();
+        $sql = "DELETE FROM `alunos` WHERE id=".$idAluno;
+        return $conn->exec($sql);
+    }
+```
