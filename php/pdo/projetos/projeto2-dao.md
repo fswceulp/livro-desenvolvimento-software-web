@@ -105,6 +105,23 @@ private  function retorno($objResult){
 
 O método `retorno` está preparado também para o caso do parâmetro passado para ela ser um `array`, que deverá ser percorrido e **mapeado para um array de objetos** `Aluno`. 
 
+O método `fillObject` recebe por parâmetro os valores correspondentes ao retorno de uma determinada consulta SQL e mapeia para um objeto `Aluno`, conforme código apresentado a seguir:
+```php
+    private static function fillObject($obj){
+        $aluno = new Aluno();
+        $aluno->Id = $obj["id"];
+        $aluno->Nome=$obj["nome"];
+        $aluno->Turma=$obj["turma"];
+        $aluno->Nota1=$obj["nota1"];
+        $aluno->Nota2=$obj["nota2"];
+        $aluno->Media=$obj["media"];
+        $aluno->Frequencia=$obj["frequencia"];
+        $aluno->Situacao=$obj["situacao"];
+        return $aluno;
+    }
+```
+
+
 **Exemplo 2 para o método getById**
 
 ```php
