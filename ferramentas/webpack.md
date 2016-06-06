@@ -25,7 +25,7 @@ Outras seções são importantes, mas opcionais:
 
 O código a seguir apresenta um arquivo `webpack.config.js` completo. Vários componentes adicionais (opcionais) são utilizados:
 * `path`: utilizado no tratamento e localização de nomes de diretórios
-* `html-webpack-plugin`: utilizado para manipular código HTML e gerar importações necessárias para os arquivos de saída
+* `html-webpack-plugin`: utilizado para manipular código HTML e gerar conteúdo necessário para incorporar os arquivos de saída (ex: tag <script>)
 * `ng-annotate-webpack-plugin`: utilizado em conjunto com o AngularJS, para processamento dos nomes das dependências em módulos e controllers
 
 ```javascript
