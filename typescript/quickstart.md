@@ -132,8 +132,8 @@ Verifique a comparação com o arquivo _index.js_.
 
 <table>
 <tr>
-<td>_index.ts_</td>
-<td>_index.js_</td>
+<td>index.ts</td>
+<td>index.js</td>
 </tr>
 <tr>
 <td>
