@@ -122,6 +122,7 @@ function mensagem(nome: string) {
 var pessoa:string = "Maria";
 console.log(mensagem(pessoa));
 ```
+
 O código adiciona duas modificações importantes:
 
 1. A variável `pessoa` é do tipo `string`. A sintaxe `nome:tipo` é típica do TypeScript para indicar esse tipo de informação.
@@ -174,3 +175,112 @@ A variável `pessoa` tem o tipo `number` (representa um valor numérico). Segund
 
 Tanto o editor quanto o painel TypeScript apresentam indicações do erro.
 
+![](/typescript/phpstorm-typescript-compilador-erros-2.png)
+
+Isso é muito interessante do ponto-de-vista do desenvolvedor, principalmente para grandes projetos.
+
+Os próximos dois projetos apresentarão recursos voltados para a programação orientada a objetos.
+
+## Hello World, Interfaces!
+
+Interfaces são um recurso muito importante em linguagens fortemente tipadas, como Java e C#. Com TypeScript não é diferente, pois esse recurso também está disponível. Modifique o arquivo index.ts para o seguinte.
+
+```
+interface Pessoa {
+ primeiroNome: string;
+ ultimoNome: string;
+}
+
+function mensagem(pessoa: Pessoa) {
+ return "Olá, " + pessoa.primeiroNome + " " + pessoa.ultimoNome + "! Seja bem-vindo(a)!";
+}
+
+var pessoa:Pessoa = {
+ primeiroNome: "José",
+ ultimoNome: "Silva"
+}
+
+console.log(mensagem(pessoa));
+```
+
+Vamos por partes. Primeiro, a definição da interface Pessoa.
+
+```
+interface Pessoa {
+ primeiroNome: string;
+ ultimoNome: string;
+}
+```
+
+A sintaxe é interface `Nome { lista de atributos e métodos }`. Neste caso, o código define a interface `Pessoa`, que tem os atributos `primeiroNome` (do tipo `string`) e `ultimoNome` (também `string`).
+
+Geralmente, as linguagens de programação mais conhecidas requerem que o código crie uma classe para implementar a interface. Com TypeScript isso não é necessário.
+
+```
+var pessoa:Pessoa = {
+ primeiroNome: "José",
+ ultimoNome: "Silva"
+}
+```
+
+O código cria a variável `pessoa`, do tipo `Pessoa`. O valor atribuído a ela representa uma "estrutura" que combina com a definição da interface `Pessoa`. Isso é tudo. Não é necessário criar uma classe que implementa a interface para criar uma instância de objeto com a sua estrutura.
+
+Agora é sua vez de brincar um pouco. Veja o código do arquivo _index.js_. O que mudou? Perceba como o PHPStorm ajuda na completação de código. Gere erros no código para ver o resultado da compilação.
+
+## Hello World, agora com classe!
+Juntamente com o recurso de interfaces, a utilização de classes em programação orientada a objetos permite a definição de uma estrutura de dados. A seguir, o código do arquivo _index.ts_.
+
+```
+interface Pessoa {
+ primeiroNome: string;
+ ultimoNome: string;
+}
+
+class Aluno {
+ nome: string;
+ constructor(public primeiroNome:string, public ultimoNome:string) {
+ this.nome = primeiroNome + " " + ultimoNome;
+ }
+}
+
+function mensagem(pessoa: Pessoa) {
+ return "Olá, " + pessoa.primeiroNome + " " + pessoa.ultimoNome + "! Seja bem-vindo(a)!";
+}
+
+var pessoa = new Aluno("José", "Silva");
+
+console.log(mensagem(pessoa));
+```
+
+Mais uma vez, vamos por partes. Primeiro, a definição da classe.
+
+```
+class Aluno {
+ nome: string;
+ constructor(public primeiroNome:string, public ultimoNome:string) {
+ this.nome = primeiroNome + " " + ultimoNome;
+ }
+}
+```
+
+A sintaxe é `class Nome { definições }`. Neste caso, ocorre o seguinte:
+*  A classe `Aluno` possui o atributo `nome`, do tipo `string`;
+* O construtor da classe (definido pela função `constructor() `– perceba que não é utilizada a palavra `function`) aceita dois parâmetros: `primeiroNome`, do tipo `string`, e `ultimoNome`, também `string`.
+
+Os parâmetros do construtor da classe `Aluno` também são marcados com `public`. Isso quer dizer que o código está utilizando um recurso da linguagem que cria, automaticamente, atributos públicos conforme esses parâmetros do construtor.
+
+Agora... veja o que aconteceu com o arquivo _index.js_. Certamente, o código demonstra o emprego de um esforço maior para conseguir o mesmo recurso.
+
+A variável pessoa recebe uma instância (objeto) de Aluno. Na sequência, algo chama a atenção. A definição da função mensagem() indica que ela continua aceitando um parâmetro do tipo Pessoa. Entretanto, a chamada da função indica que está sendo passado um valor do tipo Aluno. O que chama a atenção é que a compilação não indicou erros. O que acontece?
+
+Estruturas de dados representadas por interfaces, classes e objetos têm uma relação bem próxima. O TypeScript interpreta, na verdade, a correspondência da estrutura do valor. Como a estrutura da variável pessoa (que é do tipo Aluno) combina com a estrutura do parâmetro pessoa da função mensagem() (que é do tipo Pessoa), não há erro. Aqui, “combinar” significa: ambos os tipos de dados contêm os atributos primeiroNome e ultimoNome (com seus tipos de dados correspondentes).
+
+Esse é o mesmo recurso que torna válido o código a seguir.
+
+```
+var pessoa = { primeiroNome: "José", ultimoNome: "Silva" };
+```
+
+O objeto atributo à variável pessoa contém a estrutura esperada para combinar com o tipo do parâmetro da função mensagem().
+
+Isso conclui o Quickstart.
