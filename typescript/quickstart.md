@@ -10,21 +10,21 @@ Um projeto básico, do tipo "hello world", pode ser criado no PHPStorm seguindo 
 
 Por meio do menu _File -&gt; New Project_ crie um novo projeto. Na janela _New Project_ escolha o tipo de projeto _PHP Empty Project_ e informe onde os arquivos serão armazenados.
 
-![](/typescript/phpstorm-new-project.png)
+![Janela New Project](phpstorm-new-project.png)
 
 ### Configurar o suporte para o TypeScript
 
-Por meio do menu _File -&gt; Default Settings_ \(para configurar apenas o projeto atual use apenas _Settings_\) na página _Languages & Frameworks -&gt; TypeScript_ informe a localização do NodeJS e marque as opções _Enable TypeScript Compiler_ e _Track changes_. Por fim, escolha a opção _Use tsconfig.json_.    
+Por meio do menu _File -&gt; Default Settings_ (para configurar apenas o projeto atual use apenas _Settings_) na página _Languages & Frameworks -&gt; TypeScript_ informe a localização do NodeJS e marque as opções _Enable TypeScript Compiler_ e _Track changes_. Por fim, escolha a opção _Use tsconfig.json_.    
 
-![](/typescript/phpstorm-default-settings.png)
+![](phpstorm-default-settings.png)
 
-Após fazer essa configuração para o modo padrão \(_Default settings_\) você não precisará fazer isso novamente para **novos** projetos.
+Após fazer essa configuração para o modo padrão (_Default settings_) você não precisará fazer isso novamente para **novos** projetos.
 
 ### Hora do código
 
 Crie o arquivo _index.ts_ com o conteúdo a seguir.
 
-```
+```typescript
 function mensagem(nome) {
     return "Olá, " + nome + "! Seja bem-vindo(a)!";
 }
@@ -36,11 +36,11 @@ Se você já conhece JavaScript certamente está pensando: mas... isso é JavaSc
 
 ### Execute o código
 
-Por meio do PHPStorm é possível executar código TypeScript usando o NodeJS. Você também pode usar o formato padrão de incorporar o código em uma página HTML e executá-lo no browser. Entretanto, um procedimento anterior precisa ser feito. O NodeJS e o browser não entendem TypeScript. Assim, será necessário usar o processo conhecido como “transpiling” \(algo como “transpilar”\) para converter o código TypeScript para JavaScript.
+Por meio do PHPStorm é possível executar código TypeScript usando o NodeJS. Você também pode usar o formato padrão de incorporar o código em uma página HTML e executá-lo no browser. Entretanto, um procedimento anterior precisa ser feito. O NodeJS e o browser não entendem TypeScript. Assim, será necessário usar o processo conhecido como “transpiling” (algo como "transpilar") para traduzir o código TypeScript para JavaScript.
 
 Antes de escolher um modo de execução, é necessário configurar o PHPStorm.
 
-Crie o arquivo _tsconfig.json_. O PHPStorm já tem um template padrão. Basta usar o menu _File -&gt; New_ e escolher o template _tsconfig.js File_. O conteúdo desse arquivo será algo como o seguinte.
+Crie o arquivo _tsconfig.json_. O PHPStorm já tem um template padrão. Basta usar o menu _File $$\arrow$$ New_ e escolher o template _tsconfig.js File_. O conteúdo desse arquivo será algo como o seguinte.
 
 ```
 {
@@ -281,6 +281,6 @@ Esse é o mesmo recurso que torna válido o código a seguir.
 var pessoa = { primeiroNome: "José", ultimoNome: "Silva" };
 ```
 
-O objeto atributo à variável pessoa contém a estrutura esperada para combinar com o tipo do parâmetro da função mensagem().
+O objeto atributo à variável `pessoa` contém a estrutura esperada para combinar com o tipo do parâmetro da função `mensagem()`.
 
-Isso conclui o Quickstart.
+Isso conclui o **Quickstart**.
