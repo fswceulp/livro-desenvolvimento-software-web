@@ -157,5 +157,20 @@ console.log(mensagem(pessoa));
 </table>
 
 
+Como se poderia esperar, o código JavaScript continua idêntico, mesmo com a utilização de tipos de dados no arquivo TypeScript.
+Modifique o arquivo index.ts mais uma vez.
 
+```
+function mensagem(nome: string) {
+ return "Olá, " + nome + "! Seja bem-vindo(a)!";
+}
+var pessoa:number = 1;
+console.log(mensagem(pessoa));
+```
+
+Esse é um erro simplório, certamente. Mas demonstra recursos interessantes.
+
+A variável `pessoa` tem o tipo `number` (representa um valor numérico). Segundo, na chamada da função `mensagem()` há um erro: não se pode atribuir um valor do tipo `number` para um parâmetro do tipo `string`.
+
+Tanto o editor quanto o painel TypeScript apresentam indicações do erro.
 
