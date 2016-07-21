@@ -12,9 +12,9 @@ Por meio do menu _File -&gt; New Project_ crie um novo projeto. Na janela _New P
 
 ![](/typescript/phpstorm-new-project.png)
 
-### **Configurar o suporte para o TypeScript**
+### Configurar o suporte para o TypeScript
 
-Por meio do menu _File -&gt; Default Settings_ \(para configurar apenas o projeto atual use apenas _Settings_\) na página _Languages & Frameworks -&gt; TypeScript_ informe a localização do NodeJS e marque as opções _Enable TypeScript Compiler_ e _Track changes_. Por fim, escolha a opção _Use tsconfig.json_.
+Por meio do menu _File -&gt; Default Settings_ \(para configurar apenas o projeto atual use apenas _Settings_\) na página _Languages & Frameworks -&gt; TypeScript_ informe a localização do NodeJS e marque as opções _Enable TypeScript Compiler_ e _Track changes_. Por fim, escolha a opção _Use tsconfig.json_.    
 
 ![](/typescript/phpstorm-default-settings.png)
 
@@ -132,8 +132,8 @@ Verifique a comparação com o arquivo _index.js_.
 
 <table>
 <tr>
-<td>*index.ts*</td>
-<td>*index.js*</td>
+<td>_index.ts_</td>
+<td>_index.js_</td>
 </tr>
 <tr>
 <td>
