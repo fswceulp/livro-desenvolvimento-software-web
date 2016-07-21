@@ -4,11 +4,11 @@ Este capítulo permite um início rápido à utilização do TypeScript e a conf
 
 ## Projeto Hello World!
 
-Um projeto básico, do tipo ‘hello world’, pode ser criado no PHPStorm seguindo os seguintes passos.
+Um projeto básico, do tipo "hello world", pode ser criado no PHPStorm seguindo os seguintes passos.
 
 ### Criar o projeto
 
-Por meio do menu _File -&gt; New Project_ crie um novo projeto. Na janela _New Project_ escolha o tipo de projeto \_PHP Empty Project \_e informe onde os arquivos serão armazenados.
+Por meio do menu _File -&gt; New Project_ crie um novo projeto. Na janela _New Project_ escolha o tipo de projeto _PHP Empty Project_ e informe onde os arquivos serão armazenados.
 
 ![](/typescript/phpstorm-new-project.png)
 
