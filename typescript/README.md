@@ -25,6 +25,16 @@ Isso vai instalar dois programas:
 
 * **tsserver**: uma versão do compilador que também cria um servidor web
 
+Para compilar um arquivo TypeScript, basta executar `tsc programa.ts`. Isso vai criar o arquivo _programa.js_ (na mesma pasta onde está o arquivo _programa.ts_).
+
+Outro programa bastante útil, que permite executar código TypeScript diretamente no prompt de comando é o [ts-node](https://github.com/TypeStrong/ts-node). Para instalá-lo com npm, use:
+
+```
+npm install -g ts-node
+```
+
+Depois disso, basta executar `ts-node arquivo.ts`.
+
 ## IIFE
 
 IIFE é a sigla para _Immediately Invoked Function Expression_ (algo como expressão de função invocada imediatamente). Esse é um recurso geralmente em concepções _avançadas_ de programação JavaScript.
@@ -38,7 +48,7 @@ console.log(a); // imprime 8
 
 IIFE, portanto, é um recurso utilizado para representar uma expressão que é declada e, imediatamente, chamada como uma função.
 
-Acesse as seções deste capítulo:
+## Acesse as seções deste capítulo
 * [Quickstart](quickstart.md)
 * [Tipos de dados](tipos-de-dados.md)
 * [Declaração de variáveis](declaracao-de-variaveis.md)

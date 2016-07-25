@@ -94,7 +94,7 @@ Um comportamento bastante interessante do código é que a variável `ajax` é d
 
 ## Modificadores `public`, `private` e `protected`
 
-`public` por padrão
+### `public` por padrão
 
 Em algumas linguagens de programação orientadas a objetos o padrão para declaração de membros da classe é que sejam `private`. No caso do TypeScript, o padrão é que os membros são `public`.
 
