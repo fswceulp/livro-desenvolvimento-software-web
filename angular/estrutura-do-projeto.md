@@ -64,6 +64,7 @@ Veja mais informações sobre isso no capítulo do Webpack.
 ## Código-fonte do projeto
 
 O diretório `src` contém o código-fonte do projeto. Há "arquivos de configuração" do aplicativo ou que criam uma estrutura padrão para receber o módulo `AppModule`:
+
 * `src/index.html`
 * `src/main.ts`
 * `src/vendor.ts`
@@ -131,6 +132,7 @@ import 'rxjs';
 As importações são, praticamente, direcionadas para carregar os módulos do Angular no aplicativo.
 
 O diretório `app` contém a definição do módulo raiz, utilizado no aplicativo. O módulo possui quatro arquivos:
+
 * `src/app/app.module.ts`
 * `src/app/app.component.ts`
 * `src/app/app.component.html`
@@ -189,7 +191,7 @@ O seletor `my-app` instrui o Angular que deve procurar o elemento `my-app` no te
 
 A utilização da instrução `import` é bastante flexível. No caso de um arquivo `.css`, isso instrui o Webpack a inserir o arquivo em questão na lista de arquivos CSS que devem ser reunidos para gerar a versão de produção do aplicativo.
 
-## Arquivo `app.component.html` 
+## Arquivo `app.component.html`
 
 O arquivo `src/app/app.component.html` contém o template do módulo. Seu conteúdo:
 
@@ -198,5 +200,9 @@ O arquivo `src/app/app.component.html` contém o template do módulo. Seu conte�
 <ul>
  <li *ngFor="let evento of eventos">{{evento}}</li>
 </ul>
+```
+
+```php
+
 ```
 
