@@ -38,14 +38,14 @@ Os três principais diretórios são:
 
 O arquivo `package.json` contém as dependências do projeto. Há as dependências de desenvolvimento e as dependências de produção. Veja mais sobre isso no capítulo sobre o `npm`.
 
-As principais dependências são:
+Algumas dependências são:
 
 * De produção: angular, jquery, bootstrap
-* De desenvolvimento: webpack 
+* De desenvolvimento: webpack, webpack-dev-server, file-loader, css-loader
 
 ## Webpack
 
-A documentação do Angular utiliza **System.js** para compilação do código TypeScript em JavaScript. Entretanto, o software desenvolvido neste capítulo utiliza **Webpack**.
+A documentação do Angular utiliza **System.js** para compilação do código TypeScript em JavaScript. Entretanto, este capítulo utiliza **Webpack**.
 
 O arquivo `webpack.config.js` contém o código:
 
@@ -188,4 +188,15 @@ O código importa a anotator function `Component`, definida em `@angular/core`. 
 O seletor `my-app` instrui o Angular que deve procurar o elemento `my-app` no template do aplicativo e, dentro dele, modificar o DOM para inserir o conteúdo. Como já visto, este elemento está no arquivo `src/index.html`.
 
 A utilização da instrução `import` é bastante flexível. No caso de um arquivo `.css`, isso instrui o Webpack a inserir o arquivo em questão na lista de arquivos CSS que devem ser reunidos para gerar a versão de produção do aplicativo.
+
+## Arquivo `app.component.html` 
+
+O arquivo `src/app/app.component.html` contém o template do módulo. Seu conteúdo:
+
+```html
+<h1>Eventos do mês de {{mes}}</h1>
+<ul>
+ <li *ngFor="let evento of eventos">{{evento}}</li>
+</ul>
+```
 
