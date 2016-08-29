@@ -8,14 +8,14 @@ A figura a seguir apresenta as interações entre os principais componentes da a
 
 Os componentes dessa arquitetura são os seguintes e são detalhados nas seções em sequência:
 
-* Modules \(módulos\)
-* Components \(componentes\)
-* Templates \(templates\)
-* Metadata \(metadados\)
-* Data binding \(vinculação de dados\)
-* Directives \(diretivas\)
-* Services \(serviços\)
-* Dependency Injection \(injeção de dependência\)
+* **Modules** \(módulos\)
+* **Components **\(componentes\)
+* **Templates **\(templates\)
+* **Metadata **\(metadados\)
+* **Data binding** \(vinculação de dados\)
+* **Directives **\(diretivas\)
+* **Services **\(serviços\)
+* **Dependency Injection** \(injeção de dependência\)
 
 Os nomes dos componentes da arquitetura serão mantidos no original, em inglês.
 
@@ -288,3 +288,4 @@ Estes são os principais blocos de construção \(elementos\) da arquitetura do 
 * Dependency Injection
 
 Estes elementos formam a base tudo em um aplicativo Angular. Além deles, há recursos como animação, detecção de mudanças, eventos, formulários, XHR \(ajax\), elementos do ciclo de vida e roteamento.
+

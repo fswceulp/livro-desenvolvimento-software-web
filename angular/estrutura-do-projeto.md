@@ -202,7 +202,38 @@ O arquivo `src/app/app.component.html` contém o template do módulo. Seu conte�
 </ul>
 ```
 
-```php
+O template é informado nos metadados do componente \(trecho do arquivo `src/app/app.component.ts`\):
 
+```TypeScript
+import { Component } from '@angular/core';
+import '../../public/css/styles.css';
+@Component({
+ selector: 'my-app',
+ templateUrl: './app.component.html',
+ styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+...
+}
 ```
 
+O template apresenta o valor do atributo `mes `e utiliz a diretiva `ngFor` para apresentar uma lista de valores \(definidos no atributo `evento`, que é um array\).
+
+## Arquivo `app.component.css`
+
+O arquivo `src/app/app.component.css` contém as definições de estilos CSS para o componente `AppComponent`. Um recurso importante do Angular é dar um contexto para o CSS: o próprio componente. Isso significa que o conceito de modularização também funciona para os estilos CSS.
+
+O arquivo CSS é especificado nos metadados do componente (trecho do arquivo `src/app/app.component.ts`):
+
+```TypeScript
+import { Component } from '@angular/core';
+import '../../public/css/styles.css';
+@Component({
+ selector: 'my-app',
+ templateUrl: './app.component.html',
+ styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+...
+}
+```
