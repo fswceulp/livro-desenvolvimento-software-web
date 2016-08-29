@@ -61,6 +61,14 @@ Os arquivos da pasta `config` contém três arquivos de configuração do Webpac
 
 Veja mais informações sobre isso no capítulo do Webpack.
 
+## Diagrama
+
+A figura a seguir apresenta o diagrama do aplicativo.
+
+![](/angular/estrutura-projeto-1.png)
+
+A classe `AppModule` fornece o módulo, enquanto a classe `AppComponent` fornece o componente \(que usa os arquivos `app.component.css` e `app.component.html`\).
+
 ## Código-fonte do projeto
 
 O diretório `src` contém o código-fonte do projeto. Há "arquivos de configuração" do aplicativo ou que criam uma estrutura padrão para receber o módulo `AppModule`:
@@ -237,6 +245,4 @@ export class AppComponent {
 ...
 }
 ```
-
-
 
