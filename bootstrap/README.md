@@ -34,9 +34,29 @@ Os arquivos também pode ser utilizados online, sem necessidade de download, dir
 
 O código a seguir apresenta a estrutura básica de um arquivo HTML com Bootstrap.
 
-{%ace%}
-!INCLUDE "intro/index.html"
-{%endace%}
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Hello, Bootstrap!</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
+```
 
 Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/kiNm1soFELpZfrnSHkhV/preview).
 
