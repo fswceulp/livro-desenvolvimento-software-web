@@ -7,14 +7,15 @@ A figura a seguir apresenta as interações entre os principais componentes da a
 ![Arquitetura do Angular](https://angular.io/resources/images/devguide/architecture/overview2.png)
 
 Os componentes dessa arquitetura são os seguintes e são detalhados nas seções em sequência:
-* Modules (módulos)
-* Components (componentes)
-* Templates (templates)
-* Metadata (metadados)
-* Data binding (vinculação de dados)
-* Directives (diretivas)
-* Services (serviços)
-* Dependency Injection (injeção de dependência)
+
+* Modules \(módulos\)
+* Components \(componentes\)
+* Templates \(templates\)
+* Metadata \(metadados\)
+* Data binding \(vinculação de dados\)
+* Directives \(diretivas\)
+* Services \(serviços\)
+* Dependency Injection \(injeção de dependência\)
 
 Os nomes dos componentes da arquitetura serão mantidos no original, em inglês.
 
@@ -22,16 +23,17 @@ Os nomes dos componentes da arquitetura serão mantidos no original, em inglês.
 
 Aplicativos Angular são modulares, seguindo um sistema chamado _Angular Modules_ ou _NgModules_.
 
-Cada aplicativo Angular tem pelo menos um módulo, o _módulo raiz_. Geralmente, o _módulo raiz_ é um componente visual, que hospeda outros componentes visuais ou não. Independentemente de ser o módulo raiz, cada módulo é definido em uma classe marcada com `@NgModule` (uma _decorator function_).
+Cada aplicativo Angular tem pelo menos um módulo, o _módulo raiz_. Geralmente, o _módulo raiz_ é um componente visual, que hospeda outros componentes visuais ou não. Independentemente de ser o módulo raiz, cada módulo é definido em uma classe marcada com `@NgModule` \(uma _decorator function_\).
 
 `NgModule` é uma _decorator function_ que recebe um objeto com os seguintes atributos:
+
 * `declarations`: um array contendo a lista de _view classes_ que pertencem ao módulo
 * `exports`: um subconjunto de `declarations` que estarão visíveis e utilizáveis nos componentes _templates_ de outros módulos
 * `imports`: array contendo a lista de outros módulos cujas classes exportadas são requeridas por _templates_ do módulo em questão
 * `providers`: array com uma lista de serviços disponibilizados pelo módulo atual que se tornam disponíveis glovalmente para todos os módulos do aplicativo
 * `bootstrap`: array contendo o _módulo raiz_.
 
-Exemplo (arquivo `app/app.module.ts`):
+Exemplo \(arquivo `app/app.module.ts`\):
 
 ```TypeScript
 import { NgModule }      from '@angular/core';
@@ -46,9 +48,9 @@ import { BrowserModule } from '@angular/platform-browser';
 export class AppModule { }
 ```
 
-O aplicativo é executado por meio do processo de _bootstrap_ do módulo raiz. 
+O aplicativo é executado por meio do processo de _bootstrap_ do módulo raiz.
 
-Exemplo (arquivo `app/main.ts`):
+Exemplo \(arquivo `app/main.ts`\):
 
 ```TypeScript
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -66,17 +68,18 @@ import { Component } from '@angular/core';
 O código importa a decorator function `Component`, definida no módulo `@angular/core`.
 
 As bibliotecas podem ser:
-* Components (componentes)
-* Directives (diretivas)
-* Services (serviços)
-* Values (valores)
-* Functions (funções)
+
+* Components \(componentes\)
+* Directives \(diretivas\)
+* Services \(serviços\)
+* Values \(valores\)
+* Functions \(funções\)
 
 ## Components
 
 Um **component** controla parte do estado real da tela que é chamada de `view`. A lógica de um componente é definida em uma classe.
 
-Exemplo (arquivo `app/hero-list.component.ts`):
+Exemplo \(arquivo `app/hero-list.component.ts`\):
 
 ```typescript
 export class HeroListComponent implements OnInit {
@@ -99,7 +102,7 @@ O Angular cria, atualiza e destrói componentes conforme o usuário utiliza o ap
 
 A view de um componente é definida no **template**, que é uma espécie de HTML que indica ao Angular como apresentar visualmente o componente.
 
-Exemplo (arquivo `app/hero-list.component.html`):
+Exemplo \(arquivo `app/hero-list.component.html`\):
 
 ```html
 <h2>Hero List</h2>
@@ -112,16 +115,15 @@ Exemplo (arquivo `app/hero-list.component.html`):
 <hero-detail *ngIf="selectedHero" [hero]="selectedHero"></hero-detail>
 ```
 
-O template utiliza elementos HTML em conjunto com a **sintaxe de template** do Angular. 
+O template utiliza elementos HTML em conjunto com a **sintaxe de template** do Angular.
 
-O último elemento do código, `<hero-detail>`, é criado pelo componente `HeroDetailComponent`. 
+O último elemento do código, `<hero-detail>`, é criado pelo componente `HeroDetailComponent`.
 
 ## Metadata
 
-Os metadados dizem ao Angular como processar uma classe. Uma classe, na verdade, só se torna um componente do Angular ao utilizar metadados. No TypeScript é utilizada uma *decorator function* para informar metadados para o Angular.
+Os metadados dizem ao Angular como processar uma classe. Uma classe, na verdade, só se torna um componente do Angular ao utilizar metadados. No TypeScript é utilizada uma _decorator function_ para informar metadados para o Angular.
 
-
-Exemplo (arquivo `app/hero-list.component.ts`):
+Exemplo \(arquivo `app/hero-list.component.ts`\):
 
 ```TypeScript
 @Component({
@@ -135,7 +137,8 @@ export class HeroListComponent implements OnInit {
 ```
 
 O decorator `@Component` identifica uma classe como um componente. O parâmetro é um objeto que contém atributos como:
-* `selector`: o seletor CSS que diz ao Angular como criar e inserir uma instância deste componente. No caso do exemplo, o seletor `hero-list` indica ao Angular que deve procurar por um elemento (está usando um seletor de elemento)
+
+* `selector`: o seletor CSS que diz ao Angular como criar e inserir uma instância deste componente. No caso do exemplo, o seletor `hero-list` indica ao Angular que deve procurar por um elemento \(está usando um seletor de elemento\)
 * `templateUrl`: o caminho para o arquivo do template
 * `directives`: array de componentes ou diretivas que este componente requer
 * `providers`: array de serviços que o componente requer. No exemplo, o componente `HeroListComponent` depende do componente `HeroService`, que é um serviço.
@@ -146,7 +149,7 @@ Outros `decorators` são `@Injectable`, `@Input` e `@Output`.
 
 O mecanismo de **data binding** é usado pelo Angular para coordenar a sincronia entre partes do template e partes de um componente.
 
-Exemplo (arquivo `app/hero-list.component.html`):
+Exemplo \(arquivo `app/hero-list.component.html`\):
 
 ```html
 <li>{{hero.name}}</li>
@@ -155,8 +158,9 @@ Exemplo (arquivo `app/hero-list.component.html`):
 ```
 
 Esse código é interpretado da seguinte forma:
-* O código entre `{{}}` usa o recurso chamado de **interpolação** e faz com que o valor de `hero.name` (um tipo de expressão TypeScript) seja apresentado dentro do elemento `li`
-* A **property binding** expressada por `[hero]="selectedHero"` passa o valor de `selectedHero` (atributo do componente `HeroListComponent`) para a propriedade `hero` do componente filho `HeroDetailComponent` (representado pelo elemento `hero-detail`)
+
+* O código entre `{{}}` usa o recurso chamado de **interpolação** e faz com que o valor de `hero.name` \(um tipo de expressão TypeScript\) seja apresentado dentro do elemento `li`
+* A **property binding** expressada por `[hero]="selectedHero"` passa o valor de `selectedHero` \(atributo do componente `HeroListComponent`\) para a propriedade `hero` do componente filho `HeroDetailComponent` \(representado pelo elemento `hero-detail`\)
 * O **event binding** expressado por `(click)="selectHero(hero)"` chama o método `selectHero()` quando o usuário clicar no elemento `li`.
 
 Um tipo especial de **data binding** chamado **two-way data binding** combina **property binding** e **event binding**, usando a diretiva `ngModel`. Exemplo:
@@ -165,7 +169,7 @@ Um tipo especial de **data binding** chamado **two-way data binding** combina **
 <input [(ngModel)]="hero.name">
 ```
 
-Usando **two-way data binding** o valor de uma propriedade (`hero.name`) passa do componente atual para o elemento `input`. Quando o valor do `input` é modificado, ele é atribuído de volta para a propriedade.
+Usando **two-way data binding** o valor de uma propriedade \(`hero.name`\) passa do componente atual para o elemento `input`. Quando o valor do `input` é modificado, ele é atribuído de volta para a propriedade.
 
 ## Directives
 
@@ -175,7 +179,7 @@ Uma **directive** é uma classe com metadados de diretiva. No TypeScript é util
 
 **Directives** podem ser de dois tipos: **de estruturas** ou **de atributos**.
 
-As diretivas de estrutura alteram o DOM adicionando, removendo ou substituindo elementos. Exemplo:
+As **diretivas de estrutura** alteram o DOM adicionando, removendo ou substituindo elementos. Exemplo:
 
 ```html
 <li *ngFor="let hero of heroes"></li>
@@ -183,22 +187,23 @@ As diretivas de estrutura alteram o DOM adicionando, removendo ou substituindo e
 ```
 
 São usadas duas diretivas:
+
 * `*ngFor` indica ao Angular que deve repetir o elemento `li` para cada item do array `heroes`
 * `*ngIf` indica ao Angular que só deve incluir o componente `HeroDetailComponent` se o valor de `selectedHero` estiver definido.
 
-Diretivas de atributo alteram a aparência ou o comportamento de um elemento já existente no DOM. A diretiva `ngModel` modifica o comportamento de um elemento existente (como um `input`) definindo seu valor e respondendo ao evento de alteraçãod o seu valor. Exemplo:
+**Diretivas de atributo** alteram a aparência ou o comportamento de um elemento já existente no DOM. A diretiva `ngModel` modifica o comportamento de um elemento existente \(como um `input`\) definindo seu valor e respondendo ao evento de alteração do seu valor. Exemplo:
 
 ```html
 <input [(ngModel)]="hero.name">
-``` 
+```
 
-Outras diretivas são `ngSwitch` (de estrutura), `ngStyle` e `ngClass` (de atributo).
+Outras diretivas são `ngSwitch` \(de estrutura\), `ngStyle` e `ngClass` \(de atributo\).
 
 ## Services
 
-Um **service** é, tipicamente, uma classe com um propósito muito objetivo. Na verdade, não há uma definição especial do Angular para um **service**, pois ele é, basicamente, uma classe. 
+Um **service** é, tipicamente, uma classe com um propósito muito específico. Na verdade, não há uma definição especial do Angular para um **service**, pois ele é, basicamente, uma classe.
 
-Exemplo (arquivo `app/logger.service.ts`):
+Exemplo \(arquivo `app/logger.service.ts`\):
 
 ```typescript
 export class Logger {
@@ -210,7 +215,7 @@ export class Logger {
 
 O serviço `Logger` faz log de mensagens no console do browser.
 
-Outro exemplo (arquivo `app/hero.service.ts`):
+Outro exemplo \(arquivo `app/hero.service.ts`\):
 
 ```typescript
 export class HeroService {
@@ -232,11 +237,11 @@ export class HeroService {
 
 Neste exemplo, o serviço `HeroService` consulta dados e depende dos serviços `BackendService` e `Logger`.
 
-No formato de arquitetura do Angular, é preferível que as classes de componentes não façam tarefas como buscar dados de um servidor, validar entradas do usuário ou fazer log diretamente no console do browser. Essas tarefas são delegadas para serviços. A tarefa de um componente é lidar com a experiência (interação) com o usuário, e nada mais. O componente intermedia a interação entre a view e a lógica do aplicativo. Um bom componente apresenta propriedades e métodos para data binding. Por fim, delega tudo não trivial para serviços.
+No formato de arquitetura do Angular, é preferível que as classes de componentes não façam tarefas como buscar dados de um servidor, validar entradas do usuário ou fazer log diretamente no console do browser. Essas tarefas são delegadas para serviços. A tarefa de um componente é lidar com a experiência \(interação\) com o usuário, e nada mais. O componente intermedia a interação entre a view e a lógica do aplicativo. Um bom componente apresenta propriedades e métodos para data binding. Por fim, delega tudo não trivial para serviços.
 
 ## Dependency Injection
 
-**Dependency Injection** (DI) é uma forma de suprir uma nova instância de uma classe com as dependências que ela requer. Exemplo do construtor do componente `HeroListComponent` (arquivo `app/hero-list.component.ts`):
+**Dependency Injection** \(DI\) é uma forma de suprir uma nova instância de uma classe com as dependências que ela requer. Exemplo do construtor do componente `HeroListComponent` \(arquivo `app/hero-list.component.ts`\):
 
 ```typescript
 constructor(private service: HeroService) { }
@@ -244,7 +249,7 @@ constructor(private service: HeroService) { }
 
 Quando o Angular cria um componente, primeiro consulta o **injector** sobre serviços requeridos pelo componente. O injetor mantém uma lista de instâncias de serviços criada anteriormente. Se uma instância de serviço não estiver na lista, o injetor cria uma instância e adiciona na lista antes de retorna o serviço ao Angular. Por fim, o Angular chama o construtor do componente informando os serviços como argumentos. Esse processo é chamado **injeção de dependência**.
 
-O injetor identifica os serviços necessários por meio dos metadados do módulo ou do componente. Geralmente, isso é feito no módulo raiz. Por exemplo (trecho do arquivo `app/app.module.ts`):
+O injetor identifica os serviços necessários por meio dos metadados do módulo ou do componente. Geralmente, isso é feito no módulo raiz. Por exemplo \(trecho do arquivo `app/app.module.ts`\):
 
 ```typescript
 @NgModule({
@@ -257,7 +262,7 @@ export class AppModule { }
 
 Por meio da _decorator_ `@NgModule` a lista de **providers** indica as dependências de serviços do `AppModule`. Desta forma, ao registrar os serviços como dependência do módulo raiz, elas ficam disponíveis em todo o aplicativo.
 
-Uma alternativa é registrar as dependências de serviços em um componente. Exemplo (trecho do arquivo `app/hero-list.component.ts`):
+Uma alternativa é registrar as dependências de serviços em um componente. Exemplo \(trecho do arquivo `app/hero-list.component.ts`\):
 
 ```typescript
 @Component({
@@ -267,4 +272,19 @@ Uma alternativa é registrar as dependências de serviços em um componente. Exe
 })
 ```
 
-Registrar uma dependência de serviço no nível do componente significa que será criada uma instância do serviço para cada 
+Registrar uma dependência de serviço no nível do componente significa que será criada uma instância do serviço para cada instância do componente em questão.
+
+## Resumo
+
+Estes são os principais blocos de construção \(elementos\) da arquitetura do Angular:
+
+* Modules
+* Components
+* Templates
+* Metadata
+* Data binding
+* Directives
+* Services
+* Dependency Injection
+
+Estes elementos formam a base tudo em um aplicativo Angular. Além deles, há recursos como animação, detecção de mudanças, eventos, formulários, XHR \(ajax\), elementos do ciclo de vida e roteamento.
