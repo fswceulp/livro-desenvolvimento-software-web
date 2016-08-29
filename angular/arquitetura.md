@@ -30,7 +30,7 @@ Cada aplicativo Angular tem pelo menos um módulo, o _módulo raiz_. Geralmente,
 * `declarations`: um array contendo a lista de _view classes_ que pertencem ao módulo
 * `exports`: um subconjunto de `declarations` que estarão visíveis e utilizáveis nos componentes _templates_ de outros módulos
 * `imports`: array contendo a lista de outros módulos cujas classes exportadas são requeridas por _templates_ do módulo em questão
-* `providers`: array com uma lista de serviços disponibilizados pelo módulo atual que se tornam disponíveis glovalmente para todos os módulos do aplicativo
+* `providers`: array com uma lista de serviços disponibilizados pelo módulo atual que se tornam disponíveis globalmente para todos os módulos do aplicativo
 * `bootstrap`: array contendo o _módulo raiz_.
 
 Exemplo \(arquivo `app/app.module.ts`\):
