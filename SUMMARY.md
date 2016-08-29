@@ -54,9 +54,12 @@
   * [Passo 8: Roteamento e múltiplas Views](angular-tutorial/passo-8.md)
   * [Passo 9: REST e Serviços](angular-tutorial/passo-9.md)
 
-* [Angular](/angular/readme.md)
-  * [Arquitetura](/angular/arquitetura.md)
-  * [Estrutura do projeto](/angular/estrutura-do-projeto.md)
+* [Angular](angular/readme.md)
+  * [Arquitetura](angular/arquitetura.md)
+  * [Estrutura do projeto](angular/estrutura-do-projeto.md)
+  * [Observables](angular/observables.md)
+  * [Servicos](angular/servicos.md)
+  * [Múltiplos componentes](angular/multiplos-componentes.md)
 
 * [Back-end](backend.md)
 * [PHP](php/README.md)
