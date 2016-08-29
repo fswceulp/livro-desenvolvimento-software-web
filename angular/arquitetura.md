@@ -163,7 +163,7 @@ Exemplo \(arquivo `app/hero-list.component.html`\):
 
 Esse código é interpretado da seguinte forma:
 
-* O código entre `{{}}` usa o recurso chamado de **interpolação** e faz com que o valor de `hero.name` \(um tipo de expressão TypeScript\) seja apresentado dentro do elemento `li`
+* O código entre `\{\{\}\}` usa o recurso chamado de **interpolação** e faz com que o valor de `hero.name` \(um tipo de expressão TypeScript\) seja apresentado dentro do elemento `li`
 * A **property binding** expressada por `[hero]="selectedHero"` passa o valor de `selectedHero` \(atributo do componente `HeroListComponent`\) para a propriedade `hero` do componente filho `HeroDetailComponent` \(representado pelo elemento `hero-detail`\)
 * O **event binding** expressado por `(click)="selectHero(hero)"` chama o método `selectHero()` quando o usuário clicar no elemento `li`.
 
