@@ -63,11 +63,13 @@ O elemento `eventos-detalhes` tem como atributo `[evento]="eventoSelecionado"`, 
 O componente só apresenta dados se estiver recebendo um evento como entrada. Por isso, há uma verificação no template (arquivo `src/app/eventos-detalhes.component.html`):
 
 ```html
+{%raw%}
 <div *ngIf="evento">
     <h2>{{evento.nome}}</h2>
     <p>Local: {{evento.cidade}} - {{evento.estado}}</p>
     <button (click)="fechar()" class="btn btn-default">Fechar</button>
 </div>
+{%endraw%}
 ```
 
 As saídas permitem que um componente hospedeiro seja informado de um "evento" ocorrido no componente hospedado. No caso, o componente `EventosDetalhesComponent` informa seu hospedeiro quando o botão "Fechar" for clicado. O atributo `onFechar : EventEmitter` é decorado com `Output()`, ou seja, declara um evento. 

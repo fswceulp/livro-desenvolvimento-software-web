@@ -204,10 +204,12 @@ A utilização da instrução `import` é bastante flexível. No caso de um arqu
 O arquivo `src/app/app.component.html` contém o template do módulo. Seu conteúdo:
 
 ```html
+{%raw%}
 <h1>Eventos do mês de {{mes}}</h1>
 <ul>
  <li *ngFor="let evento of eventos">{{evento}}</li>
 </ul>
+{%endraw%}
 ```
 
 O template é informado nos metadados do componente \(trecho do arquivo `src/app/app.component.ts`\):

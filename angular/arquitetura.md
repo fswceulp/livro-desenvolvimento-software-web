@@ -105,6 +105,7 @@ A view de um componente é definida no **template**, que é uma espécie de HTML
 Exemplo \(arquivo `app/hero-list.component.html`\):
 
 ```html
+{%raw%}
 <h2>Hero List</h2>
 <p><i>Pick a hero from the list</i></p>
 <ul>
@@ -113,6 +114,7 @@ Exemplo \(arquivo `app/hero-list.component.html`\):
   </li>
 </ul>
 <hero-detail *ngIf="selectedHero" [hero]="selectedHero"></hero-detail>
+{%endraw%}
 ```
 
 O template utiliza elementos HTML em conjunto com a **sintaxe de template** do Angular.
@@ -152,9 +154,11 @@ O mecanismo de **data binding** é usado pelo Angular para coordenar a sincronia
 Exemplo \(arquivo `app/hero-list.component.html`\):
 
 ```html
+{%raw%}
 <li>{{hero.name}}</li>
 <hero-detail [hero]="selectedHero"></hero-detail>
 <li (click)="selectHero(hero)"></li>
+{%endraw%}
 ```
 
 Esse código é interpretado da seguinte forma:
