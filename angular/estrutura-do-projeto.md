@@ -110,7 +110,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 
 Os usos da instrução `import` indicam os módulos ou bibliotecas sendo importados. O condicional baseado no valor de `process.env.ENV` é utilizado para habilitar o chamado "modo de produção do aplicativo" \(que adiciona certos comportamentos quando o aplicativo estiver em modo de produção\).
 
-A última linha é que, efetivamente, faz o "bootstrap" do aplicativo, ao chamar o método `bootstrapModule()` do objeto criado pela chamada ao método `platformBrowserDynamic()`, informando como parâmetro o `AppModule` \(que represnta o módulo raiz do aplicativo\).
+A última linha é que, efetivamente, faz o "bootstrap" do aplicativo, ao chamar o método `bootstrapModule()` do objeto criado pela chamada ao método `platformBrowserDynamic()`, informando como parâmetro o `AppModule` \(que representa o módulo raiz do aplicativo\).
 
 ### Arquivo `vendor.ts`
 
@@ -217,13 +217,13 @@ export class AppComponent {
 }
 ```
 
-O template apresenta o valor do atributo `mes `e utiliz a diretiva `ngFor` para apresentar uma lista de valores \(definidos no atributo `evento`, que é um array\).
+O template apresenta o valor do atributo `mes`e utiliz a diretiva `ngFor` para apresentar uma lista de valores \(definidos no atributo `evento`, que é um array\).
 
 ## Arquivo `app.component.css`
 
 O arquivo `src/app/app.component.css` contém as definições de estilos CSS para o componente `AppComponent`. Um recurso importante do Angular é dar um contexto para o CSS: o próprio componente. Isso significa que o conceito de modularização também funciona para os estilos CSS.
 
-O arquivo CSS é especificado nos metadados do componente (trecho do arquivo `src/app/app.component.ts`):
+O arquivo CSS é especificado nos metadados do componente \(trecho do arquivo `src/app/app.component.ts`\):
 
 ```TypeScript
 import { Component } from '@angular/core';
@@ -237,3 +237,6 @@ export class AppComponent {
 ...
 }
 ```
+
+
+
