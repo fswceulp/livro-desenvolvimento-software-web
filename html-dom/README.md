@@ -22,13 +22,7 @@ Ao representar o documento HTML na forma de objetos, também são representadas 
 
 Por meio da interface de programação do DOM é possível manipular o documento, o que quer dizer que você pode, usando JavaScript, por exemplo, criar nós, mover nós, adicionar ou modificar propriedades etc.
 
-O exemplo a seguir demonstra o funcionamento básico do DOM.
-
-{%ace%}
-!INCLUDE "intro/index.html"
-{%endace%}
-
-Você pode ver o exemplo em funcionamento [aqui](http://embed.plnkr.co/A8JOWp4A85IzNE4NBzNW/preview).
+[Este exemplo](http://embed.plnkr.co/A8JOWp4A85IzNE4NBzNW/preview) demonstra o funcionamento básico do DOM.
 
 No exemplo, o trecho de código a seguir merece destaque:
 
@@ -67,10 +61,4 @@ Além da propriedade `innerHTML` o objeto `Element` possui:
 
 Para criar elementos, o objeto `document` fornece o método `createElement(tag)`, que cria um novo elemento, para ser adicionado à árvore DOM.
 
-O exemplo a seguir apresenta uma situação em que vários métodos do DOM são chamados para manipular o documento.
-
-{%ace%}
-!INCLUDE "manipulacao/index.html"
-{%endace%}
-
-Veja o exemplo em funcionamento [aqui](http://embed.plnkr.co/X37GpqvFnKFvzaU85z9U/preview).
+[Este exemplo](http://embed.plnkr.co/X37GpqvFnKFvzaU85z9U/preview)  apresenta uma situação em que vários métodos do DOM são chamados para manipular o documento.
