@@ -148,26 +148,35 @@ O decorator `@Component` identifica uma classe como um componente. O parâmetro 
 * `directives`: array de componentes ou diretivas que este componente requer
 * `providers`: array de serviços que o componente requer. No exemplo, o componente `HeroListComponent` depende do componente `HeroService`, que é um serviço.
 
+O metadado `@Component` indica para o Angular onde procurar os principais blocos de construção do componente. **Nesse sentido, é importante notar que template, metadata e component, juntos, descrevem uma view.**
+
 Outros `decorators` são `@Injectable`, `@Input` e `@Output`.
 
 ## Data binding
 
-O mecanismo de **data binding** é usado pelo Angular para coordenar a sincronia entre partes do template e partes de um componente.
+Sem um framework, o desenvolvedor é responsável por inserir valores \[de dados\] no HTML e tratar a interação com o usuário para atualizar esses valores. O código para isso requer conhecimento avançado \(e muitas vezes tedioso\) de programação do HTML DOM.
+
+![](https://angular.io/resources/images/devguide/architecture/databinding.png)
+
+O mecanismo de **data binding** é usado pelo Angular para coordenar a sincronia entre partes do template e partes de um componente. Como o diagrama da figura anterior mostra, há quatro formas de utilizar a sintaxe de data binding:
+
+* `{{value}}`
+* `[property]="value"`
+* `(event)="handler"`
+* `[(ng-model)]="property"`
 
 Exemplo \(arquivo `app/hero-list.component.html`\):
 
 ```html
-{%raw%}
 <li>{{hero.name}}</li>
 <hero-detail [hero]="selectedHero"></hero-detail>
 <li (click)="selectHero(hero)"></li>
-{%endraw%}
 ```
 
 Esse código é interpretado da seguinte forma:
 
-* O código entre `\{\{\}\}` usa o recurso chamado de **interpolação** e faz com que o valor de `hero.name` \(um tipo de expressão TypeScript\) seja apresentado dentro do elemento `li`
-* A **property binding** expressada por `[hero]="selectedHero"` passa o valor de `selectedHero` \(atributo do componente `HeroListComponent`\) para a propriedade `hero` do componente filho `HeroDetailComponent` \(representado pelo elemento `hero-detail`\)
+* O código entre `{{...}}` usa o recurso chamado de **interpolação** e faz com que o valor de `hero.name` \(um tipo de expressão TypeScript\) seja apresentado dentro do elemento `li`
+* A **property binding** expressada por `[hero]="selectedHero"` passa o valor de `selectedHero` \(um atributo do componente `HeroListComponent`\) para a propriedade `hero` do componente filho `HeroDetailComponent` \(representado pelo elemento `hero-detail`\)
 * O **event binding** expressado por `(click)="selectHero(hero)"` chama o método `selectHero()` quando o usuário clicar no elemento `li`.
 
 Um tipo especial de **data binding** chamado **two-way data binding** combina **property binding** e **event binding**, usando a diretiva `ngModel`. Exemplo:
@@ -178,9 +187,17 @@ Um tipo especial de **data binding** chamado **two-way data binding** combina **
 
 Usando **two-way data binding** o valor de uma propriedade \(`hero.name`\) passa do componente atual para o elemento `input`. Quando o valor do `input` é modificado, ele é atribuído de volta para a propriedade.
 
+O Angular processa o data binding de uma vez no ciclo de vida, a partir do componente raiz até todos os componentes filhos. 
+
+Data binding tem um papel importante na comunicação entre template e componente, da mesma forma que na comunicação entre componentes pais e filhos.
+
+![](https://angular.io/resources/images/devguide/architecture/component-databinding.png)
+
+![](https://angular.io/resources/images/devguide/architecture/parent-child-binding.png)
+
 ## Directives
 
-Os templates do Angular são dinâmicos, e são modificados quando o Angular transforma o DOM de acordo com as instruções dadas pelas **directives**.
+Os templates do Angular são dinâmicos e são modificados quando o Angular transforma o DOM de acordo com as instruções dadas pelas **directives**.
 
 Uma **directive** é uma classe com metadados de diretiva. No TypeScript é utilizada a _decorator function_  `@Directive` para adicionar metadados a uma classe.
 
@@ -196,7 +213,7 @@ As **diretivas de estrutura** alteram o DOM adicionando, removendo ou substituin
 São usadas duas diretivas:
 
 * `*ngFor` indica ao Angular que deve repetir o elemento `li` para cada item do array `heroes`
-* `*ngIf` indica ao Angular que só deve incluir o componente `HeroDetailComponent` se o valor de `selectedHero` estiver definido.
+* `*ngIf` indica ao Angular que só deve incluir o componente `HeroDetailComponent` se o valor de `selectedHero` estiver definido ou for verdadeiro \(considerando a avaliação de uma expressão lógica\).
 
 **Diretivas de atributo** alteram a aparência ou o comportamento de um elemento já existente no DOM. A diretiva `ngModel` modifica o comportamento de um elemento existente \(como um `input`\) definindo seu valor e respondendo ao evento de alteração do seu valor. Exemplo:
 
