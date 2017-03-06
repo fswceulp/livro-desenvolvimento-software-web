@@ -67,7 +67,7 @@ A figura a seguir apresenta o diagrama do aplicativo.
 
 ![](/angular/estrutura-projeto-1.png)
 
-A classe `AppModule` fornece o módulo, enquanto a classe `AppComponent` fornece o componente \(que usa os arquivos `app.component.css` e `app.component.html`\).
+A classe `AppModule` fornece o módulo, enquanto a classe `AppComponent` fornece o componente raiz \(que usa os arquivos `app.component.css` e `app.component.html`\).
 
 ## Código-fonte do projeto
 
@@ -86,7 +86,7 @@ O arquivo `src/index.html` é o template principal do projeto; é o primeiro a s
 ```html
 <html lang="pt-br">
   <head>
-    <title>Angular 2 QuickStart</title>
+    <title>Sistema Eventos</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -204,12 +204,10 @@ A utilização da instrução `import` é bastante flexível. No caso de um arqu
 O arquivo `src/app/app.component.html` contém o template do módulo. Seu conteúdo:
 
 ```html
-{%raw%}
 <h1>Eventos do mês de {{mes}}</h1>
 <ul>
  <li *ngFor="let evento of eventos">{{evento}}</li>
 </ul>
-{%endraw%}
 ```
 
 O template é informado nos metadados do componente \(trecho do arquivo `src/app/app.component.ts`\):
@@ -247,4 +245,6 @@ export class AppComponent {
 ...
 }
 ```
+
+
 
