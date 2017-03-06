@@ -23,15 +23,19 @@ Os nomes dos componentes da arquitetura serão mantidos no original, em inglês.
 
 Aplicativos Angular são modulares, seguindo um sistema chamado _Angular Modules_ ou _NgModules_.
 
-Cada aplicativo Angular tem pelo menos um módulo, o _módulo raiz_. Geralmente, o _módulo raiz_ é um componente visual, que hospeda outros componentes visuais ou não. Independentemente de ser o módulo raiz, cada módulo é definido em uma classe marcada com `@NgModule` \(uma _decorator function_\).
+Cada aplicativo Angular tem pelo menos um módulo, o _**módulo raiz**_. Geralmente, o _módulo raiz_ é um componente visual, que hospeda outros componentes visuais ou não. Independentemente de ser o módulo raiz, cada módulo é definido em uma classe marcada com `@NgModule` \(uma _decorator function_\).
 
-`NgModule` é uma _decorator function_ que recebe um objeto com os seguintes atributos:
+> **Decorator Function**
+>
+> Decorators \(mantendo o termo em inglês\) são funções que modificam classes. Angular possui vários decorators que anexam metadados a classes de modo a identificar o que elas significam e o que deve ser feito com elas.
+
+`NgModule` é uma _decorator function_ que recebe um objeto \(chamado _metadados_\) com os seguintes atributos:
 
 * `declarations`: um array contendo a lista de _view classes_ que pertencem ao módulo
-* `exports`: um subconjunto de `declarations` que estarão visíveis e utilizáveis nos componentes _templates_ de outros módulos
-* `imports`: array contendo a lista de outros módulos cujas classes exportadas são requeridas por _templates_ do módulo em questão
+* `exports`: um subconjunto de `declarations` que estará visível e utilizável nos componentes _templates_ de outros módulos
+* `imports`: dependências requeridas por _templates_ do módulo em questão
 * `providers`: array com uma lista de serviços disponibilizados pelo módulo atual que se tornam disponíveis globalmente para todos os módulos do aplicativo
-* `bootstrap`: array contendo o _módulo raiz_.
+* `bootstrap`: array contendo **apenas **o _módulo raiz_.
 
 Exemplo \(arquivo `app/app.module.ts`\):
 
@@ -55,11 +59,12 @@ Exemplo \(arquivo `app/main.ts`\):
 ```TypeScript
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app.module';
+platformBrowserDynamic().boostrapModule(AppModule);
 ```
 
 ### Bibliotecas
 
-O Angular fornece vários módulos, cada um deles com nomes tendo o prefixo `@angular`. Os módulos podem ser instalados utilizando `npm` e importados utilizando a instrução `import`. Exemplo:
+O Angular fornece vários módulos, cada um deles com nomes que começam com o prefixo `@angular`. Os módulos podem ser instalados utilizando `npm` e importados utilizando a instrução `import`. Exemplo:
 
 ```TypeScript
 import { Component } from '@angular/core';
@@ -77,7 +82,7 @@ As bibliotecas podem ser:
 
 ## Components
 
-Um **component** controla parte do estado real da tela que é chamada de `view`. A lógica de um componente é definida em uma classe.
+Um **component** controla parte do estado real da tela \(interface gráfica\) que é chamada de `view`. A lógica de um componente é definida em uma classe.
 
 Exemplo \(arquivo `app/hero-list.component.ts`\):
 
@@ -96,7 +101,7 @@ export class HeroListComponent implements OnInit {
 }
 ```
 
-O Angular cria, atualiza e destrói componentes conforme o usuário utiliza o aplicativo. O desenvolvedor tem acesso aos momentos do ciclo de vida do aplicativo por meio dos **eventos do ciclo de vida**, como o método `ngOnInit()` utilizado no código anterior.
+O Angular cria, atualiza e destrói componentes conforme o usuário utiliza o aplicativo. O aplicativo executa ações a cada momento do ciclo de vida por meio dos **eventos do ciclo de vida**, como o método `ngOnInit()` utilizado no código anterior.
 
 ## Templates
 
@@ -105,7 +110,6 @@ A view de um componente é definida no **template**, que é uma espécie de HTML
 Exemplo \(arquivo `app/hero-list.component.html`\):
 
 ```html
-{%raw%}
 <h2>Hero List</h2>
 <p><i>Pick a hero from the list</i></p>
 <ul>
@@ -114,12 +118,11 @@ Exemplo \(arquivo `app/hero-list.component.html`\):
   </li>
 </ul>
 <hero-detail *ngIf="selectedHero" [hero]="selectedHero"></hero-detail>
-{%endraw%}
 ```
 
 O template utiliza elementos HTML em conjunto com a **sintaxe de template** do Angular.
 
-O último elemento do código, `<hero-detail>`, é criado pelo componente `HeroDetailComponent`.
+O último elemento do código, `<hero-detail>`, é uma tag especial, criada pelo componente `HeroDetailComponent`.
 
 ## Metadata
 
