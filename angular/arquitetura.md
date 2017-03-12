@@ -160,7 +160,7 @@ Sem um framework, o desenvolvedor é responsável por inserir valores \[de dados
 
 O mecanismo de **data binding** é usado pelo Angular para coordenar a sincronia entre partes do template e partes de um componente. Como o diagrama da figura anterior mostra, há quatro formas de utilizar a sintaxe de data binding:
 
-* `{{value}}`
+* `\{\{value\}\}`
 * `[property]="value"`
 * `(event)="handler"`
 * `[(ng-model)]="property"`
