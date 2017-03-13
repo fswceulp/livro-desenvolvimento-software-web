@@ -30,6 +30,66 @@ Isso permitirá que componentes desse módulo possam usar o `FormsModule`.
 
 ## Template do componente
 
+Antes de lidar com detalhes do formulário em Angular, o código a seguir mostra um trecho de um código HTML referente a um formulário:
+
+```
+<form>
+  <div class="form-group">
+    <label for="nome">Nome da tarefa</label>
+    <input type="text" class="form-control" id="nome" name="nome" required>
+  </div>
+  <button type="submit" class="btn btn-success">Salvar</button>
+  <button type="button" class="btn btn-default">Limpar</button>
+</form>
+```
+
+O código utiliza os elementos `form`, `label`, `input` e `button`, que são responsáveis por gerar o formulário, em si. As classes `form-group`, `form-control`, `btn`, `btn-success` e `btn-default` pertencem ao framework Bootstrap.
+
+Para transformar este código em template do Angular, é necessário utilizar diretivas e data binding.
+
+### Data binding
+
+O primeiro passo é utilizar data binding no elemento `input`:
+
+```
+<input type="text" class="form-control" id="nome" name="nome" required 
+      [(ngModel)]="tarefa.nome" #nome="ngModel">
+```
+
+A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possua um atributo `tarefa`, que tem um atributo `nome`. O potencial do two-way data binding é que o fato desta sintaxe estar aplicada a um elemento `input` faz com que a entrada de texto pelo usuário atualize o objeto em questão, e vice-versa.
+
+### Variável temporária de template
+
+Uma variável temporária de template é usada como uma referência ao controle de entrada. Essa referência pode ser usada diretamente no template ou, por exemplo, passada como parâmetro para uma função da classe do componente. 
+
+A sintaxe para a variável temporária é usar `#...`, como no código a seguir:
+
+```
+<input type="text" class="form-control" id="nome" name="nome" required 
+      [(ngModel)]="tarefa.nome" #nome>
+```
+
+Ao usar uma variável temporária, o `input` é referenciado por meio de `nome`:
+
+```
+<input type="text" ... #nome>
+{{nome.value}}
+```
+
+Isso vai fazer com que o valor do controle de entrada seja apresentado depois de uma alteração.
+
+### Estado do controle de entrada de dados e validação
+
+Quando o elemento `input` possui o atributo `required`, isso indica que é obrigatório fornecer um valor para este controle de entrada de dados. Isso é chamado de validação.
+
+Utilizar `ngModel` em um controle de formulário faz mais do que o two way data binding, pois informa o estado do componente. O estado tem relação com a interação entre o usuário e o controle \(e seu valor\). O Angular atribui classes CSS ao controle de entrada conforme o estado dele, bem como fornece atributos para o objeto associado ao controle de entrada. A tabela a seguir mostra essa relação. 
+
+| Estado | Classe se true | Classe se false |
+| :--- | :--- | :--- |
+| O controle foi visitado | `ng-touched` | `ng-untouched` |
+| O valor do controle mudou | `ng-dirty` | `ng-pristine` |
+| O valor do controle é válido | `ng-valid` | `ng-invalid` |
+
 ## Resumo
 
 Para utilizar formulários em Angular:
