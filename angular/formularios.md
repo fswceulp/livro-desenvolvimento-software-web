@@ -30,8 +30,6 @@ Isso permitirá que componentes desse módulo possam usar o `FormsModule`.
 
 ## Template do componente
 
-
-
 ## Resumo
 
 Para utilizar formulários em Angular:
