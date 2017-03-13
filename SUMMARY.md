@@ -52,6 +52,7 @@
 * [Angular](angular/readme.md)
   * [Arquitetura](angular/arquitetura.md)
   * [Estrutura do projeto](angular/estrutura-do-projeto.md)
+  * [Formulários](angular/formularios.md)
   * [Observables](angular/observables.md)
   * [Servicos](angular/servicos.md)
   * [Múltiplos componentes](angular/multiplos-componentes.md)
@@ -91,7 +92,7 @@
     * [Exclusão de dados](php/pdo/exclui-dados.md)
     * [Exemplos de projetos com PDO](php/pdo/projetos/README.md)
       * [PROJETO 1: Conexão com o banco de dados](php/pdo/projetos/projeto1-conexao.md)
-      * [PROJETO 2: operações DAO \(](php/pdo/projetos/projeto2-dao.md\)`Data Access Object`[\) com 1 tabela]\(php/pdo/projetos/projeto2-dao.md)
+      * [PROJETO 2: operações DAO \(](php/pdo/projetos/projeto2-dao.md%29`Data Access Object`[%29 com 1 tabela]%28php/pdo/projetos/projeto2-dao.md)
 
 ---
 
@@ -101,6 +102,4 @@
   * [Acesso a Bancos de Dados](backend/banco-de-dados.md)
   * [DBAL](backend/dbal.md)
   * [Arquitetura de uma API](backend/modelo-arquitetura-api-cliente.md)
-
-
 
