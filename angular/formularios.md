@@ -108,18 +108,20 @@ Com base no estado e na regra de validação do controle é possível, por exemp
 <div class="alert alert-danger" [hidden]="nome.valid || nome.pristine">Informe o nome da tarefa</div>
 ```
 
-O trecho de código indica que o `input `será referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid `e `pristine` indicando, respectivamente o estado do controle de entrada:
+O trecho de código indica que o `input`será referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid`e `pristine` indicando, respectivamente o estado do controle de entrada:
 
 * `valid`: o valor do controle de entrada está válido conforme a regra de validação
 * `pristine`: a tela foi carregada pela primeira vez
 
-Utilizar um elemento com a propriedade `hidden `e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
+Utilizar um elemento com a propriedade `hidden`e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
 
 ## Resumo
 
 Para utilizar formulários em Angular:
 
 1. Configurar o módulo para usar o `FormsModule`
-2. 
+2. Configurar o template do componente
+3. Configurar a classe do componente
+
 
 
