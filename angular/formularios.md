@@ -11,7 +11,7 @@ Este capítulo trata da primeira das formas.
 
 Formulários baseados em templates estão definidos no módulo `FormsModule`, disponível no pacote `@angular/forms`. Considere que um aplicativo tenha o arquivo `app.module.ts` no qual está definido o módulo raiz. O módulo raiz deve importar o módulo `FormsModule`.
 
-```
+```TypeScript
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
@@ -32,7 +32,7 @@ Isso permitirá que componentes desse módulo possam usar o `FormsModule`.
 
 Antes de lidar com detalhes do formulário em Angular, o código a seguir mostra um trecho de um código HTML referente a um formulário:
 
-```
+```html
 <form>
   <div class="form-group">
     <label for="nome">Nome da tarefa</label>
@@ -51,7 +51,7 @@ Para transformar este código em template do Angular, é necessário utilizar di
 
 O primeiro passo é utilizar data binding no elemento `input`:
 
-```
+```html
 <input type="text" class="form-control" id="nome" name="nome" required 
       [(ngModel)]="tarefa.nome" #nome="ngModel">
 ```
@@ -64,19 +64,19 @@ Uma variável temporária de template é usada como uma referência ao controle 
 
 A sintaxe para a variável temporária é usar `#...`, como no código a seguir:
 
-```
+```html
 <input type="text" class="form-control" id="nome" name="nome" required 
       [(ngModel)]="tarefa.nome" #nome>
 ```
 
 Ao usar uma variável temporária, o `input` é referenciado por meio de `nome`:
 
-```
+```html
 <input type="text" ... #nome>
 {{nome.value}}
 ```
 
-Isso vai fazer com que o valor do controle de entrada seja apresentado depois de uma alteração.
+Isso vai fazer com que o valor \(atributo `value`\) do controle de entrada seja apresentado depois de uma alteração.
 
 ### Estado do controle de entrada de dados e validação
 
@@ -89,6 +89,31 @@ Utilizar `ngModel` em um controle de formulário faz mais do que o two way data 
 | O controle foi visitado | `ng-touched` | `ng-untouched` |
 | O valor do controle mudou | `ng-dirty` | `ng-pristine` |
 | O valor do controle é válido | `ng-valid` | `ng-invalid` |
+
+Para mostrar as classes CSS do controle de entrada use algo como seguinte:
+
+```html
+<input type="text" ... #nome>
+<div>
+    {{nome.className}}
+</div>
+```
+
+O trecho de código indica que a variável temporária `nome`, que referencia um controle de etrada \(`input`\), possui o atributo `className`, que mostra os nomes das classes associadas ao controle de entrada no momento.
+
+Com base no estado e na regra de validação do controle é possível, por exemplo, interagir com o usuário, indicando que ele deve informar um valor para um controle de entrada que esteja com o atributo `required`. O trecho a seguir demonstra isso.
+
+```html
+<input type="text" ... required [(ngModel)="tarefa.nome" #nome="ngModel">
+<div class="alert alert-danger" [hidden]="nome.valid || nome.pristine">Informe o nome da tarefa</div>
+```
+
+O trecho de código indica que o `input `será referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid `e `pristine` indicando, respectivamente o estado do controle de entrada:
+
+* `valid`: o valor do controle de entrada está válido conforme a regra de validação
+* `pristine`: a tela foi carregada pela primeira vez
+
+Utilizar um elemento com a propriedade `hidden `e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
 
 ## Resumo
 
