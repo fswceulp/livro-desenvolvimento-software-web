@@ -56,7 +56,7 @@ O primeiro passo é utilizar data binding no elemento `input`:
       [(ngModel)]="tarefa.nome" #nome="ngModel">
 ```
 
-A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possua um atributo `tarefa`, que tem um atributo `nome`. O potencial do two-way data binding é que o fato desta sintaxe estar aplicada a um elemento `input` faz com que a entrada de texto pelo usuário atualize o objeto em questão, e vice-versa.
+A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possui um atributo `tarefa`, que tem um atributo `nome`. O potencial do two-way data binding é que o fato de esta sintaxe estar aplicada a um elemento `input` faz com que a entrada de texto pelo usuário atualize o objeto em questão, e vice-versa.
 
 ### Variável temporária de template
 
