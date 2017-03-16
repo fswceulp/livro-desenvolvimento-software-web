@@ -110,10 +110,10 @@ Com base no estado e na regra de validação do controle é possível, por exemp
 </div>
 ```
 
-O trecho de código indica que o `input`será referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid`e `pristine` indicando, respectivamente o estado do controle de entrada:
+O trecho de código indica que o `input`é referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid`e `pristine` indicando, respectivamente o estado do controle de entrada:
 
-* `valid`: o valor do controle de entrada está válido conforme a regra de validação
-* `pristine`: a tela foi carregada pela primeira vez
+* `valid`: quando é `true`, o valor do controle de entrada está válido conforme a regra de validação
+* `pristine`: quando é `true`, a tela foi carregada pela primeira vez
 
 Utilizar um elemento com a propriedade `hidden`e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
 
