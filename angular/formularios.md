@@ -164,7 +164,7 @@ A classe possui o atributo `estados`, que é um array \(`any[]`\). Os elementos 
 
 Agora, o template:
 
-```
+```html
 <div class="form-group">
     <label for="estado">Estado</label>
     <select id="estado" name="estado" class="form-control" 
@@ -192,7 +192,72 @@ Utilizar `select`em cascata é uma prática muito comum em aplicações web. Sup
 
 ![](http://g.recordit.co/Q7zwxP4Kde.gif)
 
-Para conseguir isso, utilizamos, em conjunto, o recurso de criar as opções do select usando código \(seção anterior\) e
+Para conseguir isso, utilizamos o recurso de criar as opções do select usando código \(seção anterior\) e outros recursos do Angular. Primeiro, o código da classe do componente:
+
+```typescript
+@Component({...})
+export class EventoManagerComponent {
+  estados: any[];
+  cidades: any[];
+  constructor() {
+    this.estados = [
+      {uf: 'TO', nome: 'Tocantins'},
+      {uf: 'GO', nome: 'Goiás'},
+      {uf: 'MG', nome: 'Minas Gerais'},
+      {uf: 'SP', nome: 'São Paulo'},
+      {uf: 'RJ', nome: 'Rio de Janeiro'}
+    ];
+    this.cidades = [
+      {nome: 'Palmas', uf: 'TO'},
+      {nome: 'Paraíso do Tocantins', uf: 'TO'},
+      {nome: 'Gurupi', uf: 'TO'},
+      {nome: 'Araguaína', uf: 'TO'},
+      {nome: 'Porto Nacional', uf: 'TO'},
+      {nome: 'Belo Horizonte', uf: 'MG'},
+      {nome: 'Goiânia', uf: 'GO'},
+      {nome: 'São Paulo', uf: 'SP'},
+      {nome: 'Rio de Janeiro', uf: 'RJ'}
+    ];  
+  }
+  
+  getCidades(uf: string) {
+    let lista: any[] = [];
+    for(let i = 0; i < this.cidades.length; i++) {
+      if (this.cidades[i].uf == uf) {
+        lista.push(this.cidades[i]);
+      }
+    }
+    return lista;
+  }  
+}
+```
+
+A classe EventoManagerComponent possui os atributos `estados` e `cidades`, ambos do tipo `any[]`. No constructor\(\) esses atributos são inicializados. Cada elemento de `cidades` é um objeto que possui os atributos `nome` e `uf`. O método `getCidades()` recebe o parâmetro `uf`, que representa o identificador de um Estado, e retorna as cidades que pertencem ao mesmo.
+
+Agora, o template:
+
+```html
+<div class="form-group">
+    <label for="cidade">Cidade</label>
+    <select id="cidade" [disabled]="!evento.estado" name="cidade" 
+        class="form-control" [(ngModel)]="evento.cidade" 
+        #cidade="ngModel" required>
+        <option value="">Selecione uma cidade</option>
+        <option *ngFor="let cidade of getCidades(estado.value)" [value]="cidade.nome">
+            {{cidade.nome}}
+        </option>
+    </select>
+    <div class="alert alert-danger" [hidden]="cidade.valid || cidade.pristine">
+        Você deve informar uma cidade para o endereço do evento
+    </div>            
+</div>
+```
+
+O código do template indica que um `select `é usado para apresentar as opções de cidades para o usuário. De início, a propriedade `disabled` possui o valor `!evento.estado`. Isso indica que o `select `estará desabilitado \(entrada proibida\) enquanto o usuário não selecionar um valor para o Estado. 
+
+Outra parte importante é que a diretiva `ngFor` é utilizada para criar as opções de cidades para o usuário selecionar. A diferença é que as opções não são criadas com base no atributo `cidades` da classe do componente, mas em uma chamada do método `getCidades()`. Como o método recebe a UF do Estado, faz sentido passar como parâmetro `estado.value`, ou seja, o valor do `select` que representa o Estado. Assim, o valor da diretiva `ngFor` é `let cidade of getCidades(estado.value)`.
+
+Com isso conseguimos implementar o recurso de select em cascata.
 
 ## Resumo
 
