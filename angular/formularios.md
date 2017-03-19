@@ -58,7 +58,7 @@ O primeiro passo é utilizar data binding no elemento `input`:
 
 O Angular requer que o controle de entrada \(o `input`\) tenha o atributo `name`. Neste caso, o atributo tem o valor `nome`.
 
-A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possui um atributo `tarefa`, um objeto que tem um atributo `nome`. 
+A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possui um atributo `tarefa`, um objeto que tem um atributo `nome`.
 
 ```typescript
 @Component({...})
@@ -110,7 +110,7 @@ Para mostrar as classes CSS do controle de entrada use algo como seguinte:
 </div>
 ```
 
-O trecho de código indica que a variável temporária `nome`, que referencia um controle de etrada \(`input`\), possui o atributo `className`, que mostra os nomes das classes associadas ao controle de entrada no momento. 
+O trecho de código indica que a variável temporária `nome`, que referencia um controle de etrada \(`input`\), possui o atributo `className`, que mostra os nomes das classes associadas ao controle de entrada no momento.
 
 Importante notar que a variável de template `nome` não possui um valor. Isso permite acessar o atributo `className`. Para utilizar validação, a variável temporária precisa ter o valor `ngModel`. Isso modifica o comportamento do objeto ao qual a variável de template faz referência e, por exemplo, não dá mais acesso ao atributo `className`.
 
@@ -133,11 +133,11 @@ Utilizar um elemento `div` com a propriedade `hidden`e seu valor baseado em uma 
 
 ## Recursos avançados
 
-Este capítulo apresenta também alguns recursos avançados de formulários utilizando Angular. 
+Este capítulo apresenta também alguns recursos avançados de formulários utilizando Angular.
 
 ### Criando opções em um select
 
-O Angular permite um gerenciamento do documento HTML e isso também significa que é possível modificar o conteúdo de um formulário, em específico um controle `select`. 
+O Angular permite um gerenciamento do documento HTML e isso também significa que é possível modificar o conteúdo de um formulário, em específico um controle `select`.
 
 As opções \(elemento `option`\) de um `select` podem ser definidas manualmente no documento HTML, mas fazer isso usando programação pode ser bastante útil em algumas situações.
 
@@ -147,7 +147,7 @@ Comecemos pela classe do componente:
 @Component({...})
 export class EditorComponent {
     estados: any[];
-    
+
     constructor() {
         this.estados = [
           {uf: 'TO', nome: 'Tocantins'},
@@ -176,6 +176,23 @@ Agora, o template:
     </select>
 </div>
 ```
+
+O `select`permite ao usuário escolher um Estado \(no contexto de um formulário que solicita ao usuário um Estado no cadastro de um endereço, por exemplo\). O template utiliza data biding e cria elementos `option`de duas formas:
+
+1. Opção padrão: por padrão, a opção selecionada é "Selecione um Estado" que, na prática, é uma opção inválida. Isso é usado como estratégia para exigir que o usuário escolha uma das opções "válidas"
+2. Opções que representam os Estados
+
+Para o segundo caso, é utilizada a diretiva `ngFor`com o valor `let estado of estados`. Importante notar que `estados` é um array definido na classe do componente, como já visto. A propriedade `value` de cada `option` criado pelo `ngFor` é `estado.uf`, o que indica que o valor do `select` será o atributo `uf` de um objeto `estado`. O rótulo, o que o usuário vê na tela, é o valor de `estado.nome`.
+
+Essa estratégia é útil quando se deseja definir as opções de um `select` usando código.
+
+### Usando select em cascata
+
+Utilizar `select`em cascata é uma prática muito comum em aplicações web. Suponha que ao pedir que um usuário selecione o Estado para o endereço, o aplicativo apresente um `select` para que o usuário selecione a cidade. É muito útil, nesse caso, que as cidades apresentadas sejam aquelas do Estado selecionado. Isso é o que chamamos _select em cascata_ ou _select vinculado_.
+
+
+
+Para conseguir isso, utilizamos, em conjunto, o recurso de criar as opções do select usando código \(seção anterior\) e
 
 ## Resumo
 
