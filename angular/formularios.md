@@ -188,9 +188,9 @@ Essa estratégia é útil quando se deseja definir as opções de um `select` us
 
 ### Usando select em cascata
 
-Utilizar `select`em cascata é uma prática muito comum em aplicações web. Suponha que ao pedir que um usuário selecione o Estado para o endereço, o aplicativo apresente um `select` para que o usuário selecione a cidade. É muito útil, nesse caso, que as cidades apresentadas sejam aquelas do Estado selecionado. Isso é o que chamamos _select em cascata_ ou _select vinculado_.
+Utilizar `select`em cascata é uma prática muito comum em aplicações web. Suponha que ao pedir que um usuário selecione o Estado para o endereço, o aplicativo apresente um `select` para que o usuário selecione a cidade. É muito útil, nesse caso, que as cidades apresentadas sejam aquelas do Estado selecionado. Isso é o que chamamos _select em cascata_ ou _select vinculado_. A animação a seguir ilustra esse procedimento.
 
-
+![](http://g.recordit.co/Q7zwxP4Kde.gif)
 
 Para conseguir isso, utilizamos, em conjunto, o recurso de criar as opções do select usando código \(seção anterior\) e
 
