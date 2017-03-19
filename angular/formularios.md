@@ -9,7 +9,7 @@ Este capítulo trata da primeira das formas.
 
 ## Configuração do módulo
 
-Formulários baseados em templates estão definidos no módulo `FormsModule`, disponível no pacote `@angular/forms`. Considere que um aplicativo tenha o arquivo `app.module.ts` no qual está definido o módulo raiz. O módulo raiz deve importar o módulo `FormsModule`.
+Formulários baseados em templates estão definidos no módulo `FormsModule`, disponível no pacote `@angular/forms`. Considere que um aplicativo tenha o arquivo `app.module.ts` no qual está definido o módulo raiz \(trecho dele é apresentado a seguir\). O módulo raiz deve importar o módulo `FormsModule`.
 
 ```TypeScript
 import { NgModule }      from '@angular/core';
@@ -56,13 +56,24 @@ O primeiro passo é utilizar data binding no elemento `input`:
       [(ngModel)]="tarefa.nome" #nome="ngModel">
 ```
 
-A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possui um atributo `tarefa`, que tem um atributo `nome`. O potencial do two-way data binding é que o fato de esta sintaxe estar aplicada a um elemento `input` faz com que a entrada de texto pelo usuário atualize o objeto em questão, e vice-versa.
+O Angular requer que o controle de entrada \(o `input`\) tenha o atributo `name`. Neste caso, o atributo tem o valor `nome`.
+
+A sintaxe `[(ngModel]="..."` permite o recurso de two-way data binding, o que faz com que o valor indicado como valor do atributo seja atualizado tanto no template quanto na classe do componente. Neste caso, `[(ngModel)]="tarefa.nome"` considera que a classe do componente possui um atributo `tarefa`, um objeto que tem um atributo `nome`. 
+
+```typescript
+@Component({...})
+export class TarefaComponent {
+    tarefa : Tarefa;
+}
+```
+
+O potencial do two-way data binding é que o fato de esta sintaxe estar aplicada a um elemento `input` fazer com que a entrada de texto pelo usuário atualize o objeto vinculado, e vice-versa: o valor do `input` é o mesmo valor de `tarefa.nome`.
 
 ### Variável temporária de template
 
 Uma variável temporária de template é usada como uma referência ao controle de entrada. Essa referência pode ser usada diretamente no template ou, por exemplo, passada como parâmetro para uma função da classe do componente.
 
-A sintaxe para a variável temporária é usar `#...`, como no código a seguir:
+A sintaxe para a variável temporária é usar `#nomedavariavel`, como no código a seguir:
 
 ```html
 <input type="text" class="form-control" id="nome" name="nome" required 
@@ -76,7 +87,7 @@ Ao usar uma variável temporária, o `input` é referenciado por meio de `nome`:
 {{nome.value}}
 ```
 
-Isso vai fazer com que o valor \(atributo `value`\) do controle de entrada seja apresentado depois de uma alteração.
+Isso faz com que o valor \(atributo `value`\) do controle de entrada seja apresentado depois de uma alteração. É possível ter mais de uma variável de template referenciando o controle de entrada.
 
 ### Estado do controle de entrada de dados e validação
 
@@ -99,9 +110,15 @@ Para mostrar as classes CSS do controle de entrada use algo como seguinte:
 </div>
 ```
 
-O trecho de código indica que a variável temporária `nome`, que referencia um controle de etrada \(`input`\), possui o atributo `className`, que mostra os nomes das classes associadas ao controle de entrada no momento.
+O trecho de código indica que a variável temporária `nome`, que referencia um controle de etrada \(`input`\), possui o atributo `className`, que mostra os nomes das classes associadas ao controle de entrada no momento. 
 
-Com base no estado e na regra de validação do controle é possível, por exemplo, interagir com o usuário, indicando que ele deve informar um valor para um controle de entrada que esteja com o atributo `required`. O trecho a seguir demonstra isso.
+Importante notar que a variável de template `nome` não possui um valor. Isso permite acessar o atributo `className`. Para utilizar validação, a variável temporária precisa ter o valor `ngModel`. Isso modifica o comportamento do objeto ao qual a variável de template faz referência e, por exemplo, não dá mais acesso ao atributo `className`.
+
+A validação de formulários do Angular utiliza os recursos de validação do HTML. As seções a seguir demonstram como implementar diversas regras de validação.
+
+#### Validação de campo requerido
+
+Com base no estado e na regra de validação do controle é possível, por exemplo, interagir com o usuário, indicando que ele deve informar um valor para um controle de entrada que possua o atributo `required`. O trecho a seguir demonstra isso.
 
 ```html
 <input type="text" ... required [(ngModel)="tarefa.nome" #nome="ngModel">
@@ -110,12 +127,55 @@ Com base no estado e na regra de validação do controle é possível, por exemp
 </div>
 ```
 
-O trecho de código indica que o `input`é referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid`e `pristine` indicando, respectivamente o estado do controle de entrada:
+O trecho de código indica que o `input`é referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid`e `pristine` indicando, respectivamente o estado do controle de entrada \(conforme a tabela dos estados de validação apresentada anteriormente\).
 
-* `valid`: quando é `true`, o valor do controle de entrada está válido conforme a regra de validação
-* `pristine`: quando é `true`, a tela foi carregada pela primeira vez
+Utilizar um elemento `div` com a propriedade `hidden`e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
 
-Utilizar um elemento com a propriedade `hidden`e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
+## Recursos avançados
+
+Este capítulo apresenta também alguns recursos avançados de formulários utilizando Angular. 
+
+### Criando opções em um select
+
+O Angular permite um gerenciamento do documento HTML e isso também significa que é possível modificar o conteúdo de um formulário, em específico um controle `select`. 
+
+As opções \(elemento `option`\) de um `select` podem ser definidas manualmente no documento HTML, mas fazer isso usando programação pode ser bastante útil em algumas situações.
+
+Comecemos pela classe do componente:
+
+```typescript
+@Component({...})
+export class EditorComponent {
+    estados: any[];
+    
+    constructor() {
+        this.estados = [
+          {uf: 'TO', nome: 'Tocantins'},
+          {uf: 'GO', nome: 'Goiás'},
+          {uf: 'MG', nome: 'Minas Gerais'},
+          {uf: 'SP', nome: 'São Paulo'},
+          {uf: 'RJ', nome: 'Rio de Janeiro'}
+        ];        
+    }
+}
+```
+
+A classe possui o atributo `estados`, que é um array \(`any[]`\). Os elementos do array são criados no `constructor()`. Cada elemento é um objeto que possui os atributos `uf` e `nome`.
+
+Agora, o template:
+
+```
+<div class="form-group">
+    <label for="estado">Estado</label>
+    <select id="estado" name="estado" class="form-control" 
+        [(ngModel)]="evento.estado" required>
+        <option value="">Selecione um Estado</option>
+        <option *ngFor="let estado of estados" [value]="estado.uf">
+            {{estado.nome}}
+        </option>
+    </select>
+</div>
+```
 
 ## Resumo
 
