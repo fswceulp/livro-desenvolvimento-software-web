@@ -88,7 +88,7 @@ export class EventoManagerComponent {
 
 Isso indica que o componente `EventoManagerComponent` depende de três classes \(serviços\): `EventosService`, `EstadosService` e `CidadesService`.
 
-### Dependências do Serviço
+### Dependências do módulo
 
 Se um serviço precisar estar disponível para todos os componentes de um módulo, ele pode ser registrado no nível do módulo. Para isso, basta registrá-lo como ilustra o código a seguir:
 
