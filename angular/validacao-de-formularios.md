@@ -46,6 +46,28 @@ Utilizar um elemento `div` com a propriedade `hidden`e seu valor baseado em uma 
 
 ## Mais de uma regra de validação no campo
 
+Pode ocorrer de um campo precisar de mais de uma regra de validação. Por exemplo, no contexto de um cadastro de eventos, o nome do evento é obrigatório e deve ter, no mínimo 20 caracteres. Para implementar essa validação trabalhamos com o atributo `errors` de uma variável de template vinculada ao data biding:
+
+```html
+<label for="nome">Nome</label>
+<input type="text" id="nome" name="nome" class="form-control" 
+    [(ngModel)]="evento.nome" #nome="ngModel" placeholder="Nome do evento" 
+    required minlength="20" maxlength="60">
+<div class="alert alert-danger" 
+    *ngIf="nome.errors && (nome.dirty || nome.touched)">
+    <div [hidden]="!nome.errors.required">
+        Você deve informar o nome do evento.
+    </div>
+    <div [hidden]="!nome.errors.minlength">
+        O nome do evento deve ter, no mínimo, 20 caracteres.
+    </div>
+</div>
+```
+
+Em relação à regra de validação anterior, muda no sentido de incluir atributos para validação do comprimento do valor do controle de entrada: o atributo `minlength`.  O valor do atributo é `20`, indicando que esse é o tamanho mínimo para o valor fornecido pelo usuário.
+
+Em segundo lugar, muda a técnica usada para ocultar/mostrar a mensagem de erro de validação. Ao invés de utilizar a propriedade `hidden` é usada a diretiva `ngIf`. Nesse caso, a diretiva tem o valor baseado na expressão `nome.errors && (nome.dirty || nome.touched)`. A diferença fica para fato de que a expressão usa `nome.errors`.  Esse atributo é um objeto que contém os erros de validação referentes ao controle de entrada \(referenciado pela variável de template\). Por exemplo, se houver erro de campo requerido `nome.errors.required` terá valor `true`. Se houver erro de comprimento mínimo, `nome.errors.minlength` terá valor `true`. Isso continua válido para cada validação de entrada do HTML e permite um modelo flexível para validar entrada do usuário.
+
 Como a validação de formulários baseados em template utiliza os recursos do HTML, o capítulo atual pode ser estendido por qualquer referência de validação em HTML. Recomendamos essas duas:
 
 * W3Schools: HTML Input Types: [https://www.w3schools.com/html/html\_form\_input\_types.asp](https://www.w3schools.com/html/html_form_input_types.asp)
