@@ -89,47 +89,56 @@ Ao usar uma variável temporária, o `input` é referenciado por meio de `nome`:
 
 Isso faz com que o valor \(atributo `value`\) do controle de entrada seja apresentado depois de uma alteração. É possível ter mais de uma variável de template referenciando o controle de entrada.
 
-### Estado do controle de entrada de dados e validação
-
-Quando o elemento `input` possui o atributo `required`, isso indica que é obrigatório fornecer um valor para este controle de entrada de dados. Isso é chamado de validação.
-
-Utilizar `ngModel` em um controle de formulário faz mais do que o two way data binding, pois informa o estado do componente. O estado tem relação com a interação entre o usuário e o controle \(e seu valor\). O Angular atribui classes CSS ao controle de entrada conforme o estado dele, bem como fornece atributos para o objeto associado ao controle de entrada. A tabela a seguir mostra essa relação.
-
-| Estado | Classe se true | Classe se false |
-| :--- | :--- | :--- |
-| O controle foi visitado | `ng-touched` | `ng-untouched` |
-| O valor do controle mudou | `ng-dirty` | `ng-pristine` |
-| O valor do controle é válido | `ng-valid` | `ng-invalid` |
-
-Para mostrar as classes CSS do controle de entrada use algo como seguinte:
+Sobretudo, uma variável temporária pode ser aplicada a qualquer elemento como uma forma de referenciá-lo. No contexto de formulários, podemos usar uma variável temporária no elemento `form` como maneira de fazer referência ao formulário:
 
 ```html
-<input type="text" ... #nome>
-<div>
-    {{nome.className}}
-</div>
+<form (ngSubmit)="onSubmit()" #formCadastro="ngForm">
+...
+</form>
 ```
 
-O trecho de código indica que a variável temporária `nome`, que referencia um controle de etrada \(`input`\), possui o atributo `className`, que mostra os nomes das classes associadas ao controle de entrada no momento.
+A variável de template `formCadastro` recebe `ngForm`, indicando que há também um nível de data binding além dos controles do formulário, ou seja, para o próprio formulário, em si.
 
-Importante notar que a variável de template `nome` não possui um valor. Isso permite acessar o atributo `className`. Para utilizar validação, a variável temporária precisa ter o valor `ngModel`. Isso modifica o comportamento do objeto ao qual a variável de template faz referência e, por exemplo, não dá mais acesso ao atributo `className`.
+## Envio dos dados \(submit\)
 
-A validação de formulários do Angular utiliza os recursos de validação do HTML. As seções a seguir demonstram como implementar diversas regras de validação.
+O envio dos dados, ou submit, é a última etapa de uma sequência que tem:
 
-#### Validação de campo requerido
+* preenchimento dos dados \(pelo usuário\)
+* validação \(pelo sistema\)
+* envio dos dados \(pelo sistema\)
 
-Com base no estado e na regra de validação do controle é possível, por exemplo, interagir com o usuário, indicando que ele deve informar um valor para um controle de entrada que possua o atributo `required`. O trecho a seguir demonstra isso.
+Ainda não vamos lidar com as etapas que acontecem na interação com o _back-end_.
+
+Como no HTML, o submit de um formulário é disparado por um clique em um botão:
 
 ```html
-<input type="text" ... required [(ngModel)="tarefa.nome" #nome="ngModel">
-<div class="alert alert-danger" [hidden]="nome.valid || nome.pristine">
-    Informe o nome da tarefa
-</div>
+<form (ngSubmit)="onSubmit()" #formCadastro="ngForm">
+    ...
+    <button type="submit" class="btn btn-success" 
+        [disabled]="!formCadastro.form.valid">
+        Salvar
+    </button>
+</form>
 ```
 
-O trecho de código indica que o `input`é referenciado pela variável temporária `nome`. Além disso, a variável temporária recebe o valor `ngModel`, o que indica que ela está vinculada ao controle por meio do two way data binding. A variável temporária possui os atributos `valid`e `pristine` indicando, respectivamente o estado do controle de entrada \(conforme a tabela dos estados de validação apresentada anteriormente\).
+O elemento `button` tem o atributo `type="submit"` e a propriedade `disabled` baseada no valor `!formCadastro.form.valid`. A validação do formulário não faz parte desse capítulo, mas isso quer dizer que o botão estará desabilitado enquanto o formulário, referenciado pela variável de template `formCadastro`, não estiver válido.
 
-Utilizar um elemento `div` com a propriedade `hidden`e seu valor baseado em uma expressão lógica faz com que a mensagem de validação seja apresentada para o usuário apenas na situação apropriada.
+Voltando para o elemento `form`, há o evento `ngSubmit`. Este é um evento específico de formulário, que é disparado quando começa o processo de submit \(envio dos dados\). O valor do evento é um código TypeScript que, nesse caso, é a chamada da função `onSubmit()`, definida na classe do componente:
+
+```typescript
+@Component({...})
+export class EventoManagerComponent {
+  eventos: Evento[] = [];
+  evento: Evento = new Evento(0, '', '');
+  enviado: boolean = false;
+  
+  onSubmit() : void {
+    this.eventos.push(this.evento);
+  }
+}
+```
+
+A classe EventoManagerComponent declara o método onSubmit\(\) que, no contexto do exemplo, insere os dados do formulário \(representados pelo atributo `evento`\) em uma lista de eventos \(representada pelo atributo `eventos`\). 
 
 ## Recursos avançados
 
@@ -219,7 +228,7 @@ export class EventoManagerComponent {
       {nome: 'Rio de Janeiro', uf: 'RJ'}
     ];  
   }
-  
+
   getCidades(uf: string) {
     let lista: any[] = [];
     for(let i = 0; i < this.cidades.length; i++) {
@@ -253,7 +262,9 @@ Agora, o template:
 </div>
 ```
 
-O código do template indica que um `select `é usado para apresentar as opções de cidades para o usuário. De início, a propriedade `disabled` possui o valor `!evento.estado`. Isso indica que o `select `estará desabilitado \(entrada proibida\) enquanto o usuário não selecionar um valor para o Estado. 
+O código do template indica que um `select`é usado para apresentar as opções de cidades para o usuário. De início, a propriedade `disabled` possui o valor `!evento.estado`. Isso indica que o `select`estará desabilitado \(entrada proibida\) enquanto o usuário não selecionar um valor para o Estado.
+
+O valor de cada opção, a propriedade `value`, recebe `cidade.nome`.
 
 Outra parte importante é que a diretiva `ngFor` é utilizada para criar as opções de cidades para o usuário selecionar. A diferença é que as opções não são criadas com base no atributo `cidades` da classe do componente, mas em uma chamada do método `getCidades()`. Como o método recebe a UF do Estado, faz sentido passar como parâmetro `estado.value`, ou seja, o valor do `select` que representa o Estado. Assim, o valor da diretiva `ngFor` é `let cidade of getCidades(estado.value)`.
 
