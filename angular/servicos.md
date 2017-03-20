@@ -88,6 +88,24 @@ export class EventoManagerComponent {
 
 Isso indica que o componente `EventoManagerComponent` depende de três classes \(serviços\): `EventosService`, `EstadosService` e `CidadesService`.
 
+### Dependências do Serviço
+
+Se um serviço precisar estar disponível para todos os componentes de um módulo, ele pode ser registrado no nível do módulo. Para isso, basta registrá-lo como ilustra o código a seguir:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { EventosService } from './eventos.service';
+
+@NgModule({
+    ...
+    providers: [ EventosService ],
+    ...
+})
+export class AppModule { }
+```
+
+Assim não será necessário registrar o serviço `EventosService` como dependência em cada componente.
+
 ### Interagindo com o serviço
 
 Considere o serviço `CidadesService`, apresentado a seguir:
@@ -189,6 +207,4 @@ Além disso, usa `EventosService` em dois momentos:
 * no método `onSubmit()`, chamando o método `save()`.
 
 Perceba que a grande utilidade de serviços é separar código. Desta forma, o código do componente fica reduzido, mais fácil de manter e o serviço pode ser utilizado por outros componentes.
-
-
 
