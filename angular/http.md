@@ -4,11 +4,90 @@ Um recurso muito útil no desenvolvimento de software web é consultar fontes de
 
 O `HttpModule` é disponibilizado pelo pacote `@angular/http` e é preciso registrá-lo no `AppModule`:
 
+```typescript
+import { HttpModule } from '@angular/http';
+
+@NgModule({
+    imports : [ BrowserModule, FormsModule, HttpModule ],
+    ...
+})
+export class AppModule { }
 ```
 
+## Consultando dados de um arquivo .json
+
+Uma fonte de dados pode ser um arquivo .json. Por exemplo \(arquivo `eventos.json`\):
+
+```js
+[
+    {
+        "id": 1, 
+        "nome": "XIX Congresso de Computação e Sistemas de Informação", 
+        "sigla": "ENCOINFO"
+    },
+    {
+        "id": 2, 
+        "nome": "XIII Simpósio Brasileiro de Sistemas de Informação", 
+        "sigla": "SBSI"
+    },
+    {
+        "id": 3, 
+        "nome": "XXXVII Congresso da Sociedade Brasileira de Computação", 
+        "sigla": "CSBC"
+    }
+]
 ```
 
+Para consultar o arquivo podemos usar o serviço `Http`, disponibilizado pelo módulo `HttpModule`. Para isso, é necessário, primeiro, injetá-lo no construtor de um serviço:
 
+```typescript
+import { Injectable } from '@angular/core';
+import { Evento } from './Evento';
+import { Http }       from '@angular/http';
+import { Observable }     from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class EventosService {
+    constructor(private http : Http) {
+    }
+
+    ...
+}
+```
+
+Depois, o serviço pode disponibilizar métodos que consultem e retornem o conteúdo do arquivo. Por exemplo, o método `all()`:
+
+```typescript
+all() : Observable<Evento[]>{
+    return this.http.get('../../public/dados/eventos.json')
+        .map(response => response.json() as Evento[]);
+}
+```
+
+O serviço `Http` fornece o método `get()`, que aceita um caminho \(ou uma URL\) para o arquivo .json \(neste caso `eventos.json`\). O retorno desse método é do tipo `Observable` sobre o qual chamamos a função `map()`, que faz algum processamento sobre o retorno do método anterior e o retorna. 
+
+A sintaxe `response => response.json()` é chamada de lambda ou função seta \(arrow function\) e permite passar uma função como callback para o método `map()`. Neste caso, a função lambda tem um parâmetro, chamado `response`, e o retorno da função é `response.json()`. Por fim, este valor é convertido para `Evento[]` utilizando o operador `as`.
+
+Para usar o serviço, o componente deve interagir com ele conforme um ciclo de vida específico \(e assíncrono\) \(trecho de código a seguir é do componente `EventoManagerComponent`\):
+
+```typescript
+ngOnInit(): void {
+  this.eventosService.all().subscribe(eventos => this.eventos = eventos);
+}
+```
+
+Para utilizar o valor de um `Observable` é necessário chamar o método `subscribe()`, que aceita três parâmetros:
+
+* a callback que trata do retorno da `Observable` que opera com sucesso
+* a callback que trata do retorno da `Observable` quando ocorre um erro
+* a callback que executa quando o processo é concluído
+
+Lidar com esse ciclo de vida é importante porque seu comportamento assíncrono muda a forma de utilizar os métodos -- por exemplo, não há um retorno do método para ser usado diretamente.
+
+## Mais sobre serviços
+
+Esta seção demonstra como criar um serviço para usar o serviço `Http` e consumir uma API.
 
 **Exemplo \(trecho do arquivo src\/app\/eventos.service.ts\):**
 
