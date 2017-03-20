@@ -131,18 +131,21 @@ export class EventoManagerComponent {
   eventos: Evento[] = [];
   evento: Evento = new Evento(0, '', '');
   enviado: boolean = false;
-  
+
   onSubmit() : void {
     this.eventos.push(this.evento);
   }
 }
 ```
 
-A classe EventoManagerComponent declara o método onSubmit\(\) que, no contexto do exemplo, insere os dados do formulário \(representados pelo atributo `evento`\) em uma lista de eventos \(representada pelo atributo `eventos`\). 
+A classe `EventoManagerComponent` declara o método `onSubmit()` que é chamado no evento `ngSubmit` do formulário e, no contexto do exemplo, insere os dados do formulário \(representados pelo atributo `evento`\) em uma lista de eventos \(representada pelo atributo `eventos`\).
 
 ## Recursos avançados
 
-Este capítulo apresenta também alguns recursos avançados de formulários utilizando Angular.
+Este capítulo apresenta também alguns recursos avançados de formulários utilizando Angular:
+
+* criar opções em um `select` utilizando código
+* usar selects em cascata
 
 ### Criando opções em um select
 
