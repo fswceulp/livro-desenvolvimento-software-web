@@ -46,12 +46,10 @@ Utilizar um elemento `div` com a propriedade `hidden`e seu valor baseado em uma 
 
 ## Mais de uma regra de validação no campo
 
-
-
 Como a validação de formulários baseados em template utiliza os recursos do HTML, o capítulo atual pode ser estendido por qualquer referência de validação em HTML. Recomendamos essas duas:
 
-* W3Schools: HTML Input Types: https://www.w3schools.com/html/html\_form\_input\_types.asp
-* W3Schools: HTML Input Attributes: https://www.w3schools.com/html/html\_form\_attributes.asp
+* W3Schools: HTML Input Types: [https://www.w3schools.com/html/html\_form\_input\_types.asp](https://www.w3schools.com/html/html_form_input_types.asp)
+* W3Schools: HTML Input Attributes: [https://www.w3schools.com/html/html\_form\_attributes.asp](https://www.w3schools.com/html/html_form_attributes.asp)
 
 Resumidamente, a validação pode ser estendida para usar tipos de controle de entrada do HTML:
 
@@ -84,8 +82,6 @@ Os atributos a seguir também pode ser úteis e podem ser usados como propriedad
 
 * `disabled`: desabilita um controle de entrada
 * `readonly`: determina que um controle de entrada está no modo somente leitura
-
-
 
 
 
