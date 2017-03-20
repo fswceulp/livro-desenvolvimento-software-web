@@ -12,5 +12,7 @@ O conteúdo do livro é dividido em partes:
 
 Como um livro de programação, também estão disponíveis os códigos-fontes dos aplicativos de exemplo utilizados nos conteúdos. Para ter acesso a eles, acesse o repositório [https://github.com/jacksongomesbr/livro-web-codigo-fonte](https://github.com/jacksongomesbr/livro-web-codigo-fonte).
 
+A leitura do livro pode ser feita em https://www.gitbook.com/book/fsw-ceulp/desenvolvimento-de-software-para-a-web/details de forma on-line \(botão "Read"\) ou baixando a versão PDF, Mobi ou ePub.
+
 De uma forma didática, os conceitos envolvidos nas áreas contempladas neste livro podem ser acompanhados por meio de um [mapa mental](https://coggle.it/diagram/WI-H2T3NPQd40faP).
 
