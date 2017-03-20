@@ -1,5 +1,13 @@
 # HTTP
 
+Um recurso muito útil no desenvolvimento de software web é consultar fontes de dados. Por exemplo, suponha que um conjunto de objetos esteja presente em um arquivo ou então esteja disponível por meio de uma URL de uma API. Para usar esse rcurso, o Angular fornece o `HttpModule`.
+
+O `HttpModule` é disponibilizado pelo pacote `@angular/http` e é preciso registrá-lo no `AppModule`:
+
+```
+
+```
+
 
 
 **Exemplo \(trecho do arquivo src\/app\/eventos.service.ts\):**
@@ -89,6 +97,4 @@ delete(evento: Evento) : Observable<number> {
 ```
 
 A estrutura de `http.delete()` é bastante similar à de `http.get()`.
-
-
 
