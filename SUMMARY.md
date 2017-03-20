@@ -54,8 +54,9 @@
   * [Estrutura do projeto](angular/estrutura-do-projeto.md)
   * [Formulários](angular/formularios.md)
   * [Validação de formulários](angular/validacao-de-formularios.md)
-  * [Observables](angular/observables.md)
   * [Servicos](angular/servicos.md)
+  * [HTTP](angular/http.md)
+  * [Observables](angular/observables.md)
   * [Múltiplos componentes](angular/multiplos-componentes.md)
 
 ## Programação Back-end
