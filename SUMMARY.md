@@ -58,6 +58,7 @@
   * [HTTP](angular/http.md)
   * [Observables](angular/observables.md)
   * [Múltiplos componentes](angular/multiplos-componentes.md)
+  * [Rotas](angular/rotas.md)
 
 ## Programação Back-end
 
