@@ -93,7 +93,7 @@ Uma rota de fallback é usada quando nenhuma rota combinou com a URL. Para isso 
 
 ## Router outlet
 
-Como já visto, a primeira etapa do funcionamento do Router é combinar URL e rotas para identificar qual componente apresentar. Entretanto, esse componente não é apresentado sozinho. Aqui o Router utiliza o conceito do `outlet`. Primeiro, lembre-se que o módulo raiz indica qual componente é carregado:
+Como já visto, a primeira etapa do funcionamento do Router é combinar URL e rotas para identificar qual componente apresentar. Entretanto, esse componente não é apresentado sozinho. Aqui o Router utiliza a diretiva `RouterOutlet`, cujo seletor é o elemento `router-outlet`. Primeiro, lembre-se que o módulo raiz indica qual componente é carregado:
 
 ```
 @NgModule({
@@ -113,7 +113,7 @@ A partir de então, o Router procura no template deste componente pelo elemento 
 </div>
 ```
 
-A localização do elemento `router-outlet` no template é importante porque ela vai determinar, na prática, onde o Router deverá apresentar o componente em questão. Por causa disso, o Router chama o componente de _shell_ \(concha\). De certa forma, o template fornece uma "casca" \(um conteúdo padrão e compartilhado\) para todos os componentes a serem carregados.
+A localização do elemento `router-outlet` no template é importante porque ela vai determinar, na prática, onde o Router deverá apresentar o componente em questão. Por causa disso, o Router chama o componente `AppComponent` de _shell_ \(concha\). De certa forma, o template fornece uma "casca" \(um conteúdo padrão e compartilhado\) para todos os componentes a serem carregados.
 
 ## Configuração dos componentes
 
@@ -131,4 +131,10 @@ export class EventosListaComponent implements OnInit {
 ```
 
 Claramente, isso é possível apenas para os componentes que estarão vinculados a rotas, pois serão carregados pelo Router. Para os demais componentes, vale utilizar o seletor para que possam ser utilizados por outros componentes.
+
+## Navegação
+
+
+
+
 
