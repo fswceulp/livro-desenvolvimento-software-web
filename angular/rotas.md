@@ -8,7 +8,7 @@ Embora o Angular forneça ao desenvolvedor várias formas de gerenciar o conteú
 
 O Angular Router se baseia nesse mesmo modelo: interpreta uma URL como uma instrução para navegar para uma view. Pode-se passar parâmetros opcionais para o componente que está associado à view, de modo que ele possa decidir sobre um conteúdo específico que deve ser apresentado. Você pode vincular o router a links em uma página e ele vai negar para a view apropriada quando o usuário clicar em um link. Você pode navegar de forma imperativa \(programaticamente\) quando o usuário clica em botão, seleciona uma opção de um select ou em resposta a outro estímulo de qualquer fonte. Ainda, o router mantém um registro da atividade no histórico do browser para que os botões "Voltar" e "Avançar" funcionem.
 
-Este capítulo apresenta vários conceitos sobre o Router e seu funcionamento. 
+Este capítulo apresenta vários conceitos sobre o Router e seu funcionamento.
 
 ## &lt;base href&gt;
 
@@ -30,7 +30,7 @@ Há momentos em que a URL raiz não é conhecida a princípio \(em tempo de dese
 
 ## Configuração do módulo
 
-Uma aplicação usa apenas uma instância do Angular Router. Quando a URL do browser muda, ele procura por uma rota correspondente, a partir da qual determina qual componente apresentar. 
+Uma aplicação usa apenas uma instância do Angular Router. Quando a URL do browser muda, ele procura por uma rota correspondente, a partir da qual determina qual componente apresentar.
 
 A configuração depende do tipo de módulo: raiz \(root\) ou filho \(child\). A diferença é sutil e não interfere na maneira como cada tipo de módulo as integra. O trecho de código a seguir exemplifica como definir rotas para o módulo raiz.
 
@@ -75,7 +75,7 @@ A rota fixa é representada por um caminho que não muda. No caso do exemplo, a 
 
 ### Rota dinâmica
 
-A rota dinâmica contém os chamados **parâmetros de rota**. Por meio de parâmetros de rota é possível comunicar-se com o componente associado à rota. No caso do exemplo, a rota `eventos/:id` contém o parâmetro `id`. A sintaxe para criar um parâmetro de rota é usar o sinal de dois pontos seguido do nome do parâmetro. 
+A rota dinâmica contém os chamados **parâmetros de rota**. Por meio de parâmetros de rota é possível comunicar-se com o componente associado à rota. No caso do exemplo, a rota `eventos/:id` contém o parâmetro `id`. A sintaxe para criar um parâmetro de rota é usar o sinal de dois pontos seguido do nome do parâmetro.
 
 Esse tipo de rota é importante porque permite uma URL como: `eventos/10`, a qual indica que o parâmetro de rota `id` tem o valor `10`.
 
@@ -89,7 +89,46 @@ Uma rota de redirecionamento indica para o Angular Router procurar outra rota, p
 
 ### Rota de fallback
 
-Uma rota de fallback é usada quando nenhuma rota combinou com a URL. Para isso o caminho é fixo com valor `**`. No caso do exemplo, a rota `**` redireciona para o component `PaginaNaoEncontradaComponent`, o que é uma forma de criar uma "página de erro" que trata a situação em que o usuário solicita uma página não encontrada. 
+Uma rota de fallback é usada quando nenhuma rota combinou com a URL. Para isso o caminho é fixo com valor `**`. No caso do exemplo, a rota `**` redireciona para o component `PaginaNaoEncontradaComponent`, o que é uma forma de criar uma "página de erro" que trata a situação em que o usuário solicita uma página não encontrada.
 
+## Router outlet
 
+Como já visto, a primeira etapa do funcionamento do Router é combinar URL e rotas para identificar qual componente apresentar. Entretanto, esse componente não é apresentado sozinho. Aqui o Router utiliza o conceito do `outlet`. Primeiro, lembre-se que o módulo raiz indica qual componente é carregado:
+
+```
+@NgModule({
+    ...
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Assim, o módulo raiz carrega o componente `AppComponent` por causa do atributo `bootstrap` do objeto passado como parâmetro para a decorator `@NgModule`.
+
+A partir de então, o Router procura no template deste componente pelo elemento `router-outlet`:
+
+```
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+```
+
+A localização do elemento `router-outlet` no template é importante porque ela vai determinar, na prática, onde o Router deverá apresentar o componente em questão. Por causa disso, o Router chama o componente de _shell_ \(concha\). De certa forma, o template fornece uma "casca" \(um conteúdo padrão e compartilhado\) para todos os componentes a serem carregados.
+
+## Configuração dos componentes
+
+Com exceção do componente raiz todos os demais componentes não precisam de um seletor. Exemplo:
+
+```
+@Component({
+    templateUrl: 'eventos-lista.component.html'
+})
+export class EventosListaComponent implements OnInit {
+    constructor() { }
+
+    ngOnInit() { }
+}
+```
+
+Claramente, isso é possível apenas para os componentes que estarão vinculados a rotas, pois serão carregados pelo Router. Para os demais componentes, vale utilizar o seletor para que possam ser utilizados por outros componentes.
 
