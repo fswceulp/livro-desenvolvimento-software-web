@@ -157,5 +157,32 @@ Há dois elementos `a`. No primeiro a diretiva `RouterLink` \(atributo `routerLi
 
 
 
+### Router como um serviço
+
+
+
+```
+...
+import { Location } from '@angular/common';
+...
+
+@Component({
+...
+})
+export class EventosListaComponent implements OnInit {
+...
+    constructor(private eventosService: EventosService,
+        private router: Router) { }
+
+...
+
+    mostrarDetalhes(evento: Evento) {
+        this.router.navigate(['/eventos', evento.id]);
+    }
+}
+```
+
+
+
 
 
