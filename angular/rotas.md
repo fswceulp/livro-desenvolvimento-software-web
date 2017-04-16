@@ -352,7 +352,23 @@ Pode-se perceber, pelos nomes dos arquivos, que não há uma organização nos c
     - pagina-nao-encontrada.component.ts
 ```
 
-Depois da organização dos arquivos seguem-se outros procedimentos, criando um módulo específico para as funcionalidades referentes a "eventos". O padrão de desenvolvimento do Angular chama esses módulos menores de _feature modules_.
+Depois da organização dos arquivos seguem-se outros procedimentos, criando um módulo específico para as funcionalidades referentes a "eventos". O padrão de desenvolvimento do Angular chama esses módulos menores de _feature modules_. Este formato de desenvolvimento também permite introduzir o conceito de _child routes_ \(rotas filhas\).
+
+### Arquitetura modular
+
+
+
+### Componente padrão do módulo
+
+
+
+### Módulo de rotas
+
+Segundo o formato de desenvolvimento visto na seção anterior, o desenvolvimento do módulo "eventos" começa pelo módulo de rotas `EventosRoutingModule`:
+
+```
+
+```
 
 
 
