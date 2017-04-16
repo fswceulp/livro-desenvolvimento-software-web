@@ -138,7 +138,7 @@ A navegação pode ser feita pelo usuário \(no clique de um link ou diretamente
 
 ### Diretiva RouterLink
 
-A diretiva `RouterLink` permite definir a URL \(atributo `href`\) de um elemento `a` de forma que ele direcione corretamente uma rota. O exemplo a seguir demonstra como usar essa diretiva:
+A diretiva `RouterLink` \(atributo `routerLink`\) permite definir a URL \(atributo `href`\) de um elemento `a` de forma que ele direcione corretamente uma rota. O exemplo a seguir demonstra como usar essa diretiva:
 
 ```
 <ul class="navbar-nav">
@@ -151,11 +151,17 @@ A diretiva `RouterLink` permite definir a URL \(atributo `href`\) de um elemento
 </ul>
 ```
 
-Há dois elementos `a`. No primeiro a diretiva `RouterLink` \(atributo `routerLink`\) contém o valor `/`, o que quer dizer que o link direciona para essa rota. No segundo, contém o valor `/eventos`, indicando que, igualmente, o link direciona para outra rota.
+Há dois elementos `a`. No primeiro, a diretiva `RouterLink`contém o valor `/`, o que quer dizer que o link direciona para essa rota. No segundo, contém o valor `/eventos`, indicando que, igualmente, o link direciona para outra rota.
+
+Não há problema em utilizar o atributo `href` diretamente. Entretanto, usar essa abordagem levará em conta a necessidade de tratar particularidades da URL do aplicativo web \(por exemplo, quando o aplicativo não está na raiz\).
 
 ### Diretiva RouterLinkActive
 
+A diretiva `RouterLinkActive` \(atributo `routerLinkActive`\) permite atribuir uma ou mais classes CSS ao atributo ao qual é aplicada quando a rota ativa corresponder à informada na diretiva `RouterLink`. Isso é muito útil em navegação, quando se deseja destacar um item de um menu em relação aos demais. No caso do exemplo, a classe CSS `active` é atribuída ao elemento `li`. 
 
+Interessante notar que a diretiva `RouterLink` não está presente no elemento `li`, em si, mas no elemento `a`, contido nele. Essa é uma situação tratada corretamente pelo Angular Router.
+
+É importante considerar, por fim, que o tratamento de rotas é um processo que requer certos cuidados. Para a URL `http://dominio.com/eventos`, por exemplo, por causa da ordem dos itens do menu, a diretiva `RouterLinkActive` considera que a rota `/` está ativa. Assim, para que ela trate a rota `/eventos` como ativa, é necessário informar que a comparação é de rota exata. Isso é feito por meio da propriedade `routerLinkActiveOptions`, com o valor `{exact:true}`, como usado no exemplo de código acima.
 
 ### Router como um serviço
 
@@ -181,8 +187,6 @@ export class EventosListaComponent implements OnInit {
     }
 }
 ```
-
-
 
 
 
