@@ -242,13 +242,7 @@ ngOnInit() {
 }
 ```
 
-O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable `\(um objeto retornado por `EventosService.find()`\). Na prática, esse é o procedimento padrão para tratar mudanças em valores de parâmetros de rota. 
+O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable`. Nesse processo, o parâmetro `id` é acessado de forma nomeada: `params['id']`. O resultado de `EventosService.find()` é então retornado. Na prática, esse é o procedimento padrão para tratar mudanças em valores de parâmetros de rota.
 
-Na sequência, o código usa `subscribe()` para tratar o `Observable` retornado pelo operador `switchMap`. 
-
-
-
-
-
-
+Na sequência, o código usa `subscribe()` para tratar o `Observable` retornado pelo operador `switchMap`.
 
