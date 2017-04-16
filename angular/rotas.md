@@ -242,7 +242,70 @@ ngOnInit() {
 }
 ```
 
-O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable`. Nesse processo, o parâmetro `id` é acessado de forma nomeada: `params['id']`. O resultado de `EventosService.find()` é então retornado. Na prática, esse é o procedimento padrão para tratar mudanças em valores de parâmetros de rota.
+O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable`. Nesse processo, o parâmetro `id` é acessado de forma nomeada: `params['id']`. Como ele é representado como um `string`, seu valor é convertido para number usando `Number.parseInt()`. 
+
+O resultado de `EventosService.find()` é então retornado. Na prática, esse é o procedimento padrão para tratar mudanças em valores de parâmetros de rota.
 
 Na sequência, o código usa `subscribe()` para tratar o `Observable` retornado pelo operador `switchMap`.
+
+## Módulo de rotas
+
+Uma boa prática para a arquitetura do aplicativo é usar outro módulo para representar as rotas \(o módulo de rotas\). Para fazer isso, o módulo de rotas é criado e importado no módulo do aplicativo \(como o módulo raiz\). O código a seguir aprenta o arquivo `app-routing.module.ts`, que contém a definição do módulo `AppRoutingModule`, um módulo de rotas.
+
+```
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home.component';
+import { EventosListaComponent } from './eventos-lista.component';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { EventoDetalhesComponent } from './evento-detalhes.component';
+
+const rotas: Routes = [
+    { path: 'eventos/:id', component: EventoDetalhesComponent },
+    { path: 'eventos', component: EventosListaComponent },
+    { path: '', component: HomeComponent },
+    { path: '**', component: PaginaNaoEncontradaComponent }
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot(rotas)
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+export class AppRoutingModule { }
+```
+
+A diferença para o que estava sendo feito anteriormente, com as rotas no mesmo módulo raiz, é que o `AppRoutingModule` exporta o `RouterModule` para que as rotas possam ser usadas em outro módulo.
+
+Posteriormente, o módulo raiz \(`AppModule`\) importa o módulo de rotas:
+
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+...
+import { AppRoutingModule } from './app-routing.module';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+...
+})
+export class AppModule { }
+```
+
+Embora esse procedimento não seja obrigatório, é uma boa prática de programação e, preferencialmente, deve ser usado.
+
+
+
+
 
