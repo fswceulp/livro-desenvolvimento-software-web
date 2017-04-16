@@ -242,7 +242,7 @@ ngOnInit() {
 }
 ```
 
-O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable`. Nesse processo, o parâmetro `id` é acessado de forma nomeada: `params['id']`. Como ele é representado como um `string`, seu valor é convertido para number usando `Number.parseInt()`. 
+O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable`. Nesse processo, o parâmetro `id` é acessado de forma nomeada: `params['id']`. Como ele é representado como um `string`, seu valor é convertido para number usando `Number.parseInt()`.
 
 O resultado de `EventosService.find()` é então retornado. Na prática, esse é o procedimento padrão para tratar mudanças em valores de parâmetros de rota.
 
@@ -304,6 +304,55 @@ export class AppModule { }
 ```
 
 Embora esse procedimento não seja obrigatório, é uma boa prática de programação e, preferencialmente, deve ser usado.
+
+## Arquitetura do software em módulos
+
+Os recursos apresentados até aqui permitem o desenvolvimento de aplicativos pequenos. Entretanto, para aplicativos maiores, são necessários outros níveis de abstração. Na prática, o conteúdo dessa seção demonstra como organizar o aplicativo em módulos e incorporá-los no módulo raiz, tornando o software mais fácil de se manter e mais organizado.
+
+Considere que um software possui a seguinte estrutura de arquivos \(na pasta `src`\):
+
+```
++ src/
+  + app/
+    - app-routing.module.ts
+    - app.component.html
+    - app.component.ts
+    - app.module.ts
+    - evento-detalhes.component.html
+    - evento-detalhes.component.ts
+    - Evento.ts
+    - eventos-lista.component.html
+    - eventos-lista.component.ts
+    - eventos.service.ts
+    - home.component.html
+    - home.component.ts
+    - pagina-nao-encontrada.component.html
+    - pagina-nao-encontrada.component.ts
+```
+
+Pode-se perceber, pelos nomes dos arquivos, que não há uma organização nos componentes. Estão todos juntos. Para organizá-los, o desenvolvedor cria uma pasta chamada `eventos` e coloca nela apenas os componentes desse contexto. Assim, a organização dos arquivos fica da seguinte forma:
+
+```
++ src/  
+  + app/
+    + eventos/
+      - evento-detalhes.component.html
+      - evento-detalhes.component.ts
+      - Evento.ts
+      - eventos-lista.component.html
+      - eventos-lista.component.ts
+      - eventos.service.ts          
+    - app-routing.module.ts
+    - app.component.html
+    - app.component.ts
+    - app.module.ts
+    - home.component.html
+    - home.component.ts
+    - pagina-nao-encontrada.component.html
+    - pagina-nao-encontrada.component.ts
+```
+
+Depois da organização dos arquivos seguem-se outros procedimentos, criando um módulo específico para as funcionalidades referentes a "eventos". O padrão de desenvolvimento do Angular chama esses módulos menores de _feature modules_.
 
 
 
