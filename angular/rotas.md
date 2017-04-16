@@ -134,5 +134,24 @@ Claramente, isso é possível apenas para os componentes que estarão vinculados
 
 ## Navegação
 
+A navegação pode ser feita pelo usuário \(no clique de um link ou diretamente na barra de navegação, por exemplo\) ou programaticamente \(utilizando código\).
+
+### Diretiva routerLink
+
+A diretiva `RouterLink` permite definir a URL \(atributo `href`\) de um elemento `a` de forma que ele direcione corretamente uma rota. O exemplo a seguir demonstra como usar essa diretiva:
+
+```
+<ul class="navbar-nav">
+    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/eventos">Eventos</a>
+    </li>
+</ul>
+```
+
+Há dois elementos `a`. No primeiro a diretiva `RouterLink` \(atributo `routerLink`\) contém o valor `/`, o que quer dizer que o link direciona para essa rota. No segundo, contém o valor `/eventos`, indicando que, igualmente, o link direciona para outra rota.
+
 
 
