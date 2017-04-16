@@ -157,19 +157,19 @@ Não há problema em utilizar o atributo `href` diretamente. Entretanto, usar es
 
 ### Diretiva RouterLinkActive
 
-A diretiva `RouterLinkActive` \(atributo `routerLinkActive`\) permite atribuir uma ou mais classes CSS ao atributo ao qual é aplicada quando a rota ativa corresponder à informada na diretiva `RouterLink`. Isso é muito útil em navegação, quando se deseja destacar um item de um menu em relação aos demais. No caso do exemplo, a classe CSS `active` é atribuída ao elemento `li`. 
+A diretiva `RouterLinkActive` \(atributo `routerLinkActive`\) permite atribuir uma ou mais classes CSS ao atributo ao qual é aplicada quando a rota ativa corresponder à informada na diretiva `RouterLink`. Isso é muito útil em navegação, quando se deseja destacar um item de um menu em relação aos demais. No caso do exemplo, a classe CSS `active` é atribuída ao elemento `li`.
 
 Interessante notar que a diretiva `RouterLink` não está presente no elemento `li`, em si, mas no elemento `a`, contido nele. Essa é uma situação tratada corretamente pelo Angular Router.
 
-É importante considerar, por fim, que o tratamento de rotas é um processo que requer certos cuidados. Para a URL `http://dominio.com/eventos`, por exemplo, por causa da ordem dos itens do menu, a diretiva `RouterLinkActive` considera que a rota `/` está ativa. Assim, para que ela trate a rota `/eventos` como ativa, é necessário informar que a comparação é de rota exata. Isso é feito por meio da propriedade `routerLinkActiveOptions`, com o valor `{exact:true}`, como usado no exemplo de código acima.
+É importante considerar, por fim, que o tratamento de rotas é um processo que requer certos cuidados. Para a URL `http://dominio.com/eventos`, por exemplo, a diretiva `RouterLinkActive` aplica um procedimento em cascata, considerando que as duas rotas `/` e `/eventos` estão ativas. Assim, para que ela trate a rota `/eventos` como ativa, é necessário informar que a comparação é de rota exata. Isso é feito por meio da propriedade `routerLinkActiveOptions`, com o valor `{exact:true}`, como usado no exemplo de código acima.
 
 ### Router como um serviço
 
-
+Considere uma situação em que o aplicativo não fornece navegação para uma página por meio de links, mas de eventos. Nesse caso, é necessário tratar o evento de forma imperativa, programática. Por isso, o componente em questão precisa realizar alguns procedimentos. O primeiro deles é importar o `Router` e injetá-lo no construtor \(como mostra o trecho de código a seguir\).
 
 ```
 ...
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 ...
 
 @Component({
@@ -179,14 +179,76 @@ export class EventosListaComponent implements OnInit {
 ...
     constructor(private eventosService: EventosService,
         private router: Router) { }
-
 ...
-
-    mostrarDetalhes(evento: Evento) {
-        this.router.navigate(['/eventos', evento.id]);
-    }
 }
 ```
+
+Posteriormente, o método que trata um evento chamda o método `navigate()` do `Router:`
+
+```
+mostrarDetalhes(evento: Evento) {
+    this.router.navigate(['/eventos', evento.id]);
+}
+```
+
+O método `navigate()` aceita um vetor como parâmetro, que tem a seguinte estrutura: o primeiro elemento representa a ronta para onde se deseja que seja feita a negação \(neste caso, a rota é `/eventos/:id`\); os demais elementos do vetor representam os valores para os parâmetros de rota. Como a rota em questão possui apenas um parâmetro \(`id`\)  o segundo elemento do vetor define seu valor \(`evento.id`\).
+
+Essa mesma sintaxe pode ser utilizada para definir o valor da diretiva `RouterLink` no template.
+
+### Obtendo informações da rota e seus parâmetros
+
+O serviço `ActivatedRoute` fornece várias informações sobre a rota, como apresenta a tabela a seguir:
+
+| Atributo | Descrição |
+| :--- | :--- |
+| `url` | Um `Observable` do caminho da rota, representado como um array de strings para cada parte do caminho |
+| `data` | Um `Observable` que contém o objeto data fornecido para a rota |
+| `params` | Um `Observable` que contém os parâmetros de rota |
+| `queryParams` | Um `Observable` que contém os parâmetros de URL |
+| `parent` | Um `ActivatedRoute` que contém informações sobre a rota pai \(quando são usadas rotas filhas\) |
+| `children` | Contém as rotas filhas ativadas sob a rota atual |
+
+No caso do exemplo a seguir, a rota é `eventos/:id`, ou seja, há o parâmetro de rota `id`. O trecho de código apresenta as importações e injeções de serviços necessárias para obter o valor deste parâmetro de rota.
+
+```
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+...
+import 'rxjs/add/operator/switchMap';
+
+@Component({
+...
+})
+export class EventoDetalhesComponent implements OnInit {
+    evento: Evento;
+
+    constructor(
+        private eventosService: EventosService,
+        private route: ActivatedRoute) { }
+
+}
+```
+
+Como visto no código, é importado e injetado o serviço `ActivatedRoute`. Note também a importação do operador `switchMap` \(do pacote `rxjs`\). O trecho de código a seguir demonstra como obter o valor do parâmetro de rota.
+
+```
+ngOnInit() {
+    this.route.params
+        .switchMap(params => {
+            let id: number = Number.parseInt(params['id']);
+            return this.eventosService.find(id);
+        })
+        .subscribe(evento => this.evento = evento );
+}
+```
+
+O objeto `route` \(um `ActivatedRoute`\) fornece o atributo `params` \(do tipo `Params` fornecido pelo pacote `@angular/router`\). Como ele é um `Observable`, o código usa o operador `switchMap` para mapear seu valor atual \(os parâmetros de rota\) para um novo `Observable `\(um objeto retornado por `EventosService.find()`\). Na prática, esse é o procedimento padrão para tratar mudanças em valores de parâmetros de rota. 
+
+Na sequência, o código usa `subscribe()` para tratar o `Observable` retornado pelo operador `switchMap`. 
+
+
+
+
 
 
 
