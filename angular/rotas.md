@@ -356,11 +356,20 @@ Depois da organização dos arquivos seguem-se outros procedimentos, criando um 
 
 ### Arquitetura modular
 
+Considere que a arquitetura do módulo esteja organizada em módulos:
 
+```
++ Módulo Raiz
+  - Componente A
+  - Componente B
+  + Módulo Filho1
+    - Componente C
+    - Componente D  
+```
+
+O "Módulo Raiz" possui filhos que são componentes \("Componente A" e "Componente B"\) e módulo \("Módulo Filho1"\). O "Módulo Filho1", por sua vez, possui outros componentes filhos \("Componente C" e "Componente D"\). 
 
 ### Componente padrão do módulo
-
-
 
 ### Módulo de rotas
 
@@ -369,8 +378,6 @@ Segundo o formato de desenvolvimento visto na seção anterior, o desenvolviment
 ```
 
 ```
-
-
 
 
 
