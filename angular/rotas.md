@@ -398,7 +398,7 @@ const rotas: Routes = [
 export class EventosRoutingModule { }
 ```
 
-A variável `rotas` contém as rotas do módulo. Uma diferença marcante está presente na sua definição: o atributo `children`. 
+A variável `rotas` contém as rotas do módulo. Uma diferença marcante está presente na sua definição: o atributo `children`.
 
 Considere a rota `eventos` e que ela possui duas rotas filhas:
 
@@ -407,21 +407,62 @@ Considere a rota `eventos` e que ela possui duas rotas filhas:
 
 Assim, o Angular Router aplica uma "lógica de navegação" que trata a URL em partes. Por exemplo, considere a URL `/eventos/1`e a arquitetura modular vista anteriormente:
 
-1. **Parte `""`:** O Router começa criando uma instância do componente raiz `AppComponent` e a usa como _shell _para os componentes que serão descobertos a seguir
-2. **Parte `"eventos"`: **Como a URL combina com a rota `eventos`, o Router cria uma instância de `EventosHomeComponent` , a apresenta no `RouterOutlet` do `AppComponent`e, por fim, a usa como _shell _para os demais componentes _ _
-3. **Parte `"1"`: **Como a URL combina com a rota `:id`, filha da rota `eventos`, o Router cria uma instância de `EventoDetalhesComponent` e a apresenta no `RouterOutlet` de `EventosHomeComponent`
+1. **Parte **`""`**:** O Router começa criando uma instância do componente raiz `AppComponent` e a usa como \_shell \_para os componentes que serão descobertos a seguir
+2. **Parte **`"eventos"`**: **Como a URL combina com a rota `eventos`, o Router cria uma instância de `EventosHomeComponent` , a apresenta no `RouterOutlet` do `AppComponent`e, por fim, a usa como _shell \_para os demais componentes _ \_
+3. **Parte **`"1"`**: **Como a URL combina com a rota `:id`, filha da rota `eventos`, o Router cria uma instância de `EventoDetalhesComponent` e a apresenta no `RouterOutlet` de `EventosHomeComponent`
 
 Perceba que as barras \(`"/"`\) presentes na URL servem como separadores para criar as partes.
 
 Aplicando o mesmo raciocínio, a lógica para tratar a URL `/eventos` é a seguinte:
 
-1. **Parte `""`: **Cria uma instância de `AppComponent` e o usa como _shell_
-2. **Parte `"eventos"`: **Cria uma instância de `EventosHomeComponent` e o usa como _shell_
-3. **Parte `""`:** Cria uma instância de EventosListaComponent 
+1. **Parte **`""`**: **Cria uma instância de `AppComponent` e o usa como _shell_
+2. **Parte **`"eventos"`**: **Cria uma instância de `EventosHomeComponent` e o usa como _shell_
+3. **Parte **`""`**:** Cria uma instância de EventosListaComponent 
 
 A última diferença mais importante é que, ao contrário do módulo raiz, quando se usa `RouterModule.forRoot()`, para os demais módulos do aplicativo usa-se `RouterModule.forChild()`.
 
+O restante da configuração do aplicativo segue o seguinte:
 
+* Importar o módulo de rotas `EventosRoutingModule` no módulo `EventosModule`
+* Importar o módulo `EventosModule` no módulo raiz \(`AppModule`\)
+
+Quanto à última etapa, é importante notar que a ordem das importações dos módulos faz diferença na maneira como o Angular Router interpreta as rotas. Assim, é necessário que os _feature modules_ sejam importados antes do módulo de rotas do módulo raiz. Por exemplo, o trecho de código a seguir pertence ao módulo `AppModule`\(o módulo raiz\):
+
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { CidadesService } from './cidades.service';
+import { EstadosService } from './estados.service';
+import { HomeComponent } from './home.component';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { AppRoutingModule } from './app-routing.module';
+import { EventosModule } from './eventos/eventos.module';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        EventosModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        PaginaNaoEncontradaComponent
+    ],
+    providers: [
+        CidadesService,
+        EstadosService
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
 
 
