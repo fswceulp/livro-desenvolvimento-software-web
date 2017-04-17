@@ -356,7 +356,7 @@ Depois da organização dos arquivos seguem-se outros procedimentos, criando um 
 
 ### Componente padrão do módulo
 
-Da mesma forma como o módulo raiz possui um "componente padrão", cujo template usa a diretiva `RouterOutlet`, aqui também é necessário um componente padrão. Considere que ele se chama `EventosHomeComponent` e seu template é simplesmente o apresentado no código a seguir:
+Da mesma forma como o módulo raiz possui um **componente padrão**, cujo template usa a diretiva `RouterOutlet`, aqui também é necessário um componente padrão. Considere que ele se chama `EventosHomeComponent` e seu template é simplesmente o apresentado no código a seguir:
 
 ```
 <router-outlet></router-outlet>
@@ -405,10 +405,10 @@ Considere a rota `eventos` e que ela possui duas rotas filhas:
 * `:id`: representa a rota para acessar um evento específico \(exemplo: `/eventos/1`\)
 * a última rota representa a rota padrão \(exemplo: `/eventos` ou `/eventos/`\)
 
-Assim, o Angular Router aplica uma "lógica de navegação" que trata a URL em partes. Por exemplo, considere a URL `/eventos/1`e a arquitetura modular vista anteriormente:
+Assim, o Angular Router aplica uma **lógica de navegação** que trata a URL em partes. Por exemplo, considere a URL `/eventos/1`e a arquitetura modular vista anteriormente:
 
-1. **Parte **`""`**:** O Router começa criando uma instância do componente raiz `AppComponent` e a usa como \_shell \_para os componentes que serão descobertos a seguir
-2. **Parte **`"eventos"`**: **Como a URL combina com a rota `eventos`, o Router cria uma instância de `EventosHomeComponent` , a apresenta no `RouterOutlet` do `AppComponent`e, por fim, a usa como _shell \_para os demais componentes _ \_
+1. **Parte **`""`**:** O Router começa criando uma instância do componente raiz `AppComponent` e a usa como _shell_ para os componentes que serão descobertos a seguir
+2. **Parte **`"eventos"`**: **Como a URL combina com a rota `eventos`, o Router cria uma instância de `EventosHomeComponent` , a apresenta no `RouterOutlet` do `AppComponent`e, por fim, a usa como _shell_ para os demais componentes
 3. **Parte **`"1"`**: **Como a URL combina com a rota `:id`, filha da rota `eventos`, o Router cria uma instância de `EventoDetalhesComponent` e a apresenta no `RouterOutlet` de `EventosHomeComponent`
 
 Perceba que as barras \(`"/"`\) presentes na URL servem como separadores para criar as partes.
