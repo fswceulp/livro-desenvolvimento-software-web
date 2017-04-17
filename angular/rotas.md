@@ -354,30 +354,74 @@ Pode-se perceber, pelos nomes dos arquivos, que não há uma organização nos c
 
 Depois da organização dos arquivos seguem-se outros procedimentos, criando um módulo específico para as funcionalidades referentes a "eventos". O padrão de desenvolvimento do Angular chama esses módulos menores de _feature modules_. Este formato de desenvolvimento também permite introduzir o conceito de _child routes_ \(rotas filhas\).
 
-### Arquitetura modular
-
-Considere que a arquitetura do módulo esteja organizada em módulos:
-
-```
-+ Módulo Raiz
-  - Componente A
-  - Componente B
-  + Módulo Filho1
-    - Componente C
-    - Componente D  
-```
-
-O "Módulo Raiz" possui filhos que são componentes \("Componente A" e "Componente B"\) e módulo \("Módulo Filho1"\). O "Módulo Filho1", por sua vez, possui outros componentes filhos \("Componente C" e "Componente D"\). 
-
 ### Componente padrão do módulo
+
+Da mesma forma como o módulo raiz possui um "componente padrão", cujo template usa a diretiva `RouterOutlet`, aqui também é necessário um componente padrão. Considere que ele se chama `EventosHomeComponent` e seu template é simplesmente o apresentado no código a seguir:
+
+```
+<router-outlet></router-outlet>
+```
+
+Desta forma, o componente `EventosHomeComponent` serve apenas como um _shell_ para outros componentes do módulo.
 
 ### Módulo de rotas
 
-Segundo o formato de desenvolvimento visto na seção anterior, o desenvolvimento do módulo "eventos" começa pelo módulo de rotas `EventosRoutingModule`:
+Segundo o formato de desenvolvimento já visto, o módulo "eventos" contém o módulo de rotas `EventosRoutingModule`:
 
 ```
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { EventosHomeComponent } from './eventos-home.component';
+import { EventosListaComponent } from './eventos-lista.component';
+import { EventoDetalhesComponent } from './evento-detalhes.component';
 
+const rotas: Routes = [
+    {
+        path: 'eventos',
+        component: EventosHomeComponent,
+        children: [
+            { path: ':id', component: EventoDetalhesComponent },
+            { path: '', component: EventosListaComponent },
+        ]
+    },
+
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forChild(rotas)
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+export class EventosRoutingModule { }
 ```
+
+A variável `rotas` contém as rotas do módulo. Uma diferença marcante está presente na sua definição: o atributo `children`. 
+
+Considere a rota `eventos` e que ela possui duas rotas filhas:
+
+* `:id`: representa a rota para acessar um evento específico \(exemplo: `/eventos/1`\)
+* a última rota representa a rota padrão \(exemplo: `/eventos` ou `/eventos/`\)
+
+Assim, o Angular Router aplica uma "lógica de navegação" que trata a URL em partes. Por exemplo, considere a URL `/eventos/1`e a arquitetura modular vista anteriormente:
+
+1. **Parte `""`:** O Router começa criando uma instância do componente raiz `AppComponent` e a usa como _shell _para os componentes que serão descobertos a seguir
+2. **Parte `"eventos"`: **Como a URL combina com a rota `eventos`, o Router cria uma instância de `EventosHomeComponent` , a apresenta no `RouterOutlet` do `AppComponent`e, por fim, a usa como _shell _para os demais componentes _ _
+3. **Parte `"1"`: **Como a URL combina com a rota `:id`, filha da rota `eventos`, o Router cria uma instância de `EventoDetalhesComponent` e a apresenta no `RouterOutlet` de `EventosHomeComponent`
+
+Perceba que as barras \(`"/"`\) presentes na URL servem como separadores para criar as partes.
+
+Aplicando o mesmo raciocínio, a lógica para tratar a URL `/eventos` é a seguinte:
+
+1. **Parte `""`: **Cria uma instância de `AppComponent` e o usa como _shell_
+2. **Parte `"eventos"`: **Cria uma instância de `EventosHomeComponent` e o usa como _shell_
+3. **Parte `""`:** Cria uma instância de EventosListaComponent 
+
+A última diferença mais importante é que, ao contrário do módulo raiz, quando se usa `RouterModule.forRoot()`, para os demais módulos do aplicativo usa-se `RouterModule.forChild()`.
+
+
 
 
 
